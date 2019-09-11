@@ -277,11 +277,52 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/tags/开/" title="开: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="开" style="background-color: #F9EBEA;">开
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/eae/" title="eae: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="eae" style="background-color: #F5EEF8;">eae
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
 </div>
 
+    
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"开","weight":1,"link":"https://zheroic.github.io/tags/开/"},{"text":"eae","weight":1,"link":"https://zheroic.github.io/tags/eae/"}], {
+        autoResize: true
+    });
+</script>
     
 
 </main>
@@ -295,7 +336,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <br>
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">125</span>&nbsp;字
+                class="white-color">177</span>&nbsp;字
             
             
             
