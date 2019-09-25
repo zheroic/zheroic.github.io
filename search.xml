@@ -4,13 +4,50 @@
   
     
     <entry>
-      <title>hadoop-1</title>
+      <title>软件需求分析设计</title>
+      <link href="/2019/09/25/software-requirement/"/>
+      <url>/2019/09/25/software-requirement/</url>
+      
+        <content type="html"><![CDATA[<h1 id="软件需求分析设计"><a href="#软件需求分析设计" class="headerlink" title="软件需求分析设计"></a>软件需求分析设计</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><h5 id="项目："><a href="#项目：" class="headerlink" title="项目："></a>项目：</h5><p>为创建一个独特产品、服务或任务所做的临时性努力</p><h5 id="软件开发通用技术："><a href="#软件开发通用技术：" class="headerlink" title="软件开发通用技术："></a>软件开发通用技术：</h5><p>1.抽象技术<br>2.分解技术<br>3.形式化表达（模型/模式、传播）<br>4.封装  </p><h5 id="软件开发方法："><a href="#软件开发方法：" class="headerlink" title="软件开发方法："></a>软件开发方法：</h5><p>1.结构化方法<br>2.[^面向对象方法]<br>[^面向对象方法]:1.面向过程 2.面向对象 3.面向数据 4.面向服务 5.面向控制</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件需求分析设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hadoop环境配置</title>
       <link href="/2019/09/25/hadoop-1/"/>
       <url>/2019/09/25/hadoop-1/</url>
       
         <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hadoop </tag>
+            
+        </tags>
       
     </entry>
     
