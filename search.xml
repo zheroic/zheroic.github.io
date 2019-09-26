@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>spark内存计算-1</title>
+      <link href="/2019/09/26/spark-1/"/>
+      <url>/2019/09/26/spark-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="初始spark"><a href="#初始spark" class="headerlink" title="初始spark"></a>初始spark</h1><p><img alt="大数据技术框架" data-src="https://pic.superbed.cn/item/5d8c7975451253d178dc6217.png" class="lozad"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> spark内存计算 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spark </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软件需求分析设计-2</title>
       <link href="/2019/09/25/software-requirement-2/"/>
       <url>/2019/09/25/software-requirement-2/</url>
@@ -202,31 +227,6 @@
             <tag> 人月神话 </tag>
             
             <tag> 阅读 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>spark内存计算-1</title>
-      <link href="/2019/09/12/spark-1/"/>
-      <url>/2019/09/12/spark-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="初始spark"><a href="#初始spark" class="headerlink" title="初始spark"></a>初始spark</h1><p>！<a href="https://pic.superbed.cn/item/5d8c7975451253d178dc6217.png" target="_blank" rel="noopener">大数据技术框架</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> spark内存计算 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> spark </tag>
             
         </tags>
       
