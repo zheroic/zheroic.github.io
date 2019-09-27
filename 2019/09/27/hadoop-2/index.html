@@ -85,7 +85,7 @@
 <li>定时的从NameNode获取EditLogs,并更新到FsImage上。</li>
 <li>一旦它有新的fsimage文件，它将其拷贝回NameNode上，NameNode在下次重启时会使用这 个新的fsimage文件，从而减少重启的时间。<br><img alt="Hadoop实现原理-1" data-src="https://pic.superbed.cn/item/5d8d65bd451253d178323a5a.png" class="lozad"></li>
 </ul>
-<p><font color="res">注意：关于NameNode是什么时候将改动写到editlogs中的？这个操作实际上是由DataNode的写操作触发的，当我们往DataNode写文件时，DataNode会跟NameNode通信，告诉NameNode什么文件的第几个block放在它那里，NameNode这个时候会将这些元数据信息写到editlogs文件中</font></p>
+<p><font color="red">注意：关于NameNode是什么时候将改动写到editlogs中的？这个操作实际上是由DataNode的写操作触发的，当我们往DataNode写文件时，DataNode会跟NameNode通信，告诉NameNode什么文件的第几个block放在它那里，NameNode这个时候会将这些元数据信息写到editlogs文件中</font></p>
 <h3 id="DataNode"><a href="#DataNode" class="headerlink" title="DataNode"></a>DataNode</h3><ul>
 <li>DataNode是HDFS架构的从节点，管理各自节点的Block信息。 </li>
 </ul>
