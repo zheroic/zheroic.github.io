@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>idea编写spark时过滤掉运行时的INFO信息</title>
+      <link href="/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/"/>
+      <url>/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/</url>
+      
+        <content type="html"><![CDATA[<p>编写spark程序时，INFO信息导致过多 导致输出非常不好找，因此给他过滤掉</p><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在代码中加入</p><pre class=" language-java"><code class="language-java">val spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appName</span><span class="token punctuation">(</span><span class="token string">"xx"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">master</span><span class="token punctuation">(</span><span class="token string">"local"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getOrCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>val sc <span class="token operator">=</span> spark<span class="token punctuation">.</span>sparkContextsc<span class="token punctuation">.</span><span class="token function">setLogLevel</span><span class="token punctuation">(</span><span class="token string">"ERROR"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//log中只会出现error级别的信息</span><span class="token comment" spellcheck="true">//sc.setLogLevel("WARN") //log中会出现warn和error级别的信息</span></code></pre><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>此方法需要把resources加入source Folder，如果没有在src/main/下新建folder：resources然后：<br><img alt data-src="https://img-blog.csdnimg.cn/20191217150420544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"><br>在spark安装目录下的conf文件夹下找到log4j.properties.template复制到项目目录下的src/main/resources下并改名为log4j.properties，并修改将</p><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">log4j.rootCategory</span><span class="token punctuation">=</span><span class="token attr-value">INFO, console</span></code></pre><p>改成(改成WARN则log中会出现warn和error级别的信息）</p><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">log4j.rootCategory</span><span class="token punctuation">=</span><span class="token attr-value">ERROR, console</span></code></pre><p><img alt data-src="https://img-blog.csdnimg.cn/20191217150030868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> idea </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spark </tag>
+            
+            <tag> idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决idea中创建scala项目中插件无法加载的问题</title>
       <link href="/2019/12/05/jie-jue-idea-zhong-chuang-jian-scala-xiang-mu-zhong-cha-jian-wu-fa-jia-zai-de-wen-ti/"/>
       <url>/2019/12/05/jie-jue-idea-zhong-chuang-jian-scala-xiang-mu-zhong-cha-jian-wu-fa-jia-zai-de-wen-ti/</url>
