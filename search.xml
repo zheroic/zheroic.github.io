@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Command line is too long. </title>
+      <link href="/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/"/>
+      <url>/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/</url>
+      
+        <content type="html"><![CDATA[<p>idea运行代码时出现<br><img alt data-src="https://img-blog.csdnimg.cn/20191214163545223.png" class="lozad"><br>解决：<br>在.idea文件夹里的workspace.xml中的</p><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>PropertiesComponent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre><p>标签下添加：</p><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dynamic.classpath<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre><p><img alt data-src="https://img-blog.csdnimg.cn/20191214163643841.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sparkSQL练习，分析篮球运动员数据</title>
       <link href="/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/"/>
       <url>/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/</url>
