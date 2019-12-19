@@ -37,6 +37,14 @@
       
       
       
+        <tags>
+            
+            <tag> spark </tag>
+            
+            <tag> scala </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -49,6 +57,14 @@
         <content type="html"><![CDATA[<p>编写spark程序时，INFO信息导致过多 导致输出非常不好找，因此给他过滤掉</p><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在代码中加入</p><pre class=" language-java"><code class="language-java">val spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appName</span><span class="token punctuation">(</span><span class="token string">"xx"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">master</span><span class="token punctuation">(</span><span class="token string">"local"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getOrCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>val sc <span class="token operator">=</span> spark<span class="token punctuation">.</span>sparkContextsc<span class="token punctuation">.</span><span class="token function">setLogLevel</span><span class="token punctuation">(</span><span class="token string">"ERROR"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//log中只会出现error级别的信息</span><span class="token comment" spellcheck="true">//sc.setLogLevel("WARN") //log中会出现warn和error级别的信息</span></code></pre><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>此方法需要把resources加入source Folder，如果没有在src/main/下新建folder：resources然后：<br><img alt data-src="https://img-blog.csdnimg.cn/20191217150420544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"><br>在spark安装目录下的conf文件夹下找到log4j.properties.template复制到项目目录下的src/main/resources下并改名为log4j.properties，并修改将</p><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">log4j.rootCategory</span><span class="token punctuation">=</span><span class="token attr-value">INFO, console</span></code></pre><p>改成(改成WARN则log中会出现warn和error级别的信息）</p><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">log4j.rootCategory</span><span class="token punctuation">=</span><span class="token attr-value">ERROR, console</span></code></pre><p><img alt data-src="https://img-blog.csdnimg.cn/20191217150030868.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> idea </tag>
+            
+            <tag> spark </tag>
+            
+        </tags>
       
     </entry>
     
@@ -63,6 +79,14 @@
       
       
       
+        <tags>
+            
+            <tag> idea </tag>
+            
+            <tag> scala </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -75,6 +99,12 @@
         <content type="html"><![CDATA[<h1 id="list、set、map："><a href="#list、set、map：" class="headerlink" title="list、set、map："></a>list、set、map：</h1><p>Collection接口是集合类的根接口，Java中没有提供这个接口的直接的实现类。但是却让其被继承产生了两个接口，就是Set和List。Set中不能包含重复的元素。List是一个有序的集合，可以包含重复的元素，提供了按索引访问的方式。<br>Map是Java.util包中的另一个接口，它和Collection接口没有关系，是相互独立的，但是都属于集合类的一部分。Map包含了key-value对。Map不能包含重复的key，但是可以包含相同的value。</p><h1 id="数组排序："><a href="#数组排序：" class="headerlink" title="数组排序："></a>数组排序：</h1><p>法一：Arrays.sort()<br>Arrays.sort()排序方法在java中是最简单且最常用的排序方法</p><pre class=" language-Java"><code class="language-Java">int []arr1= {45,34,59,55};  Arrays.sort(arr1);//调用方法排序即可</code></pre><p>法二：冒泡排序<br>简单来说，冒泡排序就是重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成</p><pre class=" language-Java"><code class="language-Java">//array[]为待排序数组，n为数组长度void BubbleSort(int array[], int n){        int i, j, k;        for(i=0; i<n-1; i++)            for(j=0; j<n-1-i; j++)            {                            if(array[j]>array[j+1])                            {                                    k=array[j];                                    array[j]=array[j+1];                                    array[j+1]=k;                            }                    }}</code></pre><p>法三：选择排序<br>先找到最小元素所在位置的索引，然后将该元素与第一位上的元素进行交换。</p><pre class=" language-Java"><code class="language-Java">int arr3[]= {23,12,48,56,45};    for(int i=0;i<arr3.length;i++) {           int tem=i;//将数组中从i开始的最小的元素所在位置的索引赋值给tem         for(int j=i;j<arr3.length;j++) {                    if(arr3[j]<arr3[tem]) {                         tem=j;                      }               }           //上面获取了数组中从i开始的最小值的位置索引为tem，利用该索引将第i位上的元素与其进行交换         int temp1=arr3[i];          arr3[i]=arr3[tem];          arr3[tem]=temp1;    }</code></pre><p>法四：反转排序<br>将原数组按逆序排列</p><pre class=" language-Java"><code class="language-Java">//将数组第i位上的元素与第arr.length-i-1位上的元素进行交换int []arr4={23,12,48,56,45};   for(int i=0;i<arr4.length/2;i++) {          int tp=arr4[i];         arr4[i]=arr4[arr4.length-i-1];          arr4[arr4.length-i-1]=tp;   }</code></pre><p>法五：直接插入排序</p><pre class=" language-Java"><code class="language-Java">int []arr5={23,12,48,56,45};    for (int i = 1; i < arr5.length; i++) {         for (int j = i; j > 0; j--) {                   if (arr5[j - 1] > arr5[j]) {            //大的放后面                         int tmp = arr5[j - 1];                          arr5[j - 1] = arr5[j];                          arr5[j] = tmp;                      }               }   }</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
       
     </entry>
     
@@ -89,6 +119,12 @@
       
       
       
+        <tags>
+            
+            <tag> scala </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -101,6 +137,18 @@
         <content type="html"><![CDATA[<h1 id="hadoop实验"><a href="#hadoop实验" class="headerlink" title="hadoop实验"></a>hadoop实验</h1><h1 id="hive实验"><a href="#hive实验" class="headerlink" title="hive实验"></a>hive实验</h1><h1 id="hbase实验"><a href="#hbase实验" class="headerlink" title="hbase实验"></a>hbase实验</h1><p><a href="https://gitee.com/smallheroic/blog/tree/master/hadoop%E5%AE%9E%E9%AA%8C" target="_blank">下载链接</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      <categories>
+          
+          <category> hadoop </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hadoop </tag>
+            
+        </tags>
       
     </entry>
     
@@ -114,6 +162,12 @@
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Hello-hexo！！"><a href="#Hello-hexo！！" class="headerlink" title="Hello hexo！！"></a>Hello hexo！！</h3><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
       
     </entry>
     
