@@ -39,9 +39,9 @@
       
         <tags>
             
-            <tag> spark </tag>
-            
             <tag> scala </tag>
+            
+            <tag> spark </tag>
             
         </tags>
       
@@ -113,7 +113,7 @@
       
         <tags>
             
-            <tag> -scala </tag>
+            <tag> scala </tag>
             
         </tags>
       
