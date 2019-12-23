@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>word中优雅的插入代码块</title>
+      <link href="/2019/12/23/untitled/"/>
+      <url>/2019/12/23/untitled/</url>
+      
+        <content type="html"><![CDATA[<p>打开  <a href="http://www.planetb.ca/syntax-highlight-word" target="_blank" rel="noopener">http://www.planetb.ca/syntax-highlight-word</a><br>将代码复制至code块里<br>选择编译语言，然后show highlights<br><img alt data-src="https://img-blog.csdnimg.cn/20191223140647422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" class="lozad"><br>将新页面的代码复制至word即可</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sparkcore练习_2,各种算子的练习</title>
       <link href="/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/"/>
       <url>/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/</url>
