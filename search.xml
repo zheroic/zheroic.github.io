@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>shadowsocks弹出1080为系统保留端口</title>
+      <link href="/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/"/>
+      <url>/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/</url>
+      
+        <content type="html"><![CDATA[<p>由于之前使用shadowsocksR全局代理未退出就直接关机了，再次使用出现了这个<br><img alt data-src="https://pic.downk.cc/item/5e12bd2f76085c3289fefbc5.png" class="lozad"></p><h1 id="解决办法：换端口"><a href="#解决办法：换端口" class="headerlink" title="解决办法：换端口"></a>解决办法：换端口</h1><p><img alt data-src="https://pic.downk.cc/item/5e12be1176085c3289ff1639.png" class="lozad"><br><img alt data-src="https://pic.downk.cc/item/5e12be5476085c3289ff1ea1.png" class="lozad"><br>如果你想换的端口依然是系统保留端口，那就继续换就好了。。。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软件需求要点（NEU）</title>
       <link href="/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/"/>
       <url>/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/</url>
@@ -208,31 +221,6 @@
     
     
     <entry>
-      <title>Spark运行模式的区别</title>
-      <link href="/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/"/>
-      <url>/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/</url>
-      
-        <content type="html"><![CDATA[<p>local    ：就是单机，jobs都在这台机器上运行。<br>standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行<br>yarn：就是说spark程序运行在yarn上<br>client ：就是Jobs在不同机器运行，然后结果返回到这台机器上。<br>cluster ： 就是说jobs在不同机器上运行，结果返回到集群中的某一台机器上。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> spark </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> spark </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>scala一行代码实现wordcount解析</title>
       <link href="/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/"/>
       <url>/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/</url>
@@ -250,6 +238,31 @@
         <tags>
             
             <tag> scala </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spark运行模式的区别</title>
+      <link href="/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/"/>
+      <url>/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<p>local    ：就是单机，jobs都在这台机器上运行。<br>standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行<br>yarn：就是说spark程序运行在yarn上<br>client ：就是Jobs在不同机器运行，然后结果返回到这台机器上。<br>cluster ： 就是说jobs在不同机器上运行，结果返回到集群中的某一台机器上。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> spark </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spark </tag>
             
         </tags>
       
