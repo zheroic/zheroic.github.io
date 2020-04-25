@@ -1,25 +1,806 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>软件需求要点（NEU） | zh小企鹅</title><meta name="description" content="软件需求要点（NEU）"><meta name="keywords" content="软件需求"><meta name="author" content="zheroic"><meta name="copyright" content="zheroic"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon1.png"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="软件需求要点（NEU）"><meta name="twitter:description" content="软件需求要点（NEU）"><meta name="twitter:image" content="https://pic3.superbed.cn/item/5dfaf5b776085c3289bc6099.jpg"><meta property="og:type" content="article"><meta property="og:title" content="软件需求要点（NEU）"><meta property="og:url" content="https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/"><meta property="og:site_name" content="zh小企鹅"><meta property="og:description" content="软件需求要点（NEU）"><meta property="og:image" content="https://pic3.superbed.cn/item/5dfaf5b776085c3289bc6099.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="shadowsocks弹出1080为系统保留端口" href="https://zheroic.github.io/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/"><link rel="next" title="word中优雅的插入代码块" href="https://zheroic.github.io/2019/12/23/untitled/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/gh/upupming/gitalk@36368e5dffd049e956cdbbd751ff96c28d8255cf/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
-  highlight_copy: 'true',
-  highlight_lang: 'true',
-  highlight_shrink: 'false',
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  bookmark: {
-    title: '添加书签',
-    message_prev: '按',
-    message_next: '键将本页加入书签'
-  },
-  runtime_unit: '天'
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <!-- shw2018 洪卫  modify 2019.08.15-->
 
-  
-}</script><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="web_bg"></div><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#软件过程"><span class="toc-number">1.</span> <span class="toc-text">软件过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发的本质："><span class="toc-number">1.1.</span> <span class="toc-text">软件开发的本质：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统规划"><span class="toc-number">1.2.</span> <span class="toc-text">系统规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统规划方法（关心效果而不是效率）："><span class="toc-number">1.2.1.</span> <span class="toc-text">系统规划方法（关心效果而不是效率）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统的三级管理系统"><span class="toc-number">1.3.</span> <span class="toc-text">系统的三级管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发的周期（核心）"><span class="toc-number">1.4.</span> <span class="toc-text">软件开发的周期（核心）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发模型与方法"><span class="toc-number">1.5.</span> <span class="toc-text">开发模型与方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求确定"><span class="toc-number">2.</span> <span class="toc-text">需求确定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#从业务过程到解决方案的构想"><span class="toc-number">2.1.</span> <span class="toc-text">从业务过程到解决方案的构想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#过程层次建模"><span class="toc-number">2.1.1.</span> <span class="toc-text">过程层次建模</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#过程和过程分解"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">过程和过程分解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#业务过程建模"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">业务过程建模</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案构想"><span class="toc-number">2.1.2.</span> <span class="toc-text">解决方案构想</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#构想过程阶段："><span class="toc-number">2.1.2.1.</span> <span class="toc-text">构想过程阶段：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现策略和能力体系结构"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">实现策略和能力体系结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求引导"><span class="toc-number">2.2.</span> <span class="toc-text">需求引导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统需求"><span class="toc-number">2.2.1.</span> <span class="toc-text">系统需求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#功能性需求：由系统期望的服务（服务陈述），侧重功能性需求"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">功能性需求：由系统期望的服务（服务陈述），侧重功能性需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#非功能性需求（补充需求）：系统必须遵守的约束（约束陈述），如性能、安全"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">非功能性需求（补充需求）：系统必须遵守的约束（约束陈述），如性能、安全</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求引导方法"><span class="toc-number">2.2.2.</span> <span class="toc-text">需求引导方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#传统方法：适用于目标明确、低风险的项目"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">传统方法：适用于目标明确、低风险的项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#现代方法：适用于风险高的项目"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">现代方法：适用于风险高的项目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求协商与确认"><span class="toc-number">2.3.</span> <span class="toc-text">需求协商与确认</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#超出范围的需求"><span class="toc-number">2.3.1.</span> <span class="toc-text">超出范围的需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求依赖矩阵"><span class="toc-number">2.3.2.</span> <span class="toc-text">需求依赖矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求风险和优先级"><span class="toc-number">2.3.3.</span> <span class="toc-text">需求风险和优先级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求管理"><span class="toc-number">2.4.</span> <span class="toc-text">需求管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#需求标识与分类"><span class="toc-number">2.4.1.</span> <span class="toc-text">需求标识与分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#需求层次"><span class="toc-number">2.4.2.</span> <span class="toc-text">需求层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变更管理"><span class="toc-number">2.4.3.</span> <span class="toc-text">变更管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求业务模型：不属于UML，是高层可视化模型"><span class="toc-number">2.5.</span> <span class="toc-text">需求业务模型：不属于UML，是高层可视化模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统范围模型"><span class="toc-number">2.5.1.</span> <span class="toc-text">系统范围模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务用例模型"><span class="toc-number">2.5.2.</span> <span class="toc-text">业务用例模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务词汇表"><span class="toc-number">2.5.3.</span> <span class="toc-text">业务词汇表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务类模型"><span class="toc-number">2.5.4.</span> <span class="toc-text">业务类模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需求文档"><span class="toc-number">2.6.</span> <span class="toc-text">需求文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#文档模板"><span class="toc-number">2.6.1.</span> <span class="toc-text">文档模板</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可视化建模基础"><span class="toc-number">3.</span> <span class="toc-text">可视化建模基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用例视图"><span class="toc-number">3.1.</span> <span class="toc-text">用例视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参与者"><span class="toc-number">3.1.1.</span> <span class="toc-text">参与者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例"><span class="toc-number">3.1.2.</span> <span class="toc-text">用例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例图"><span class="toc-number">3.1.3.</span> <span class="toc-text">用例图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用例文档化"><span class="toc-number">3.1.4.</span> <span class="toc-text">用例文档化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#活动视图"><span class="toc-number">3.2.</span> <span class="toc-text">活动视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#活动图"><span class="toc-number">3.2.1.</span> <span class="toc-text">活动图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结构视图"><span class="toc-number">3.3.</span> <span class="toc-text">结构视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#持久化类"><span class="toc-number">3.3.1.</span> <span class="toc-text">持久化类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非持久化类"><span class="toc-number">3.3.2.</span> <span class="toc-text">非持久化类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交互视图"><span class="toc-number">3.4.</span> <span class="toc-text">交互视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#顺序图"><span class="toc-number">3.4.1.</span> <span class="toc-text">顺序图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态机视图"><span class="toc-number">3.5.</span> <span class="toc-text">状态机视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现视图"><span class="toc-number">3.6.</span> <span class="toc-text">实现视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UML逻辑模型分类"><span class="toc-number">3.7.</span> <span class="toc-text">UML逻辑模型分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求规格说明"><span class="toc-number">4.</span> <span class="toc-text">需求规格说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#体系结构优先权：层次化结构"><span class="toc-number">4.1.</span> <span class="toc-text">体系结构优先权：层次化结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC（模型——视图——控制器）：元模型、构架、编程环境"><span class="toc-number">4.1.1.</span> <span class="toc-text">MVC（模型——视图——控制器）：元模型、构架、编程环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#J2EE的核心体系结构"><span class="toc-number">4.1.2.</span> <span class="toc-text">J2EE的核心体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PCMEE和PCBMEE"><span class="toc-number">4.1.3.</span> <span class="toc-text">PCMEE和PCBMEE</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#PCMEE：表示、控制、中介者、实体、基础"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">PCMEE：表示、控制、中介者、实体、基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PCBMEE：表示、控制器、bean、中介者、实体、资源"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">PCBMEE：表示、控制器、bean、中介者、实体、资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PCBMEE的体系结构原则"><span class="toc-number">4.1.3.3.</span> <span class="toc-text">PCBMEE的体系结构原则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态规格说明：也称为数据结构模型"><span class="toc-number">4.2.</span> <span class="toc-text">状态规格说明：也称为数据结构模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类建模：迭代增量式"><span class="toc-number">4.2.1.</span> <span class="toc-text">类建模：迭代增量式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#发现类"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">发现类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对类进行说明"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">对类进行说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关联建模：最终类图不允许有孤立类"><span class="toc-number">4.2.2.</span> <span class="toc-text">关联建模：最终类图不允许有孤立类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#发现关联"><span class="toc-number">4.2.2.1.</span> <span class="toc-text">发现关联</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#说明关联"><span class="toc-number">4.2.2.2.</span> <span class="toc-text">说明关联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合和复合关系建模"><span class="toc-number">4.2.3.</span> <span class="toc-text">聚合和复合关系建模</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#发现聚合和复合"><span class="toc-number">4.2.3.1.</span> <span class="toc-text">发现聚合和复合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化关系建模（父类子类的关系）"><span class="toc-number">4.2.4.</span> <span class="toc-text">泛化关系建模（父类子类的关系）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口建模：不是在需求分析阶段应该做的"><span class="toc-number">4.2.5.</span> <span class="toc-text">接口建模：不是在需求分析阶段应该做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象建模，用来描述复杂的类和类之间的关系，表示对象随时间变化的过程"><span class="toc-number">4.2.6.</span> <span class="toc-text">对象建模，用来描述复杂的类和类之间的关系，表示对象随时间变化的过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行为规格说明"><span class="toc-number">4.3.</span> <span class="toc-text">行为规格说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用例建模：与类建模一样是迭代增量的"><span class="toc-number">4.3.1.</span> <span class="toc-text">用例建模：与类建模一样是迭代增量的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#活动建模（描述系统逻辑流程）"><span class="toc-number">4.3.2.</span> <span class="toc-text">活动建模（描述系统逻辑流程）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互建模"><span class="toc-number">4.3.3.</span> <span class="toc-text">交互建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作（CRUD）建模"><span class="toc-number">4.3.4.</span> <span class="toc-text">操作（CRUD）建模</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#发现类操作"><span class="toc-number">4.3.4.1.</span> <span class="toc-text">发现类操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态变化规格说明"><span class="toc-number">4.4.</span> <span class="toc-text">状态变化规格说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#从分析到设计"><span class="toc-number">5.</span> <span class="toc-text">从分析到设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#高级类建模（Advanced）"><span class="toc-number">5.1.</span> <span class="toc-text">高级类建模（Advanced）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展机制"><span class="toc-number">5.1.1.</span> <span class="toc-text">扩展机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可见性与封装"><span class="toc-number">5.1.2.</span> <span class="toc-text">可见性与封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#导出信息derived-information"><span class="toc-number">5.1.3.</span> <span class="toc-text">导出信息derived information</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#限定关联"><span class="toc-number">5.1.4.</span> <span class="toc-text">限定关联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关联类和具体化类"><span class="toc-number">5.1.5.</span> <span class="toc-text">关联类和具体化类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级泛化-generalization-与继承-inheritance-建模"><span class="toc-number">5.2.</span> <span class="toc-text">高级泛化(generalization)与继承(inheritance)建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#泛化和可替换性"><span class="toc-number">5.2.1.</span> <span class="toc-text">泛化和可替换性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承和封装"><span class="toc-number">5.2.2.</span> <span class="toc-text">继承和封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口继承"><span class="toc-number">5.2.3.</span> <span class="toc-text">接口继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现继承"><span class="toc-number">5.2.4.</span> <span class="toc-text">实现继承</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级聚合与委托建模"><span class="toc-number">5.3.</span> <span class="toc-text">高级聚合与委托建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#聚合的四种语义"><span class="toc-number">5.3.1.</span> <span class="toc-text">聚合的四种语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#作为泛化的可选方案的聚合"><span class="toc-number">5.3.2.</span> <span class="toc-text">作为泛化的可选方案的聚合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级交互建模"><span class="toc-number">5.4.</span> <span class="toc-text">高级交互建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生命线与消息"><span class="toc-number">5.4.1.</span> <span class="toc-text">生命线与消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#片段fragment"><span class="toc-number">5.4.2.</span> <span class="toc-text">片段fragment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互使用"><span class="toc-number">5.4.3.</span> <span class="toc-text">交互使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#系统体系结构与程序设计"><span class="toc-number">6.</span> <span class="toc-text">系统体系结构与程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式物理体系结构"><span class="toc-number">6.1.</span> <span class="toc-text">分布式物理体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对等体系结构P2P"><span class="toc-number">6.1.1.</span> <span class="toc-text">对等体系结构P2P</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分层体系结构（Multi-tier）：为了降低耦合"><span class="toc-number">6.1.2.</span> <span class="toc-text">分层体系结构（Multi-tier）：为了降低耦合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库为中心的体系结构"><span class="toc-number">6.1.3.</span> <span class="toc-text">数据库为中心的体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#体系结构的复杂性"><span class="toc-number">6.1.4.</span> <span class="toc-text">体系结构的复杂性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#空间认知复杂性"><span class="toc-number">6.1.4.1.</span> <span class="toc-text">空间认知复杂性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖"><span class="toc-number">6.1.4.2.</span> <span class="toc-text">结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）"><span class="toc-number">6.1.5.</span> <span class="toc-text">体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#外观（facade）"><span class="toc-number">6.1.5.1.</span> <span class="toc-text">外观（facade）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象工厂（abstract-factory）"><span class="toc-number">6.1.5.2.</span> <span class="toc-text">抽象工厂（abstract factory）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#责任链（chain-of-Responsibility），与递归类似"><span class="toc-number">6.1.5.3.</span> <span class="toc-text">责任链（chain of Responsibility），与递归类似</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#观察者（observer-listener），也叫出版-订阅模式"><span class="toc-number">6.1.5.4.</span> <span class="toc-text">观察者（observer/listener），也叫出版-订阅模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中介者（mediator）"><span class="toc-number">6.1.5.5.</span> <span class="toc-text">中介者（mediator）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#体系结构建模"><span class="toc-number">6.2.</span> <span class="toc-text">体系结构建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#包"><span class="toc-number">6.2.1.</span> <span class="toc-text">包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构件"><span class="toc-number">6.2.2.</span> <span class="toc-text">构件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#构件与包"><span class="toc-number">6.2.2.1.</span> <span class="toc-text">构件与包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#构件与类的接口"><span class="toc-number">6.2.2.2.</span> <span class="toc-text">构件与类的接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结点——其实是一系列机器，服务器，计算机，客户端等"><span class="toc-number">6.2.3.</span> <span class="toc-text">结点——其实是一系列机器，服务器，计算机，客户端等</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序设计与复用原则"><span class="toc-number">6.3.</span> <span class="toc-text">程序设计与复用原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类的内聚cohesion与耦合coupling"><span class="toc-number">6.3.1.</span> <span class="toc-text">类的内聚cohesion与耦合coupling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类耦合的种类"><span class="toc-number">6.3.1.1.</span> <span class="toc-text">类耦合的种类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Demeter法则"><span class="toc-number">6.3.1.2.</span> <span class="toc-text">Demeter法则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#存取方法Accessor-methods和机械类mindless-classes"><span class="toc-number">6.3.1.3.</span> <span class="toc-text">存取方法Accessor methods和机械类mindless classes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态分类和混合实例内聚"><span class="toc-number">6.3.1.4.</span> <span class="toc-text">动态分类和混合实例内聚</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复用策略"><span class="toc-number">6.3.2.</span> <span class="toc-text">复用策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工具包复用Toolkits-class-libraries"><span class="toc-number">6.3.2.1.</span> <span class="toc-text">工具包复用Toolkits(class libraries)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#框架复用Frameworks"><span class="toc-number">6.3.2.2.</span> <span class="toc-text">框架复用Frameworks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模式复用Analysis-and-design-patterns"><span class="toc-number">6.3.2.3.</span> <span class="toc-text">模式复用Analysis and design patterns</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协作建模Collaboration-modeling"><span class="toc-number">6.4.</span> <span class="toc-text">协作建模Collaboration modeling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#协作"><span class="toc-number">6.4.1.</span> <span class="toc-text">协作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复合结构——另一种类图的创建方法"><span class="toc-number">6.4.2.</span> <span class="toc-text">复合结构——另一种类图的创建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从用例到复合协作"><span class="toc-number">6.4.3.</span> <span class="toc-text">从用例到复合协作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从协作到交互"><span class="toc-number">6.4.4.</span> <span class="toc-text">从协作到交互</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形用户界面设计"><span class="toc-number">7.</span> <span class="toc-text">图形用户界面设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI设计原则"><span class="toc-number">7.1.</span> <span class="toc-text">GUI设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#良好GUI设计指南"><span class="toc-number">7.1.1.</span> <span class="toc-text">良好GUI设计指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用户控制式——主要的GUI设计指南"><span class="toc-number">7.1.1.1.</span> <span class="toc-text">用户控制式——主要的GUI设计指南</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一致性"><span class="toc-number">7.1.1.2.</span> <span class="toc-text">一致性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#个性化和客户化"><span class="toc-number">7.1.1.3.</span> <span class="toc-text">个性化和客户化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#宽容"><span class="toc-number">7.1.1.4.</span> <span class="toc-text">宽容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#反馈"><span class="toc-number">7.1.1.5.</span> <span class="toc-text">反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#审美Aesthetics和可用性——二者都关系到用户满意度"><span class="toc-number">7.1.1.6.</span> <span class="toc-text">审美Aesthetics和可用性——二者都关系到用户满意度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#桌面GUI设计"><span class="toc-number">7.2.</span> <span class="toc-text">桌面GUI设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web-GUI设计"><span class="toc-number">7.3.</span> <span class="toc-text">Web GUI设计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#持久性（persistence）与数据库设计"><span class="toc-number">8.</span> <span class="toc-text">持久性（persistence）与数据库设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#业务对象与持久性"><span class="toc-number">8.1.</span> <span class="toc-text">业务对象与持久性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据模型的层次"><span class="toc-number">8.1.1.</span> <span class="toc-text">数据模型的层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集成应用系统与数据库建模"><span class="toc-number">8.1.2.</span> <span class="toc-text">集成应用系统与数据库建模</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关系数据库模型RDB"><span class="toc-number">8.2.</span> <span class="toc-text">关系数据库模型RDB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列、域和规则"><span class="toc-number">8.2.1.</span> <span class="toc-text">列、域和规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表"><span class="toc-number">8.2.2.</span> <span class="toc-text">表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用（参照）完整性"><span class="toc-number">8.2.3.</span> <span class="toc-text">引用（参照）完整性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#触发器"><span class="toc-number">8.2.4.</span> <span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储过程"><span class="toc-number">8.2.5.</span> <span class="toc-text">存储过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视图——用来支持数据库安全"><span class="toc-number">8.2.6.</span> <span class="toc-text">视图——用来支持数据库安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#范式"><span class="toc-number">8.2.7.</span> <span class="toc-text">范式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象—关系映射"><span class="toc-number">8.3.</span> <span class="toc-text">对象—关系映射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#映射可分为："><span class="toc-number">8.3.1.</span> <span class="toc-text">映射可分为：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管理持久对象的模式"><span class="toc-number">8.4.</span> <span class="toc-text">管理持久对象的模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计数据库访问和事务"><span class="toc-number">8.5.</span> <span class="toc-text">设计数据库访问和事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL程序设计的层次"><span class="toc-number">8.5.1.</span> <span class="toc-text">SQL程序设计的层次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计业务事务"><span class="toc-number">8.5.2.</span> <span class="toc-text">设计业务事务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#短事务"><span class="toc-number">8.5.2.1.</span> <span class="toc-text">短事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#对象锁："><span class="toc-number">8.5.2.1.1.</span> <span class="toc-text">对象锁：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#隔离层次："><span class="toc-number">8.5.2.1.2.</span> <span class="toc-text">隔离层次：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#自动恢复"><span class="toc-number">8.5.2.1.3.</span> <span class="toc-text">自动恢复</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#长事务"><span class="toc-number">8.5.2.2.</span> <span class="toc-text">长事务</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://pic.superbed.cn/item/5d7a3f7a451253d1788f05ab.jpg)"><div id="page-header"><span class="pull-left"> <a class="blog_title" id="site-name" href="/">zh小企鹅</a></span><div class="open toggle-menu pull-right"><div class="menu-icon-first"></div><div class="menu-icon-second"></div><div class="menu-icon-third"></div></div><div class="menu_mask"></div><span class="pull-right menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="https://pic3.superbed.cn/item/5dfaf5b776085c3289bc6099.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item text-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">24</div></a></div></div><div class="mobile_data_item text-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">10</div></a></div></div><div class="mobile_data_item text-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">9</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fa fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于我</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">软件需求要点（NEU）</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-12-25<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2020-01-06</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/软件需求/">软件需求</a></span><div class="post-meta-wordcount"><span>字数总计: </span><span class="word-count">13.3k</span><span class="post-meta__separator">|</span><span>阅读时长: 39 分钟</span><span class="post-meta__separator">|</span><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h1 id="软件过程"><a href="#软件过程" class="headerlink" title="软件过程"></a>软件过程</h1><h2 id="软件开发的本质："><a href="#软件开发的本质：" class="headerlink" title="软件开发的本质："></a>软件开发的本质：</h2><p>1.70%的项目是失败的：质量差、超期、超预算、需求变更<br>2.软件本身是创造性开发行为的产品<br>3.软件开发的不变事实是：</p>
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="软件需求要点（NEU）, 东北大学 软件工程 大数据 zheroic">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="软件过程软件开发的本质：1.70%的项目是失败的：质量差、超期、超预算、需求变更2.软件本身是创造性开发行为的产品3.软件开发的不变事实是：
+
+complexity复杂性
+conformity一致性：软件与平台、系统一致
+changeabi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>软件需求要点（NEU） | zheroic&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zheroic's blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/AV" class="waves-effect waves-light">
+            
+            <i class="fa fa-music"></i>
+            
+            <span>视听</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>相册</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>标签</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>分类</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>归档</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/AV" class="waves-effect waves-light">
+              
+                <i class="fa fa-music"></i>
+              
+              <span>视听</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>相册</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zheroic's blog</div>
+        <div class="logo-desc">
+            
+            东北大学 | 软件工程 | 大数据
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/AV" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-music"></i>
+                
+                视听
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                相册
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zheroic" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        标签
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        分类
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        归档
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/AV" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-music"></i>
+                        
+                        视听
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        相册
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zheroic" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zheroic" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        软件需求要点（NEU）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/软件需求/" target="_blank">
+                                <span class="chip bg-color">软件需求</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/软件需求/" class="post-category" target="_blank">
+                                软件需求
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-25
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        zheroic
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        13.3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        45 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="软件过程"><a href="#软件过程" class="headerlink" title="软件过程"></a>软件过程</h1><h2 id="软件开发的本质："><a href="#软件开发的本质：" class="headerlink" title="软件开发的本质："></a>软件开发的本质：</h2><p>1.70%的项目是失败的：质量差、超期、超预算、需求变更<br>2.软件本身是创造性开发行为的产品<br>3.软件开发的不变事实是：</p>
 <ul>
 <li>complexity复杂性</li>
 <li>conformity一致性：软件与平台、系统一致</li>
@@ -730,7 +1511,7 @@
 </ul>
 <h4 id="空间认知复杂性"><a href="#空间认知复杂性" class="headerlink" title="空间认知复杂性"></a>空间认知复杂性</h4><p>计算现代程序的可认知复杂性的最合适的度量就是空间复杂性度量</p>
 <h4 id="结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖"><a href="#结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖" class="headerlink" title="结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖"></a>结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖</h4><p>适应性的一个必要条件是依赖是可追踪的</p>
-<h3 id="体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）"><a href="#体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）" class="headerlink" title="体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）"></a>体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）</h3><p><img alt data-src="https://pic.downk.cc/item/5e12d6fd76085c328902637b.jpg" class="lozad"></p>
+<h3 id="体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）"><a href="#体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）" class="headerlink" title="体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）"></a>体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）</h3><p><img src="https://pic.downk.cc/item/5e12d6fd76085c328902637b.jpg" alt=""></p>
 <h4 id="外观（facade）"><a href="#外观（facade）" class="headerlink" title="外观（facade）"></a>外观（facade）</h4><p>目标使用外观模式来对层使用简单的接口，降低子系统之间的耦合或依赖</p>
 <h4 id="抽象工厂（abstract-factory）"><a href="#抽象工厂（abstract-factory）" class="headerlink" title="抽象工厂（abstract factory）"></a>抽象工厂（abstract factory）</h4><p>可理解为外观模式的变种，在外观模式中，高层接口将意味着一个具体类，而抽象工厂中的接口或者是一个真正的接口（抽象类）</p>
 <h4 id="责任链（chain-of-Responsibility），与递归类似"><a href="#责任链（chain-of-Responsibility），与递归类似" class="headerlink" title="责任链（chain of Responsibility），与递归类似"></a>责任链（chain of Responsibility），与递归类似</h4><p>在PCBMER中，责任链使得NCP（相邻通信原则）称为可能<br>避免发送者和接收者之间的多重耦合</p>
@@ -985,17 +1766,1008 @@
             });
             document.body.appendChild(img);
           });
-      </script></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">zheroic</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/">https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zheroic.github.io">zh小企鹅</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/软件需求/">软件需求    </a></div><div class="post_share"><div class="social-share" data-image="https://pic3.superbed.cn/item/5dfaf5b776085c3289bc6099.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/"><img class="prev_cover lozad" data-src="https://pic.superbed.cn/item/5dfb06ab76085c3289bf1e25.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>shadowsocks弹出1080为系统保留端口</span></div></a></div><div class="next-post pull-right"><a href="/2019/12/23/untitled/"><img class="next_cover lozad" data-src="https://pic.superbed.cn/item/5dfb06ab76085c3289bf1e25.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">下一篇</div><div class="next_info"><span>word中优雅的插入代码块</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
-  clientID: '3875e95f58ea59855e05',
-  clientSecret: '335bf09bc36a5dae2109909b8b305e96c7966880',
-  repo: 'zheroic.github.io',
-  owner: 'zheroic',
-  admin: 'zheroic',
-  id: md5(decodeURI(location.pathname)),
-  language: 'zh-CN'
-})
-gitalk.render('gitalk-container')</script></div></div></div><footer><div id="footer"><div class="copyright">&copy;2019 - 2020 By zheroic</div><div class="framework-info"><span>驱动 </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://zheroic.github.io/">blog</a>!</div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><section class="rightside" id="rightside"><a id="to_comment" href="#post-comment"><i class="scroll_to_comment fa fa-comments"></i></a><i class="fa fa-book" id="readmode" title="阅读模式"> </i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换">繁</a><i class="nightshift fa fa-moon-o" id="nightshift" title="夜间模式"></i></section><div class=" " id="post_bottom"><div id="post_bottom_items"><a id="mobile_to_comment" href="#post-comment"><i class="mobile_scroll_to_comment fa fa-comments"></i></a><i class="fa fa-list" id="mobile_toc"></i><div id="toc_mobile"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#软件过程"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">软件过程</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#软件开发的本质："><span class="toc_mobile_items-number">1.1.</span> <span class="toc_mobile_items-text">软件开发的本质：</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#系统规划"><span class="toc_mobile_items-number">1.2.</span> <span class="toc_mobile_items-text">系统规划</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#系统规划方法（关心效果而不是效率）："><span class="toc_mobile_items-number">1.2.1.</span> <span class="toc_mobile_items-text">系统规划方法（关心效果而不是效率）：</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#系统的三级管理系统"><span class="toc_mobile_items-number">1.3.</span> <span class="toc_mobile_items-text">系统的三级管理系统</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#软件开发的周期（核心）"><span class="toc_mobile_items-number">1.4.</span> <span class="toc_mobile_items-text">软件开发的周期（核心）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#开发模型与方法"><span class="toc_mobile_items-number">1.5.</span> <span class="toc_mobile_items-text">开发模型与方法</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#需求确定"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">需求确定</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#从业务过程到解决方案的构想"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text">从业务过程到解决方案的构想</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#过程层次建模"><span class="toc_mobile_items-number">2.1.1.</span> <span class="toc_mobile_items-text">过程层次建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#过程和过程分解"><span class="toc_mobile_items-number">2.1.1.1.</span> <span class="toc_mobile_items-text">过程和过程分解</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#业务过程建模"><span class="toc_mobile_items-number">2.1.1.2.</span> <span class="toc_mobile_items-text">业务过程建模</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#解决方案构想"><span class="toc_mobile_items-number">2.1.2.</span> <span class="toc_mobile_items-text">解决方案构想</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#构想过程阶段："><span class="toc_mobile_items-number">2.1.2.1.</span> <span class="toc_mobile_items-text">构想过程阶段：</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#实现策略和能力体系结构"><span class="toc_mobile_items-number">2.1.2.2.</span> <span class="toc_mobile_items-text">实现策略和能力体系结构</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#需求引导"><span class="toc_mobile_items-number">2.2.</span> <span class="toc_mobile_items-text">需求引导</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#系统需求"><span class="toc_mobile_items-number">2.2.1.</span> <span class="toc_mobile_items-text">系统需求</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#功能性需求：由系统期望的服务（服务陈述），侧重功能性需求"><span class="toc_mobile_items-number">2.2.1.1.</span> <span class="toc_mobile_items-text">功能性需求：由系统期望的服务（服务陈述），侧重功能性需求</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#非功能性需求（补充需求）：系统必须遵守的约束（约束陈述），如性能、安全"><span class="toc_mobile_items-number">2.2.1.2.</span> <span class="toc_mobile_items-text">非功能性需求（补充需求）：系统必须遵守的约束（约束陈述），如性能、安全</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#需求引导方法"><span class="toc_mobile_items-number">2.2.2.</span> <span class="toc_mobile_items-text">需求引导方法</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#传统方法：适用于目标明确、低风险的项目"><span class="toc_mobile_items-number">2.2.2.1.</span> <span class="toc_mobile_items-text">传统方法：适用于目标明确、低风险的项目</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#现代方法：适用于风险高的项目"><span class="toc_mobile_items-number">2.2.2.2.</span> <span class="toc_mobile_items-text">现代方法：适用于风险高的项目</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#需求协商与确认"><span class="toc_mobile_items-number">2.3.</span> <span class="toc_mobile_items-text">需求协商与确认</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#超出范围的需求"><span class="toc_mobile_items-number">2.3.1.</span> <span class="toc_mobile_items-text">超出范围的需求</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#需求依赖矩阵"><span class="toc_mobile_items-number">2.3.2.</span> <span class="toc_mobile_items-text">需求依赖矩阵</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#需求风险和优先级"><span class="toc_mobile_items-number">2.3.3.</span> <span class="toc_mobile_items-text">需求风险和优先级</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#需求管理"><span class="toc_mobile_items-number">2.4.</span> <span class="toc_mobile_items-text">需求管理</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#需求标识与分类"><span class="toc_mobile_items-number">2.4.1.</span> <span class="toc_mobile_items-text">需求标识与分类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#需求层次"><span class="toc_mobile_items-number">2.4.2.</span> <span class="toc_mobile_items-text">需求层次</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#变更管理"><span class="toc_mobile_items-number">2.4.3.</span> <span class="toc_mobile_items-text">变更管理</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#需求业务模型：不属于UML，是高层可视化模型"><span class="toc_mobile_items-number">2.5.</span> <span class="toc_mobile_items-text">需求业务模型：不属于UML，是高层可视化模型</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#系统范围模型"><span class="toc_mobile_items-number">2.5.1.</span> <span class="toc_mobile_items-text">系统范围模型</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#业务用例模型"><span class="toc_mobile_items-number">2.5.2.</span> <span class="toc_mobile_items-text">业务用例模型</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#业务词汇表"><span class="toc_mobile_items-number">2.5.3.</span> <span class="toc_mobile_items-text">业务词汇表</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#业务类模型"><span class="toc_mobile_items-number">2.5.4.</span> <span class="toc_mobile_items-text">业务类模型</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#需求文档"><span class="toc_mobile_items-number">2.6.</span> <span class="toc_mobile_items-text">需求文档</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#文档模板"><span class="toc_mobile_items-number">2.6.1.</span> <span class="toc_mobile_items-text">文档模板</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#可视化建模基础"><span class="toc_mobile_items-number">3.</span> <span class="toc_mobile_items-text">可视化建模基础</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#用例视图"><span class="toc_mobile_items-number">3.1.</span> <span class="toc_mobile_items-text">用例视图</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#参与者"><span class="toc_mobile_items-number">3.1.1.</span> <span class="toc_mobile_items-text">参与者</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#用例"><span class="toc_mobile_items-number">3.1.2.</span> <span class="toc_mobile_items-text">用例</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#用例图"><span class="toc_mobile_items-number">3.1.3.</span> <span class="toc_mobile_items-text">用例图</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#用例文档化"><span class="toc_mobile_items-number">3.1.4.</span> <span class="toc_mobile_items-text">用例文档化</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#活动视图"><span class="toc_mobile_items-number">3.2.</span> <span class="toc_mobile_items-text">活动视图</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#活动图"><span class="toc_mobile_items-number">3.2.1.</span> <span class="toc_mobile_items-text">活动图</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#结构视图"><span class="toc_mobile_items-number">3.3.</span> <span class="toc_mobile_items-text">结构视图</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#持久化类"><span class="toc_mobile_items-number">3.3.1.</span> <span class="toc_mobile_items-text">持久化类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#非持久化类"><span class="toc_mobile_items-number">3.3.2.</span> <span class="toc_mobile_items-text">非持久化类</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#交互视图"><span class="toc_mobile_items-number">3.4.</span> <span class="toc_mobile_items-text">交互视图</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#顺序图"><span class="toc_mobile_items-number">3.4.1.</span> <span class="toc_mobile_items-text">顺序图</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#状态机视图"><span class="toc_mobile_items-number">3.5.</span> <span class="toc_mobile_items-text">状态机视图</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#实现视图"><span class="toc_mobile_items-number">3.6.</span> <span class="toc_mobile_items-text">实现视图</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#UML逻辑模型分类"><span class="toc_mobile_items-number">3.7.</span> <span class="toc_mobile_items-text">UML逻辑模型分类</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#需求规格说明"><span class="toc_mobile_items-number">4.</span> <span class="toc_mobile_items-text">需求规格说明</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#体系结构优先权：层次化结构"><span class="toc_mobile_items-number">4.1.</span> <span class="toc_mobile_items-text">体系结构优先权：层次化结构</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#MVC（模型——视图——控制器）：元模型、构架、编程环境"><span class="toc_mobile_items-number">4.1.1.</span> <span class="toc_mobile_items-text">MVC（模型——视图——控制器）：元模型、构架、编程环境</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#J2EE的核心体系结构"><span class="toc_mobile_items-number">4.1.2.</span> <span class="toc_mobile_items-text">J2EE的核心体系结构</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#PCMEE和PCBMEE"><span class="toc_mobile_items-number">4.1.3.</span> <span class="toc_mobile_items-text">PCMEE和PCBMEE</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#PCMEE：表示、控制、中介者、实体、基础"><span class="toc_mobile_items-number">4.1.3.1.</span> <span class="toc_mobile_items-text">PCMEE：表示、控制、中介者、实体、基础</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#PCBMEE：表示、控制器、bean、中介者、实体、资源"><span class="toc_mobile_items-number">4.1.3.2.</span> <span class="toc_mobile_items-text">PCBMEE：表示、控制器、bean、中介者、实体、资源</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#PCBMEE的体系结构原则"><span class="toc_mobile_items-number">4.1.3.3.</span> <span class="toc_mobile_items-text">PCBMEE的体系结构原则</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#状态规格说明：也称为数据结构模型"><span class="toc_mobile_items-number">4.2.</span> <span class="toc_mobile_items-text">状态规格说明：也称为数据结构模型</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#类建模：迭代增量式"><span class="toc_mobile_items-number">4.2.1.</span> <span class="toc_mobile_items-text">类建模：迭代增量式</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#发现类"><span class="toc_mobile_items-number">4.2.1.1.</span> <span class="toc_mobile_items-text">发现类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#对类进行说明"><span class="toc_mobile_items-number">4.2.1.2.</span> <span class="toc_mobile_items-text">对类进行说明</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#关联建模：最终类图不允许有孤立类"><span class="toc_mobile_items-number">4.2.2.</span> <span class="toc_mobile_items-text">关联建模：最终类图不允许有孤立类</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#发现关联"><span class="toc_mobile_items-number">4.2.2.1.</span> <span class="toc_mobile_items-text">发现关联</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#说明关联"><span class="toc_mobile_items-number">4.2.2.2.</span> <span class="toc_mobile_items-text">说明关联</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#聚合和复合关系建模"><span class="toc_mobile_items-number">4.2.3.</span> <span class="toc_mobile_items-text">聚合和复合关系建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#发现聚合和复合"><span class="toc_mobile_items-number">4.2.3.1.</span> <span class="toc_mobile_items-text">发现聚合和复合</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#泛化关系建模（父类子类的关系）"><span class="toc_mobile_items-number">4.2.4.</span> <span class="toc_mobile_items-text">泛化关系建模（父类子类的关系）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#接口建模：不是在需求分析阶段应该做的"><span class="toc_mobile_items-number">4.2.5.</span> <span class="toc_mobile_items-text">接口建模：不是在需求分析阶段应该做的</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#对象建模，用来描述复杂的类和类之间的关系，表示对象随时间变化的过程"><span class="toc_mobile_items-number">4.2.6.</span> <span class="toc_mobile_items-text">对象建模，用来描述复杂的类和类之间的关系，表示对象随时间变化的过程</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#行为规格说明"><span class="toc_mobile_items-number">4.3.</span> <span class="toc_mobile_items-text">行为规格说明</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#用例建模：与类建模一样是迭代增量的"><span class="toc_mobile_items-number">4.3.1.</span> <span class="toc_mobile_items-text">用例建模：与类建模一样是迭代增量的</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#活动建模（描述系统逻辑流程）"><span class="toc_mobile_items-number">4.3.2.</span> <span class="toc_mobile_items-text">活动建模（描述系统逻辑流程）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#交互建模"><span class="toc_mobile_items-number">4.3.3.</span> <span class="toc_mobile_items-text">交互建模</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#操作（CRUD）建模"><span class="toc_mobile_items-number">4.3.4.</span> <span class="toc_mobile_items-text">操作（CRUD）建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#发现类操作"><span class="toc_mobile_items-number">4.3.4.1.</span> <span class="toc_mobile_items-text">发现类操作</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#状态变化规格说明"><span class="toc_mobile_items-number">4.4.</span> <span class="toc_mobile_items-text">状态变化规格说明</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#从分析到设计"><span class="toc_mobile_items-number">5.</span> <span class="toc_mobile_items-text">从分析到设计</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#高级类建模（Advanced）"><span class="toc_mobile_items-number">5.1.</span> <span class="toc_mobile_items-text">高级类建模（Advanced）</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#扩展机制"><span class="toc_mobile_items-number">5.1.1.</span> <span class="toc_mobile_items-text">扩展机制</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#可见性与封装"><span class="toc_mobile_items-number">5.1.2.</span> <span class="toc_mobile_items-text">可见性与封装</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#导出信息derived-information"><span class="toc_mobile_items-number">5.1.3.</span> <span class="toc_mobile_items-text">导出信息derived information</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#限定关联"><span class="toc_mobile_items-number">5.1.4.</span> <span class="toc_mobile_items-text">限定关联</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#关联类和具体化类"><span class="toc_mobile_items-number">5.1.5.</span> <span class="toc_mobile_items-text">关联类和具体化类</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#高级泛化-generalization-与继承-inheritance-建模"><span class="toc_mobile_items-number">5.2.</span> <span class="toc_mobile_items-text">高级泛化(generalization)与继承(inheritance)建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#泛化和可替换性"><span class="toc_mobile_items-number">5.2.1.</span> <span class="toc_mobile_items-text">泛化和可替换性</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#继承和封装"><span class="toc_mobile_items-number">5.2.2.</span> <span class="toc_mobile_items-text">继承和封装</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#接口继承"><span class="toc_mobile_items-number">5.2.3.</span> <span class="toc_mobile_items-text">接口继承</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#实现继承"><span class="toc_mobile_items-number">5.2.4.</span> <span class="toc_mobile_items-text">实现继承</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#高级聚合与委托建模"><span class="toc_mobile_items-number">5.3.</span> <span class="toc_mobile_items-text">高级聚合与委托建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#聚合的四种语义"><span class="toc_mobile_items-number">5.3.1.</span> <span class="toc_mobile_items-text">聚合的四种语义</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#作为泛化的可选方案的聚合"><span class="toc_mobile_items-number">5.3.2.</span> <span class="toc_mobile_items-text">作为泛化的可选方案的聚合</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#高级交互建模"><span class="toc_mobile_items-number">5.4.</span> <span class="toc_mobile_items-text">高级交互建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#生命线与消息"><span class="toc_mobile_items-number">5.4.1.</span> <span class="toc_mobile_items-text">生命线与消息</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#片段fragment"><span class="toc_mobile_items-number">5.4.2.</span> <span class="toc_mobile_items-text">片段fragment</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#交互使用"><span class="toc_mobile_items-number">5.4.3.</span> <span class="toc_mobile_items-text">交互使用</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#系统体系结构与程序设计"><span class="toc_mobile_items-number">6.</span> <span class="toc_mobile_items-text">系统体系结构与程序设计</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#分布式物理体系结构"><span class="toc_mobile_items-number">6.1.</span> <span class="toc_mobile_items-text">分布式物理体系结构</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#对等体系结构P2P"><span class="toc_mobile_items-number">6.1.1.</span> <span class="toc_mobile_items-text">对等体系结构P2P</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#分层体系结构（Multi-tier）：为了降低耦合"><span class="toc_mobile_items-number">6.1.2.</span> <span class="toc_mobile_items-text">分层体系结构（Multi-tier）：为了降低耦合</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#数据库为中心的体系结构"><span class="toc_mobile_items-number">6.1.3.</span> <span class="toc_mobile_items-text">数据库为中心的体系结构</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#体系结构的复杂性"><span class="toc_mobile_items-number">6.1.4.</span> <span class="toc_mobile_items-text">体系结构的复杂性</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#空间认知复杂性"><span class="toc_mobile_items-number">6.1.4.1.</span> <span class="toc_mobile_items-text">空间认知复杂性</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖"><span class="toc_mobile_items-number">6.1.4.2.</span> <span class="toc_mobile_items-text">结构复杂性——强调程序对象之间的依赖关系，尽量减少依赖</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#体系结构模式（设计模式-模板被用于体系结构设计，提供通用方法）"><span class="toc_mobile_items-number">6.1.5.</span> <span class="toc_mobile_items-text">体系结构模式（设计模式/模板被用于体系结构设计，提供通用方法）</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#外观（facade）"><span class="toc_mobile_items-number">6.1.5.1.</span> <span class="toc_mobile_items-text">外观（facade）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#抽象工厂（abstract-factory）"><span class="toc_mobile_items-number">6.1.5.2.</span> <span class="toc_mobile_items-text">抽象工厂（abstract factory）</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#责任链（chain-of-Responsibility），与递归类似"><span class="toc_mobile_items-number">6.1.5.3.</span> <span class="toc_mobile_items-text">责任链（chain of Responsibility），与递归类似</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#观察者（observer-listener），也叫出版-订阅模式"><span class="toc_mobile_items-number">6.1.5.4.</span> <span class="toc_mobile_items-text">观察者（observer/listener），也叫出版-订阅模式</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#中介者（mediator）"><span class="toc_mobile_items-number">6.1.5.5.</span> <span class="toc_mobile_items-text">中介者（mediator）</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#体系结构建模"><span class="toc_mobile_items-number">6.2.</span> <span class="toc_mobile_items-text">体系结构建模</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#包"><span class="toc_mobile_items-number">6.2.1.</span> <span class="toc_mobile_items-text">包</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#构件"><span class="toc_mobile_items-number">6.2.2.</span> <span class="toc_mobile_items-text">构件</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#构件与包"><span class="toc_mobile_items-number">6.2.2.1.</span> <span class="toc_mobile_items-text">构件与包</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#构件与类的接口"><span class="toc_mobile_items-number">6.2.2.2.</span> <span class="toc_mobile_items-text">构件与类的接口</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#结点——其实是一系列机器，服务器，计算机，客户端等"><span class="toc_mobile_items-number">6.2.3.</span> <span class="toc_mobile_items-text">结点——其实是一系列机器，服务器，计算机，客户端等</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#程序设计与复用原则"><span class="toc_mobile_items-number">6.3.</span> <span class="toc_mobile_items-text">程序设计与复用原则</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#类的内聚cohesion与耦合coupling"><span class="toc_mobile_items-number">6.3.1.</span> <span class="toc_mobile_items-text">类的内聚cohesion与耦合coupling</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#类耦合的种类"><span class="toc_mobile_items-number">6.3.1.1.</span> <span class="toc_mobile_items-text">类耦合的种类</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#Demeter法则"><span class="toc_mobile_items-number">6.3.1.2.</span> <span class="toc_mobile_items-text">Demeter法则</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#存取方法Accessor-methods和机械类mindless-classes"><span class="toc_mobile_items-number">6.3.1.3.</span> <span class="toc_mobile_items-text">存取方法Accessor methods和机械类mindless classes</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#动态分类和混合实例内聚"><span class="toc_mobile_items-number">6.3.1.4.</span> <span class="toc_mobile_items-text">动态分类和混合实例内聚</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#复用策略"><span class="toc_mobile_items-number">6.3.2.</span> <span class="toc_mobile_items-text">复用策略</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#工具包复用Toolkits-class-libraries"><span class="toc_mobile_items-number">6.3.2.1.</span> <span class="toc_mobile_items-text">工具包复用Toolkits(class libraries)</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#框架复用Frameworks"><span class="toc_mobile_items-number">6.3.2.2.</span> <span class="toc_mobile_items-text">框架复用Frameworks</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#模式复用Analysis-and-design-patterns"><span class="toc_mobile_items-number">6.3.2.3.</span> <span class="toc_mobile_items-text">模式复用Analysis and design patterns</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#协作建模Collaboration-modeling"><span class="toc_mobile_items-number">6.4.</span> <span class="toc_mobile_items-text">协作建模Collaboration modeling</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#协作"><span class="toc_mobile_items-number">6.4.1.</span> <span class="toc_mobile_items-text">协作</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#复合结构——另一种类图的创建方法"><span class="toc_mobile_items-number">6.4.2.</span> <span class="toc_mobile_items-text">复合结构——另一种类图的创建方法</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#从用例到复合协作"><span class="toc_mobile_items-number">6.4.3.</span> <span class="toc_mobile_items-text">从用例到复合协作</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#从协作到交互"><span class="toc_mobile_items-number">6.4.4.</span> <span class="toc_mobile_items-text">从协作到交互</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#图形用户界面设计"><span class="toc_mobile_items-number">7.</span> <span class="toc_mobile_items-text">图形用户界面设计</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#GUI设计原则"><span class="toc_mobile_items-number">7.1.</span> <span class="toc_mobile_items-text">GUI设计原则</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#良好GUI设计指南"><span class="toc_mobile_items-number">7.1.1.</span> <span class="toc_mobile_items-text">良好GUI设计指南</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#用户控制式——主要的GUI设计指南"><span class="toc_mobile_items-number">7.1.1.1.</span> <span class="toc_mobile_items-text">用户控制式——主要的GUI设计指南</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#一致性"><span class="toc_mobile_items-number">7.1.1.2.</span> <span class="toc_mobile_items-text">一致性</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#个性化和客户化"><span class="toc_mobile_items-number">7.1.1.3.</span> <span class="toc_mobile_items-text">个性化和客户化</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#宽容"><span class="toc_mobile_items-number">7.1.1.4.</span> <span class="toc_mobile_items-text">宽容</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#反馈"><span class="toc_mobile_items-number">7.1.1.5.</span> <span class="toc_mobile_items-text">反馈</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#审美Aesthetics和可用性——二者都关系到用户满意度"><span class="toc_mobile_items-number">7.1.1.6.</span> <span class="toc_mobile_items-text">审美Aesthetics和可用性——二者都关系到用户满意度</span></a></li></ol></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#桌面GUI设计"><span class="toc_mobile_items-number">7.2.</span> <span class="toc_mobile_items-text">桌面GUI设计</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Web-GUI设计"><span class="toc_mobile_items-number">7.3.</span> <span class="toc_mobile_items-text">Web GUI设计</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-1"><a class="toc_mobile_items-link" href="#持久性（persistence）与数据库设计"><span class="toc_mobile_items-number">8.</span> <span class="toc_mobile_items-text">持久性（persistence）与数据库设计</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#业务对象与持久性"><span class="toc_mobile_items-number">8.1.</span> <span class="toc_mobile_items-text">业务对象与持久性</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#数据模型的层次"><span class="toc_mobile_items-number">8.1.1.</span> <span class="toc_mobile_items-text">数据模型的层次</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#集成应用系统与数据库建模"><span class="toc_mobile_items-number">8.1.2.</span> <span class="toc_mobile_items-text">集成应用系统与数据库建模</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#关系数据库模型RDB"><span class="toc_mobile_items-number">8.2.</span> <span class="toc_mobile_items-text">关系数据库模型RDB</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#列、域和规则"><span class="toc_mobile_items-number">8.2.1.</span> <span class="toc_mobile_items-text">列、域和规则</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#表"><span class="toc_mobile_items-number">8.2.2.</span> <span class="toc_mobile_items-text">表</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#引用（参照）完整性"><span class="toc_mobile_items-number">8.2.3.</span> <span class="toc_mobile_items-text">引用（参照）完整性</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#触发器"><span class="toc_mobile_items-number">8.2.4.</span> <span class="toc_mobile_items-text">触发器</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#存储过程"><span class="toc_mobile_items-number">8.2.5.</span> <span class="toc_mobile_items-text">存储过程</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#视图——用来支持数据库安全"><span class="toc_mobile_items-number">8.2.6.</span> <span class="toc_mobile_items-text">视图——用来支持数据库安全</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#范式"><span class="toc_mobile_items-number">8.2.7.</span> <span class="toc_mobile_items-text">范式</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#对象—关系映射"><span class="toc_mobile_items-number">8.3.</span> <span class="toc_mobile_items-text">对象—关系映射</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#映射可分为："><span class="toc_mobile_items-number">8.3.1.</span> <span class="toc_mobile_items-text">映射可分为：</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#管理持久对象的模式"><span class="toc_mobile_items-number">8.4.</span> <span class="toc_mobile_items-text">管理持久对象的模式</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#设计数据库访问和事务"><span class="toc_mobile_items-number">8.5.</span> <span class="toc_mobile_items-text">设计数据库访问和事务</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#SQL程序设计的层次"><span class="toc_mobile_items-number">8.5.1.</span> <span class="toc_mobile_items-text">SQL程序设计的层次</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#设计业务事务"><span class="toc_mobile_items-number">8.5.2.</span> <span class="toc_mobile_items-text">设计业务事务</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#短事务"><span class="toc_mobile_items-number">8.5.2.1.</span> <span class="toc_mobile_items-text">短事务</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#对象锁："><span class="toc_mobile_items-number">8.5.2.1.1.</span> <span class="toc_mobile_items-text">对象锁：</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#隔离层次："><span class="toc_mobile_items-number">8.5.2.1.2.</span> <span class="toc_mobile_items-text">隔离层次：</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#自动恢复"><span class="toc_mobile_items-number">8.5.2.1.3.</span> <span class="toc_mobile_items-text">自动恢复</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#长事务"><span class="toc_mobile_items-number">8.5.2.2.</span> <span class="toc_mobile_items-text">长事务</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script async src="/js/search/local-search.js"></script><script src="/js/nightshift.js"></script><script src="/js/baidupush.js"> </script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+      </script>
+            </div>
+            <hr/>
 
-</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@1.2.2/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-observer.observe();</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
- <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://zheroic.github.io" class="b-link-green">zheroic's blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/" class="b-link-green">软件需求要点（NEU）</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'zheroic.github.io',
+        owner: 'zheroic',
+        admin: "zheroic",
+        id: '2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("") 100% 100% no-repeat;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
+<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
+<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'XXXXXXXXXXXXXXXXXXXXXXXX',
+        appKey: 'XXXXXXXXXXXXXXXXXXXXXX',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+
+    });
+
+//     function parse_emoji() {
+//     jQuery(".vcontent").emojiParse({
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists   // 注：详见 js/emoji.list.js
+//     });
+//   }
+  
+//   setTimeout(function() {
+//     // jQuery emoji 解析
+//     parse_emoji();
+//     // jquery emoji 初始化
+//     jQuery(".veditor").emoji({
+//       showTab: true,
+//       animation: 'slide',
+//       basePath: '/libs/jQuery-emoji/images/emoji',
+//       icons: emojiLists  // 注：详见 js/emoji.list.js
+//     });
+//     jQuery(".vmore").on("click", function() {
+//       setTimeout(function() {
+//         parse_emoji();
+//       }, 500);
+//     });
+//   }, 800)
+
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="shadowsocks弹出1080为系统保留端口">
+                        
+                        <span class="card-title">shadowsocks弹出1080为系统保留端口</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            由于之前使用shadowsocksR全局代理未退出就直接关机了，再次使用出现了这个
+解决办法：换端口如果你想换的端口依然是系统保留端口，那就继续换就好了。。。
+
+        document.querySelectorAll('.git
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/杂/" class="post-category" target="_blank">
+                                    杂
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/杂/" target="_blank">
+                        <span class="chip bg-color">杂</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/23/untitled/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="word中优雅的插入代码块">
+                        
+                        <span class="card-title">word中优雅的插入代码块</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            打开  http://www.planetb.ca/syntax-highlight-word将代码复制至code块里选择编译语言，然后show highlights将新页面的代码复制至word即可
+
+        document.qu
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/杂/" class="post-category" target="_blank">
+                                    杂
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/杂/" target="_blank">
+                        <span class="chip bg-color">杂</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zheroic's blog<br />'
+            + '作者: zheroic<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2019 洪卫. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">26.1k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/shw2018" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=948840751@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/hongwei-60-34" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=948840751&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/3010027571" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 08, 10, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="/libs/materialize/materialize.min.js"></script>
+        <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="/libs/aos/aos.js"></script>
+        <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="/js/fireworks.js"></script>
+        
+
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
+        
+            <script type="text/javascript">
+            //只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义  洪卫 shw2018 add 2019.09.13  -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    </body>
+</html>
