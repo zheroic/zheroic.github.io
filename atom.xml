@@ -18,8 +18,8 @@
   
   <entry>
     <title>小说推荐</title>
-    <link href="https://zheroic.github.io/2020/04/24/xiao-shuo-tui-jian/"/>
-    <id>https://zheroic.github.io/2020/04/24/xiao-shuo-tui-jian/</id>
+    <link href="https://zheroic.github.io/2020/0424undefined.html"/>
+    <id>https://zheroic.github.io/2020/0424undefined.html</id>
     <published>2020-04-24T13:30:00.000Z</published>
     <updated>2020-04-24T13:35:24.270Z</updated>
     
@@ -44,8 +44,8 @@
   
   <entry>
     <title>shadowsocks弹出1080为系统保留端口</title>
-    <link href="https://zheroic.github.io/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/"/>
-    <id>https://zheroic.github.io/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/</id>
+    <link href="https://zheroic.github.io/2020/0106undefined.html"/>
+    <id>https://zheroic.github.io/2020/0106undefined.html</id>
     <published>2020-01-06T04:50:00.000Z</published>
     <updated>2020-01-06T05:01:08.287Z</updated>
     
@@ -70,8 +70,8 @@
   
   <entry>
     <title>软件需求要点（NEU）</title>
-    <link href="https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/"/>
-    <id>https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/</id>
+    <link href="https://zheroic.github.io/2019/1225undefined.html"/>
+    <id>https://zheroic.github.io/2019/1225undefined.html</id>
     <published>2019-12-25T13:01:00.000Z</published>
     <updated>2020-01-06T06:44:11.337Z</updated>
     
@@ -96,8 +96,8 @@
   
   <entry>
     <title>word中优雅的插入代码块</title>
-    <link href="https://zheroic.github.io/2019/12/23/untitled/"/>
-    <id>https://zheroic.github.io/2019/12/23/untitled/</id>
+    <link href="https://zheroic.github.io/2019/1223undefined.html"/>
+    <id>https://zheroic.github.io/2019/1223undefined.html</id>
     <published>2019-12-23T06:09:00.000Z</published>
     <updated>2019-12-23T06:10:13.718Z</updated>
     
@@ -122,8 +122,8 @@
   
   <entry>
     <title>sparkcore练习_2,各种算子的练习</title>
-    <link href="https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/"/>
-    <id>https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:32:00.000Z</published>
     <updated>2019-12-19T06:32:32.174Z</updated>
     
@@ -149,8 +149,8 @@
   
   <entry>
     <title>idea通过maven创建scala项目及编写spark</title>
-    <link href="https://zheroic.github.io/2019/12/19/idea-tong-guo-maven-chuang-jian-scala-xiang-mu-ji-bian-xie-spark/"/>
-    <id>https://zheroic.github.io/2019/12/19/idea-tong-guo-maven-chuang-jian-scala-xiang-mu-ji-bian-xie-spark/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:31:00.000Z</published>
     <updated>2019-12-19T06:32:02.191Z</updated>
     
@@ -179,8 +179,8 @@
   
   <entry>
     <title>解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]</title>
-    <link href="https://zheroic.github.io/2019/12/19/jie-jue-rdd-wu-fa-diao-yong-todf-ji-value-todf-is-not-a-member-of-org-apache-spark-rdd-rdd-names/"/>
-    <id>https://zheroic.github.io/2019/12/19/jie-jue-rdd-wu-fa-diao-yong-todf-ji-value-todf-is-not-a-member-of-org-apache-spark-rdd-rdd-names/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:29:00.000Z</published>
     <updated>2019-12-19T06:30:05.422Z</updated>
     
@@ -205,35 +205,9 @@
   </entry>
   
   <entry>
-    <title>spark中的map-side-join关联优化</title>
-    <link href="https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/"/>
-    <id>https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/</id>
-    <published>2019-12-19T06:28:00.000Z</published>
-    <updated>2020-04-25T16:14:19.128Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
     <title>spark scala读取文件选取特定列</title>
-    <link href="https://zheroic.github.io/2019/12/19/spark-scala-du-qu-wen-jian-xuan-qu-te-ding-lie/"/>
-    <id>https://zheroic.github.io/2019/12/19/spark-scala-du-qu-wen-jian-xuan-qu-te-ding-lie/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:28:00.000Z</published>
     <updated>2019-12-19T06:28:38.514Z</updated>
     
@@ -260,9 +234,35 @@ a,1&lt;span
   </entry>
   
   <entry>
+    <title>spark中的map-side-join关联优化</title>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2020-04-25T16:14:19.128Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存</title>
-    <link href="https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-1-rdd-zhuan-hua-wei-rdd-labelpoint-he-map-side-join-yi-ji-jiang-jie-guo-rdd-dataframe-shu-chu-dao-yi-ge-wen-jian-bao-cun/"/>
-    <id>https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-1-rdd-zhuan-hua-wei-rdd-labelpoint-he-map-side-join-yi-ji-jiang-jie-guo-rdd-dataframe-shu-chu-dao-yi-ge-wen-jian-bao-cun/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:27:00.000Z</published>
     <updated>2019-12-19T06:27:47.198Z</updated>
     
@@ -287,8 +287,8 @@ a,1&lt;span
   
   <entry>
     <title>scala一行代码实现wordcount解析</title>
-    <link href="https://zheroic.github.io/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/"/>
-    <id>https://zheroic.github.io/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:26:00.000Z</published>
     <updated>2019-12-19T06:26:20.480Z</updated>
     
@@ -313,8 +313,8 @@ a,1&lt;span
   
   <entry>
     <title>Spark运行模式的区别</title>
-    <link href="https://zheroic.github.io/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/"/>
-    <id>https://zheroic.github.io/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:26:00.000Z</published>
     <updated>2019-12-19T06:26:50.863Z</updated>
     
@@ -339,8 +339,8 @@ a,1&lt;span
   
   <entry>
     <title>读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</title>
-    <link href="https://zheroic.github.io/2019/12/19/du-qu-wen-jian-shi-du-qu-hdfs-ji-qun-de-wen-jian-he-ben-ji-wen-jian-de-scala-dai-ma-xie-fa/"/>
-    <id>https://zheroic.github.io/2019/12/19/du-qu-wen-jian-shi-du-qu-hdfs-ji-qun-de-wen-jian-he-ben-ji-wen-jian-de-scala-dai-ma-xie-fa/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:25:00.000Z</published>
     <updated>2019-12-19T06:25:47.072Z</updated>
     
@@ -365,8 +365,8 @@ a,1&lt;span
   
   <entry>
     <title>解决idea通过maven创建scala项目，自动生成的App.scala报错</title>
-    <link href="https://zheroic.github.io/2019/12/19/jie-jue-idea-tong-guo-maven-chuang-jian-scala-xiang-mu-zi-dong-sheng-cheng-de-app-scala-bao-cuo/"/>
-    <id>https://zheroic.github.io/2019/12/19/jie-jue-idea-tong-guo-maven-chuang-jian-scala-xiang-mu-zi-dong-sheng-cheng-de-app-scala-bao-cuo/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:22:00.000Z</published>
     <updated>2019-12-19T06:23:18.009Z</updated>
     
@@ -391,8 +391,8 @@ a,1&lt;span
   
   <entry>
     <title>解决idea编写spark程序时，import org.apache.spark报错</title>
-    <link href="https://zheroic.github.io/2019/12/19/jie-jue-idea-bian-xie-spark-cheng-xu-shi-import-org-apache-spark-bao-cuo/"/>
-    <id>https://zheroic.github.io/2019/12/19/jie-jue-idea-bian-xie-spark-cheng-xu-shi-import-org-apache-spark-bao-cuo/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:19:00.000Z</published>
     <updated>2019-12-19T06:19:56.513Z</updated>
     
@@ -417,8 +417,8 @@ a,1&lt;span
   
   <entry>
     <title>R语言第五次实训,dplyr 、tidyr和lubridate处理数据</title>
-    <link href="https://zheroic.github.io/2019/12/19/r-yu-yan-di-wu-ci-shi-xun-dplyr-tidyr-he-lubridate-chu-li-shu-ju/"/>
-    <id>https://zheroic.github.io/2019/12/19/r-yu-yan-di-wu-ci-shi-xun-dplyr-tidyr-he-lubridate-chu-li-shu-ju/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:16:00.000Z</published>
     <updated>2019-12-19T06:17:15.466Z</updated>
     
@@ -443,8 +443,8 @@ a,1&lt;span
   
   <entry>
     <title>R语言第六次实训,leaflet绘制地铁线路图</title>
-    <link href="https://zheroic.github.io/2019/12/19/r-yu-yan-di-liu-ci-shi-xun-leaflet-hui-zhi-di-tie-xian-lu-tu/"/>
-    <id>https://zheroic.github.io/2019/12/19/r-yu-yan-di-liu-ci-shi-xun-leaflet-hui-zhi-di-tie-xian-lu-tu/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T06:06:00.000Z</published>
     <updated>2019-12-19T06:06:48.840Z</updated>
     
@@ -473,8 +473,8 @@ a,1&lt;span
   
   <entry>
     <title>Command line is too long. Shorten command line for OOP or also for Application default configuration</title>
-    <link href="https://zheroic.github.io/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/"/>
-    <id>https://zheroic.github.io/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T03:03:00.000Z</published>
     <updated>2019-12-19T06:33:00.943Z</updated>
     
@@ -499,8 +499,8 @@ a,1&lt;span
   
   <entry>
     <title>sparkSQL练习，分析篮球运动员数据</title>
-    <link href="https://zheroic.github.io/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/"/>
-    <id>https://zheroic.github.io/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/</id>
+    <link href="https://zheroic.github.io/2019/1219undefined.html"/>
+    <id>https://zheroic.github.io/2019/1219undefined.html</id>
     <published>2019-12-19T01:09:00.000Z</published>
     <updated>2019-12-19T05:56:43.180Z</updated>
     
@@ -527,8 +527,8 @@ a,1&lt;span
   
   <entry>
     <title>idea编写spark时过滤掉运行时的INFO信息</title>
-    <link href="https://zheroic.github.io/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/"/>
-    <id>https://zheroic.github.io/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/</id>
+    <link href="https://zheroic.github.io/2019/1218undefined.html"/>
+    <id>https://zheroic.github.io/2019/1218undefined.html</id>
     <published>2019-12-18T08:37:00.000Z</published>
     <updated>2019-12-19T05:52:17.709Z</updated>
     

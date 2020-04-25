@@ -6,10 +6,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: idea, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="java-keysPoints, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="分类: idea | zheroic&#39;s blog">
+    <meta name="description" content="System.out.printfprintf(“%,d”,a)标准输出，即输出的结果为每三个数字用逗号分隔为一组（除非结果不足四个数字）。printf(“%d”,a)格式化输出整数形式
+public class TestPrintf { ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类: idea | zheroic&#39;s blog</title>
+    <title>java-keysPoints | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -597,273 +598,389 @@
 
 </header>
 
-        <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                <!-- 
-                    zheroic&#39;s blog
-                 -->
-                
-                    分类
-                
-            </div>
-
-            <div class="description center-align">
-                
-                    <!-- 东北大学 | 软件工程 | 大数据 -->
-                    <span id="jinrishici-sentence">正在加载今日诗词...</span>
-                
-            </div>
-            
-            
-        </div>
-    </div>
-</div>
+        
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/cryptojs/crypto-js.min.js"></script>
 <script>
-// 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
 </script>
 
 
-    </div>
-</div>
 
-<main class="content">
 
-    
-
-<div id="category-cloud" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
-            </div>
-            <div class="tag-chips">
-                
-                
-                
-                <a href="/categories/idea/" title="idea: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">idea
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/hexo/" title="hexo: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">hexo
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/R/" title="R: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">R
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/杂/" title="杂: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">杂
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/spark/" title="spark: 8">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">spark
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/hadoop/" title="hadoop: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">hadoop
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/scala/" title="scala: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">scala
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/小说/" title="小说: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D7BDE2;">小说
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/idea/spark/" title="spark: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #A3E4D7;">spark
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/软件需求/" title="软件需求: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">软件需求
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        java-keysPoints
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-11-24
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        zheroic
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        750
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        3 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="System-out-printf"><a href="#System-out-printf" class="headerlink" title="System.out.printf"></a>System.out.printf</h1><p>printf(“%,d”,a)标准输出，即输出的结果为每三个数字用逗号分隔为一组（除非结果不足四个数字）。<br>printf(“%d”,a)格式化输出整数形式</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPrintf</span> <span class="token punctuation">{</span> 
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+<span class="token comment" spellcheck="true">//定义一些变量，用来格式化输出。 </span>
+<span class="token keyword">double</span> d <span class="token operator">=</span> <span class="token number">345.678</span><span class="token punctuation">;</span> 
+String s <span class="token operator">=</span> <span class="token string">"你好！"</span><span class="token punctuation">;</span> 
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1234</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//"%"表示进行格式化输出，"%"之后的内容为格式的定义。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%f"</span><span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"f"表示格式化输出浮点数。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%9.2f"</span><span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"9.2"中的9表示输出的长度，2表示小数点后的位数。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%+9.2f"</span><span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"+"表示输出的数带正负号。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%-9.4f"</span><span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"-"表示输出的数左对齐（默认为右对齐）。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%+-9.3f"</span><span class="token punctuation">,</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"+-"表示输出的数带正负号且左对齐。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"d"表示输出十进制整数。</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%,d"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"d"表示输出十进制整数。输出的结果为每三个数字用逗号分隔为一组（除非结果不足四个数字）。</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%o"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"o"表示输出八进制整数。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%x"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"d"表示输出十六进制整数。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%#x"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"d"表示输出带有十六进制标志的整数。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//"d"表示输出字符串。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"输出一个浮点数：%f，一个整数：%d，一个字符串：%s"</span><span class="token punctuation">,</span>d<span class="token punctuation">,</span>i<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//可以输出多个变量，注意顺序。 </span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"字符串：%2$s，%1$d的十六进制数：%1$#x"</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//"X$"表示第几个变量。 </span>
+<span class="token punctuation">}</span> 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="list、set、map："><a href="#list、set、map：" class="headerlink" title="list、set、map："></a>list、set、map：</h1><p>Collection接口是集合类的根接口，Java中没有提供这个接口的直接的实现类。但是却让其被继承产生了两个接口，就是Set和List。Set中不能包含重复的元素。List是一个有序的集合，可以包含重复的元素，提供了按索引访问的方式。<br>Map是Java.util包中的另一个接口，它和Collection接口没有关系，是相互独立的，但是都属于集合类的一部分。Map包含了key-value对。Map不能包含重复的key，但是可以包含相同的value。</p>
+<h1 id="数组排序："><a href="#数组排序：" class="headerlink" title="数组排序："></a>数组排序：</h1><p>法一：Arrays.sort()<br>Arrays.sort()排序方法在java中是最简单且最常用的排序方法</p>
+<pre class="line-numbers language-Java"><code class="language-Java">int []arr1= {45,34,59,55};  
+Arrays.sort(arr1);//调用方法排序即可<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>法二：冒泡排序<br>简单来说，冒泡排序就是重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成</p>
+<pre class="line-numbers language-Java"><code class="language-Java">//array[]为待排序数组，n为数组长度
+void BubbleSort(int array[], int n){    
+    int i, j, k;    
+    for(i=0; i<n-1; i++)
+            for(j=0; j<n-1-i; j++)
+            {            
+                if(array[j]>array[j+1])            
+                {                
+                    k=array[j];                
+                    array[j]=array[j+1];                
+                    array[j+1]=k;            
+                }        
+            }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>法三：选择排序<br>先找到最小元素所在位置的索引，然后将该元素与第一位上的元素进行交换。</p>
+<pre class="line-numbers language-Java"><code class="language-Java">int arr3[]= {23,12,48,56,45};    
+for(int i=0;i<arr3.length;i++) {       
+    int tem=i;//将数组中从i开始的最小的元素所在位置的索引赋值给tem     
+    for(int j=i;j<arr3.length;j++) {            
+        if(arr3[j]<arr3[tem]) {             
+            tem=j;          
+            }       
+        }       
+    //上面获取了数组中从i开始的最小值的位置索引为tem，利用该索引将第i位上的元素与其进行交换     
+    int temp1=arr3[i];      
+    arr3[i]=arr3[tem];      
+    arr3[tem]=temp1;    
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>法四：反转排序<br>将原数组按逆序排列</p>
+<pre class="line-numbers language-Java"><code class="language-Java">//将数组第i位上的元素与第arr.length-i-1位上的元素进行交换
+int []arr4={23,12,48,56,45};   
+for(int i=0;i<arr4.length/2;i++) {      
+    int tp=arr4[i];     
+    arr4[i]=arr4[arr4.length-i-1];      
+    arr4[arr4.length-i-1]=tp;   
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>法五：直接插入排序</p>
+<pre class="line-numbers language-Java"><code class="language-Java">int []arr5={23,12,48,56,45};    
+for (int i = 1; i < arr5.length; i++) {     
+    for (int j = i; j > 0; j--) {           
+        if (arr5[j - 1] > arr5[j]) {
+            //大的放后面             
+            int tmp = arr5[j - 1];              
+            arr5[j - 1] = arr5[j];              
+            arr5[j] = tmp;          
+            }       
+        }   
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://zheroic.github.io" class="b-link-green">zheroic's blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/1124undefined.html" class="b-link-green">java-keysPoints</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3875e95f58ea59855e05',
+        clientSecret: '335bf09bc36a5dae2109909b8b305e96c7966880',
+        repo: 'zheroic.github.io',
+        owner: 'zheroic',
+        admin: "zheroic",
+        id: '2019/1124undefined.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/1219undefined.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="./images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="idea通过maven创建scala项目及编写spark">
-                            
-                            <span class="card-title">idea通过maven创建scala项目及编写spark</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                file-&gt;new project-&gt;maven-&gt;填写gva：配置maven版本，如果配置了镜像则读取自己的setting.xmlnext-&gt;finish
-!!!!!!! scala版本一定要对应改成自己安装的版本
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/idea/" class="post-category" target="_blank">
-                                    idea
-                                </a>
-                                
-                                <a href="/categories/idea/spark/" class="post-category" target="_blank">
-                                    spark
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
+    
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/idea/" target="_blank">
-                            <span class="chip bg-color">idea</span>
-                        </a>
-                        
-                        <a href="/tags/spark/" target="_blank">
-                            <span class="chip bg-color">spark</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/1219undefined.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="./images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="Command line is too long. Shorten command line for OOP or also for Application default configuration">
-                            
-                            <span class="card-title">Command line is too long. Shorten command line for OOP or also for Application default configuration</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                idea运行代码时出现解决：在.idea文件夹里的workspace.xml中的
-&lt;component name="PropertiesComponent">
-标签下添加：
-&lt;property name="dynamic.cla
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/idea/" class="post-category" target="_blank">
-                                    idea
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
+    
 
-                    
-                    <div class="card-action article-tags">
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/1205undefined.html">
+                    <div class="card-image">
                         
-                        <a href="/tags/idea/" target="_blank">
-                            <span class="chip bg-color">idea</span>
-                        </a>
                         
+                        <img src="./images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="解决idea中创建scala项目中插件无法加载的问题">
+                        
+                        <span class="card-title">解决idea中创建scala项目中插件无法加载的问题</span>
                     </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/1205undefined.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="./images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="解决idea中创建scala项目中插件无法加载的问题">
-                            
-                            <span class="card-title">解决idea中创建scala项目中插件无法加载的问题</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                先创建在用idea时由于自己使用的是老师给的pom，出现了始终飘红，无法下载
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            先创建在用idea时由于自己使用的是老师给的pom，出现了始终飘红，无法下载
 解决方案在依赖下载中加上
 
     
@@ -871,43 +988,227 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
       maven-scala-plugin
       2.11
     
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-05
+                        </span>
+                        <span class="publish-author">
                             
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/idea/" class="post-category" target="_blank">
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/idea/" class="post-category" target="_blank">
                                     idea
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
-
+                </div>
+                
+                <div class="card-action article-tags">
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/idea/" target="_blank">
-                            <span class="chip bg-color">idea</span>
-                        </a>
-                        
-                        <a href="/tags/scala/" target="_blank">
-                            <span class="chip bg-color">scala</span>
-                        </a>
-                        
-                    </div>
+                    <a href="/tags/idea/" target="_blank">
+                        <span class="chip bg-color">idea</span>
+                    </a>
+                    
+                    <a href="/tags/scala/" target="_blank">
+                        <span class="chip bg-color">scala</span>
+                    </a>
                     
                 </div>
+                
             </div>
-            
         </div>
-    </article>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/1117undefined.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="./images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Scala-keypoints">
+                        
+                        <span class="card-title">Scala-keypoints</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一二章a+b是a.+(b)的简写通常来说，可以使用 a 方法 b 来简写 a.方法(b)scala不提供++，– 使用+=，-=。不同于java，可自定义操作符如果方法没有参数，不需要使用括号，如 “Bannan”.sorted 。scal
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/scala/" class="post-category" target="_blank">
+                                    scala
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/scala/" target="_blank">
+                        <span class="chip bg-color">scala</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zheroic's blog<br />'
+            + '作者: zheroic<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
 </main>
 
 
