@@ -55,8 +55,7 @@
       
         
         
-          &lt;p&gt;由于之前使用shadowsocksR全局代理未退出就直接关机了，再次使用出现了这个&lt;br&gt;&lt;img src=&quot;https://pic.downk.cc/item/5e12bd2f76085c3289fefbc5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1
+          &lt;p&gt;由于之前使用shadowsocksR全局代理未退出就直接关机了，再次使用出现了这个&lt;br&gt;&lt;img src=&quot;./images/loading.gif&quot;
         
       
     
@@ -161,7 +160,7 @@
       
         
         
-          &lt;p&gt;file-&amp;gt;new project-&amp;gt;maven-&amp;gt;&lt;br&gt;&lt;img
+          &lt;p&gt;file-&amp;gt;new project-&amp;gt;maven-&amp;gt;&lt;br&gt;&lt;img src=&quot;./images/loading.gif&quot;
         
       
     
@@ -403,7 +402,7 @@ a,1&lt;span
       
         
         
-          &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;导入spark程序时，spark显示不能识别此符号&lt;br&gt;&lt;img
+          &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;导入spark程序时，spark显示不能识别此符号&lt;br&gt;&lt;img src=&quot;./images/loading.gif&quot;
         
       
     
@@ -485,8 +484,7 @@ a,1&lt;span
       
         
         
-          &lt;p&gt;idea运行代码时出现&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20191214163545223.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;解决：&lt;br&gt;在.idea文件夹里的workspace.xml中的&lt;/p&gt;
-&lt;pre
+          &lt;p&gt;idea运行代码时出现&lt;br&gt;&lt;img src=&quot;./images/loading.gif&quot; data-original=&quot;https://img-blog.csdnimg.cn/20191214163545223.png&quot;
         
       
     

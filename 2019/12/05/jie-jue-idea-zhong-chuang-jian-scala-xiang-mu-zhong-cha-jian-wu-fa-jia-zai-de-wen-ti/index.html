@@ -88,7 +88,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">zheroic's blog</span>
                 </a>
@@ -308,7 +308,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">zheroic's blog</div>
         <div class="logo-desc">
@@ -787,7 +787,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>先创建<br><img src="https://pic.superbed.cn/item/5de8b48cf1f6f81c50c35a28.jpg" alt=""><br>在用idea时由于自己使用的是老师给的pom，出现了<br><img src="https://pic3.superbed.cn/item/5de8b337f1f6f81c50c320dd.jpg" alt=""><br>始终飘红，无法下载</p>
+                <p>先创建<br><img src="./images/loading.gif" data-original="https://pic.superbed.cn/item/5de8b48cf1f6f81c50c35a28.jpg" alt=""><br>在用idea时由于自己使用的是老师给的pom，出现了<br><img src="./images/loading.gif" data-original="https://pic3.superbed.cn/item/5de8b337f1f6f81c50c320dd.jpg" alt=""><br>始终飘红，无法下载</p>
 <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在依赖下载中加上</p>
 <pre class="line-numbers language-{Xml}"><code class="language-{Xml}"><!-- https://mvnrepository.com/artifact/org.scala-tools/maven-scala-plugin -->
     <dependency>
@@ -898,7 +898,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="idea编写spark时过滤掉运行时的INFO信息">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="idea编写spark时过滤掉运行时的INFO信息">
                         
                         <span class="card-title">idea编写spark时过滤掉运行时的INFO信息</span>
                     </div>
@@ -946,7 +946,7 @@ val spark = SparkSession.builder().appName("xx").master("local").getO
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="java-keysPoints">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="java-keysPoints">
                         
                         <span class="card-title">java-keysPoints</span>
                     </div>
@@ -1410,5 +1410,5 @@ if (windowWidth > 768) {
         
 
 
-    </body>
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>

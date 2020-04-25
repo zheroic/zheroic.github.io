@@ -83,7 +83,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">zheroic's blog</span>
                 </a>
@@ -303,7 +303,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">zheroic's blog</div>
         <div class="logo-desc">
@@ -831,7 +831,7 @@ Shenyang<span class="token operator">&lt;</span><span class="token operator">-</
   addCircleMarkers<span class="token punctuation">(</span>stations$gps_lon<span class="token punctuation">,</span> stations$gps_lat<span class="token punctuation">,</span> popup <span class="token operator">=</span>paste<span class="token punctuation">(</span>stations$station<span class="token punctuation">,</span>stations$lines<span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">,</span>color <span class="token operator">=</span> pal<span class="token punctuation">(</span>stations$line<span class="token punctuation">)</span><span class="token punctuation">,</span> radius<span class="token operator">=</span><span class="token number">1.5</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span><span class="token operator">%</span>
   addLegend<span class="token punctuation">(</span>pal<span class="token operator">=</span>pal<span class="token punctuation">,</span>values <span class="token operator">=</span> stations$line<span class="token punctuation">)</span>
 Shenyang <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20191205161238766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
+<p><img src="./images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205161238766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
 <h2 id="第三步，各站点展示进站流量（08-00-00-08-05-00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。"><a href="#第三步，各站点展示进站流量（08-00-00-08-05-00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。" class="headerlink" title="第三步，各站点展示进站流量（08:00:00-08:05:00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。"></a>第三步，各站点展示进站流量（08:00:00-08:05:00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">##(2)各站点展示进站流量（08:00:00-08:05:00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。</span>
 
 
@@ -869,7 +869,7 @@ names<span class="token punctuation">(</span>s<span class="token punctuation">)<
 
 
 Shenyang <span class="token operator">%</span><span class="token operator">></span><span class="token operator">%</span> addCircleMarkers<span class="token punctuation">(</span>s$gps_lon<span class="token punctuation">,</span> s$gps_lat<span class="token punctuation">,</span> popup <span class="token operator">=</span>paste<span class="token punctuation">(</span>s$station<span class="token punctuation">,</span>s$line<span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">,</span>color <span class="token operator">=</span> pal<span class="token punctuation">(</span>s$line<span class="token punctuation">)</span><span class="token punctuation">,</span> radius<span class="token operator">=</span>getR<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">,</span>label<span class="token operator">=</span><span class="token keyword">as</span><span class="token punctuation">.</span>character<span class="token punctuation">(</span>s$count<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span><span class="token operator">></span><span class="token operator">%</span> addTiles<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20191205161411475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
+<p><img src="./images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205161411475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
 <h2 id="第四步，使用plotly绘制（17-00-00-17-05-00）出站流量最多的五个站点的出站流量"><a href="#第四步，使用plotly绘制（17-00-00-17-05-00）出站流量最多的五个站点的出站流量" class="headerlink" title="第四步，使用plotly绘制（17:00:00-17:05:00）出站流量最多的五个站点的出站流量"></a>第四步，使用plotly绘制（17:00:00-17:05:00）出站流量最多的五个站点的出站流量</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">##使用plotly绘制（17:00:00-17:05:00）出站流量最多的五个站点的出站流量。</span>
 
 library<span class="token punctuation">(</span>lubridate<span class="token punctuation">)</span>
@@ -897,7 +897,7 @@ st<span class="token operator">&lt;</span><span class="token operator">-</span>s
 st<span class="token operator">&lt;</span><span class="token operator">-</span>st<span class="token punctuation">[</span>order<span class="token punctuation">(</span><span class="token operator">-</span>s$count<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 st<span class="token operator">&lt;</span><span class="token operator">-</span>st<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 plot_ly<span class="token punctuation">(</span>st<span class="token punctuation">,</span> x<span class="token operator">=</span><span class="token operator">~</span>station<span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token operator">~</span>count<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20191205161500783.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
+<p><img src="./images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205161500783.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt="结果"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -994,7 +994,7 @@ plot_ly<span class="token punctuation">(</span>st<span class="token punctuation"
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="R语言第五次实训,dplyr 、tidyr和lubridate处理数据">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="R语言第五次实训,dplyr 、tidyr和lubridate处理数据">
                         
                         <span class="card-title">R语言第五次实训,dplyr 、tidyr和lubridate处理数据</span>
                     </div>
@@ -1043,7 +1043,7 @@ plot_ly<span class="token punctuation">(</span>st<span class="token punctuation"
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Command line is too long. Shorten command line for OOP or also for Application default configuration">
+                        <img src="./images/loading.gif" data-original="/medias/featureimages/14.jpg" class="responsive-img" alt="Command line is too long. Shorten command line for OOP or also for Application default configuration">
                         
                         <span class="card-title">Command line is too long. Shorten command line for OOP or also for Application default configuration</span>
                     </div>
@@ -1516,5 +1516,5 @@ if (windowWidth > 768) {
         
 
 
-    </body>
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>

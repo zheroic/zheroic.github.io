@@ -81,7 +81,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">zheroic's blog</span>
                 </a>
@@ -301,7 +301,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./images/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">zheroic's blog</div>
         <div class="logo-desc">
@@ -626,11 +626,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Hexo/" title="Hexo: 1">
+                <a href="/tags/R/" title="R: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hexo" style="background-color: #F9EBEA;">Hexo
-                        <span class="tag-length">1</span>
+                            data-tagname="R" style="background-color: #F9EBEA;">R
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -644,20 +644,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/R/" title="R: 2">
+                <a href="/tags/实训/" title="实训: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="R" style="background-color: #D5F5E3;">R
-                        <span class="tag-length">2</span>
+                             chip-active "
+                            data-tagname="实训" style="background-color: #D5F5E3;">实训
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/实训/" title="实训: 1">
+                <a href="/tags/杂/" title="杂: 2">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="实训" style="background-color: #E8F8F5;">实训
-                        <span class="tag-length">1</span>
+                             chip-default "
+                            data-tagname="杂" style="background-color: #E8F8F5;">杂
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -680,19 +680,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/杂/" title="杂: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="杂" style="background-color: #82E0AA;">杂
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="hexo" style="background-color: #D7BDE2;">hexo
+                            data-tagname="hexo" style="background-color: #82E0AA;">hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -701,7 +692,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/java/" title="java: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="java" style="background-color: #A3E4D7;">java
+                            data-tagname="java" style="background-color: #D7BDE2;">java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -710,8 +701,17 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/scala/" title="scala: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="scala" style="background-color: #85C1E9;">scala
+                            data-tagname="scala" style="background-color: #A3E4D7;">scala
                         <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Hexo/" title="Hexo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Hexo" style="background-color: #85C1E9;">Hexo
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -750,7 +750,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="R语言第六次实训,leaflet绘制地铁线路图">
+                            <img src="./images/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="R语言第六次实训,leaflet绘制地铁线路图">
                             
                             <span class="card-title">R语言第六次实训,leaflet绘制地铁线路图</span>
                         </div>
@@ -1070,5 +1070,5 @@ if (windowWidth > 768) {
         
 
 
-    </body>
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 </html>
