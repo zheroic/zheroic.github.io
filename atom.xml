@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zheroic&#39;s blog</title>
+  
+  <subtitle>zheroic&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://zheroic.github.io/"/>
+  <updated>2020-04-24T13:35:24.270Z</updated>
+  <id>https://zheroic.github.io/</id>
+  
+  <author>
+    <name>zheroic</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小说推荐</title>
+    <link href="https://zheroic.github.io/2020/04/24/xiao-shuo-tui-jian/"/>
+    <id>https://zheroic.github.io/2020/04/24/xiao-shuo-tui-jian/</id>
+    <published>2020-04-24T13:30:00.000Z</published>
+    <updated>2020-04-24T13:35:24.270Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;《杨戬-人生长恨水长东》&quot;&gt;&lt;a href=&quot;#《杨戬-人生长恨水长东》&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="https://zheroic.github.io/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+      <category term="小说|仙侠" scheme="https://zheroic.github.io/tags/%E5%B0%8F%E8%AF%B4-%E4%BB%99%E4%BE%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shadowsocks弹出1080为系统保留端口</title>
+    <link href="https://zheroic.github.io/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/"/>
+    <id>https://zheroic.github.io/2020/01/06/shadowsocks-dan-chu-1080-wei-xi-tong-bao-liu-duan-kou/</id>
+    <published>2020-01-06T04:50:00.000Z</published>
+    <updated>2020-01-06T05:01:08.287Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;由于之前使用shadowsocksR全局代理未退出就直接关机了，再次使用出现了这个&lt;br&gt;&lt;img src=&quot;https://pic.downk.cc/item/5e12bd2f76085c3289fefbc5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1
+        
+      
+    
+    </summary>
+    
+      <category term="杂" scheme="https://zheroic.github.io/categories/%E6%9D%82/"/>
+    
+    
+      <category term="杂" scheme="https://zheroic.github.io/tags/%E6%9D%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件需求要点（NEU）</title>
+    <link href="https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/"/>
+    <id>https://zheroic.github.io/2019/12/25/ruan-jian-xu-qiu-yao-dian-neu/</id>
+    <published>2019-12-25T13:01:00.000Z</published>
+    <updated>2020-01-06T06:44:11.337Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;软件过程&quot;&gt;&lt;a href=&quot;#软件过程&quot; class=&quot;headerlink&quot; title=&quot;软件过程&quot;&gt;&lt;/a&gt;软件过程&lt;/h1&gt;&lt;h2 id=&quot;软件开发的本质：&quot;&gt;&lt;a href=&quot;#软件开发的本质：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="软件需求" scheme="https://zheroic.github.io/categories/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"/>
+    
+    
+      <category term="软件需求" scheme="https://zheroic.github.io/tags/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>word中优雅的插入代码块</title>
+    <link href="https://zheroic.github.io/2019/12/23/untitled/"/>
+    <id>https://zheroic.github.io/2019/12/23/untitled/</id>
+    <published>2019-12-23T06:09:00.000Z</published>
+    <updated>2019-12-23T06:10:13.718Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;打开  &lt;a href=&quot;http://www.planetb.ca/syntax-highlight-word&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="杂" scheme="https://zheroic.github.io/categories/%E6%9D%82/"/>
+    
+    
+      <category term="杂" scheme="https://zheroic.github.io/tags/%E6%9D%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sparkcore练习_2,各种算子的练习</title>
+    <link href="https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/"/>
+    <id>https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-2-ge-chong-suan-zi-de-lian-xi/</id>
+    <published>2019-12-19T06:32:00.000Z</published>
+    <updated>2019-12-19T06:32:32.174Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;数据集&lt;br&gt;&lt;a href=&quot;http://grouplens.org/datasets/movielens/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea通过maven创建scala项目及编写spark</title>
+    <link href="https://zheroic.github.io/2019/12/19/idea-tong-guo-maven-chuang-jian-scala-xiang-mu-ji-bian-xie-spark/"/>
+    <id>https://zheroic.github.io/2019/12/19/idea-tong-guo-maven-chuang-jian-scala-xiang-mu-ji-bian-xie-spark/</id>
+    <published>2019-12-19T06:31:00.000Z</published>
+    <updated>2019-12-19T06:32:02.191Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;file-&amp;gt;new project-&amp;gt;maven-&amp;gt;&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="idea" scheme="https://zheroic.github.io/categories/idea/"/>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/idea/spark/"/>
+    
+    
+      <category term="idea" scheme="https://zheroic.github.io/tags/idea/"/>
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]</title>
+    <link href="https://zheroic.github.io/2019/12/19/jie-jue-rdd-wu-fa-diao-yong-todf-ji-value-todf-is-not-a-member-of-org-apache-spark-rdd-rdd-names/"/>
+    <id>https://zheroic.github.io/2019/12/19/jie-jue-rdd-wu-fa-diao-yong-todf-ji-value-todf-is-not-a-member-of-org-apache-spark-rdd-rdd-names/</id>
+    <published>2019-12-19T06:29:00.000Z</published>
+    <updated>2019-12-19T06:30:05.422Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;需加入隐式导入才能toDF&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;  val spark &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark中的map-side-join关联优化</title>
+    <link href="https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/"/>
+    <id>https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2019-12-19T06:29:12.458Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark scala读取文件选取特定列</title>
+    <link href="https://zheroic.github.io/2019/12/19/spark-scala-du-qu-wen-jian-xuan-qu-te-ding-lie/"/>
+    <id>https://zheroic.github.io/2019/12/19/spark-scala-du-qu-wen-jian-xuan-qu-te-ding-lie/</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2019-12-19T06:28:38.514Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;spark scala读取文件选取特定列&lt;br&gt;wordcount.txt:&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;a,1
+c,2
+a,1&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存</title>
+    <link href="https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-1-rdd-zhuan-hua-wei-rdd-labelpoint-he-map-side-join-yi-ji-jiang-jie-guo-rdd-dataframe-shu-chu-dao-yi-ge-wen-jian-bao-cun/"/>
+    <id>https://zheroic.github.io/2019/12/19/sparkcore-lian-xi-1-rdd-zhuan-hua-wei-rdd-labelpoint-he-map-side-join-yi-ji-jiang-jie-guo-rdd-dataframe-shu-chu-dao-yi-ge-wen-jian-bao-cun/</id>
+    <published>2019-12-19T06:27:00.000Z</published>
+    <updated>2019-12-19T06:27:47.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-数据集net-gz为网络流量数据，-数据集每条记录展现每个连接的信息，-最后一列为攻击的标签&quot;&gt;&lt;a href=&quot;#1-数据集net-gz为网络流量数据，-数据集每条记录展现每个连接的信息，-最后一列为攻击的标签&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala一行代码实现wordcount解析</title>
+    <link href="https://zheroic.github.io/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/"/>
+    <id>https://zheroic.github.io/2019/12/19/scala-yi-xing-dai-ma-shi-xian-wordcount-jie-xi/</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2019-12-19T06:26:20.480Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt; sc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textFile&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="scala" scheme="https://zheroic.github.io/categories/scala/"/>
+    
+    
+      <category term="scala" scheme="https://zheroic.github.io/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark运行模式的区别</title>
+    <link href="https://zheroic.github.io/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/"/>
+    <id>https://zheroic.github.io/2019/12/19/spark-yun-xing-mo-shi-de-qu-bie/</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2019-12-19T06:26:50.863Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</title>
+    <link href="https://zheroic.github.io/2019/12/19/du-qu-wen-jian-shi-du-qu-hdfs-ji-qun-de-wen-jian-he-ben-ji-wen-jian-de-scala-dai-ma-xie-fa/"/>
+    <id>https://zheroic.github.io/2019/12/19/du-qu-wen-jian-shi-du-qu-hdfs-ji-qun-de-wen-jian-he-ben-ji-wen-jian-de-scala-dai-ma-xie-fa/</id>
+    <published>2019-12-19T06:25:00.000Z</published>
+    <updated>2019-12-19T06:25:47.072Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;读取hdfs集群的文件&quot;&gt;&lt;a href=&quot;#读取hdfs集群的文件&quot; class=&quot;headerlink&quot; title=&quot;读取hdfs集群的文件&quot;&gt;&lt;/a&gt;读取hdfs集群的文件&lt;/h1&gt;&lt;p&gt;val
+        
+      
+    
+    </summary>
+    
+      <category term="scala" scheme="https://zheroic.github.io/categories/scala/"/>
+    
+    
+      <category term="scala" scheme="https://zheroic.github.io/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决idea通过maven创建scala项目，自动生成的App.scala报错</title>
+    <link href="https://zheroic.github.io/2019/12/19/jie-jue-idea-tong-guo-maven-chuang-jian-scala-xiang-mu-zi-dong-sheng-cheng-de-app-scala-bao-cuo/"/>
+    <id>https://zheroic.github.io/2019/12/19/jie-jue-idea-tong-guo-maven-chuang-jian-scala-xiang-mu-zi-dong-sheng-cheng-de-app-scala-bao-cuo/</id>
+    <published>2019-12-19T06:22:00.000Z</published>
+    <updated>2019-12-19T06:23:18.009Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;直接删除自动生成的scala文件&quot;&gt;&lt;a href=&quot;#直接删除自动生成的scala文件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="scala" scheme="https://zheroic.github.io/categories/scala/"/>
+    
+    
+      <category term="scala" scheme="https://zheroic.github.io/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决idea编写spark程序时，import org.apache.spark报错</title>
+    <link href="https://zheroic.github.io/2019/12/19/jie-jue-idea-bian-xie-spark-cheng-xu-shi-import-org-apache-spark-bao-cuo/"/>
+    <id>https://zheroic.github.io/2019/12/19/jie-jue-idea-bian-xie-spark-cheng-xu-shi-import-org-apache-spark-bao-cuo/</id>
+    <published>2019-12-19T06:19:00.000Z</published>
+    <updated>2019-12-19T06:19:56.513Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;导入spark程序时，spark显示不能识别此符号&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言第五次实训,dplyr 、tidyr和lubridate处理数据</title>
+    <link href="https://zheroic.github.io/2019/12/19/r-yu-yan-di-wu-ci-shi-xun-dplyr-tidyr-he-lubridate-chu-li-shu-ju/"/>
+    <id>https://zheroic.github.io/2019/12/19/r-yu-yan-di-wu-ci-shi-xun-dplyr-tidyr-he-lubridate-chu-li-shu-ju/</id>
+    <published>2019-12-19T06:16:00.000Z</published>
+    <updated>2019-12-19T06:17:15.466Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;题目1：&quot;&gt;&lt;a href=&quot;#题目1：&quot; class=&quot;headerlink&quot; title=&quot;题目1：&quot;&gt;&lt;/a&gt;题目1：&lt;/h1&gt;&lt;p&gt;1.数据处理【只用SY-20150401.csv】&lt;br&gt;将数据处理成每条数据处于一天中的第几个5分钟（说明：
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://zheroic.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://zheroic.github.io/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言第六次实训,leaflet绘制地铁线路图</title>
+    <link href="https://zheroic.github.io/2019/12/19/r-yu-yan-di-liu-ci-shi-xun-leaflet-hui-zhi-di-tie-xian-lu-tu/"/>
+    <id>https://zheroic.github.io/2019/12/19/r-yu-yan-di-liu-ci-shi-xun-leaflet-hui-zhi-di-tie-xian-lu-tu/</id>
+    <published>2019-12-19T06:06:00.000Z</published>
+    <updated>2019-12-19T06:06:48.840Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目：&quot;&gt;&lt;a href=&quot;#题目：&quot; class=&quot;headerlink&quot; title=&quot;题目：&quot;&gt;&lt;/a&gt;题目：&lt;/h2&gt;&lt;p&gt;数据请到我的主页看我的上传资源&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用leaflet绘制地铁线路图，要求&lt;br&gt;1）
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://zheroic.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://zheroic.github.io/tags/R/"/>
+    
+      <category term="实训" scheme="https://zheroic.github.io/tags/%E5%AE%9E%E8%AE%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Command line is too long. Shorten command line for OOP or also for Application default configuration</title>
+    <link href="https://zheroic.github.io/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/"/>
+    <id>https://zheroic.github.io/2019/12/19/command-line-is-too-long-shorten-command-line-for-oop-or-also-for-application-default-configuration/</id>
+    <published>2019-12-19T03:03:00.000Z</published>
+    <updated>2019-12-19T06:33:00.943Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;idea运行代码时出现&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20191214163545223.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;解决：&lt;br&gt;在.idea文件夹里的workspace.xml中的&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+      <category term="idea" scheme="https://zheroic.github.io/categories/idea/"/>
+    
+    
+      <category term="idea" scheme="https://zheroic.github.io/tags/idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sparkSQL练习，分析篮球运动员数据</title>
+    <link href="https://zheroic.github.io/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/"/>
+    <id>https://zheroic.github.io/2019/12/19/sparksql-lian-xi-fen-xi-lan-qiu-yun-dong-yuan-shu-ju/</id>
+    <published>2019-12-19T01:09:00.000Z</published>
+    <updated>2019-12-19T05:56:43.180Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;注：玄学编程，在第二题时设置local-4-时莫名其妙在统计count时会出现某些age统计量变少，如22岁的少2个（正确：1137，统计出来为1135），设置为local时结果就不会出现某些age-count数量减少！淦！玄学&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+      <category term="scala" scheme="https://zheroic.github.io/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea编写spark时过滤掉运行时的INFO信息</title>
+    <link href="https://zheroic.github.io/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/"/>
+    <id>https://zheroic.github.io/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/</id>
+    <published>2019-12-18T08:37:00.000Z</published>
+    <updated>2019-12-19T05:52:17.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;编写spark程序时，INFO信息导致过多 导致输出非常不好找，因此给他过滤掉&lt;/p&gt;
+&lt;h1 id=&quot;方法一：&quot;&gt;&lt;a href=&quot;#方法一：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="idea" scheme="https://zheroic.github.io/tags/idea/"/>
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
+    
+  </entry>
+  
+</feed>
