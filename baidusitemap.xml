@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
+    <loc>https://zheroic.github.io/2019/08/27/blog-open-source/</loc>
+    <lastmod>2020-04-25</lastmod>
+  </url>  <url>
     <loc>https://zheroic.github.io/2020/04/24/xiao-shuo-tui-jian/</loc>
     <lastmod>2020-04-24</lastmod>
   </url>  <url>
@@ -32,9 +38,6 @@
     <lastmod>2019-12-19</lastmod>
   </url>  <url>
     <loc>https://zheroic.github.io/2019/12/19/jie-jue-rdd-wu-fa-diao-yong-todf-ji-value-todf-is-not-a-member-of-org-apache-spark-rdd-rdd-names/</loc>
-    <lastmod>2019-12-19</lastmod>
-  </url>  <url>
-    <loc>https://zheroic.github.io/2019/12/19/spark-zhong-de-map-side-join-guan-lian-you-hua/</loc>
     <lastmod>2019-12-19</lastmod>
   </url>  <url>
     <loc>https://zheroic.github.io/2019/12/19/spark-scala-du-qu-wen-jian-xuan-qu-te-ding-lie/</loc>
@@ -75,8 +78,5 @@
   </url>  <url>
     <loc>https://zheroic.github.io/2019/12/18/idea-bian-xie-spark-shi-guo-lu-diao-yun-xing-shi-de-info-xin-xi/</loc>
     <lastmod>2019-12-19</lastmod>
-  </url>  <url>
-    <loc>https://zheroic.github.io/2019/08/27/blog-open-source/</loc>
-    <lastmod>2019-10-03</lastmod>
   </url>
 </urlset>
