@@ -700,14 +700,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.2k
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        7 分
                     </div>
                     
                 
@@ -747,89 +747,89 @@
 <pre class="line-numbers language-java"><code class="language-java"><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--litter--"</span><span class="token punctuation">)</span>
 <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token string">"litter"</span><span class="token punctuation">,</span><span class="token function">println</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>作为函数的参数<br>一个匿名的函数传递给一个方法或者函数的时候，scala会尽量推断出参数类型。例如一个完整的匿名函数作为参数可以写为</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> def <span class="token function">compute</span><span class="token punctuation">(</span>f<span class="token operator">:</span> <span class="token punctuation">(</span>Double<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">&gt;</span>Double<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-compute<span class="token operator">:</span> <span class="token punctuation">(</span>f<span class="token operator">:</span> Double <span class="token operator">=</span><span class="token operator">&gt;</span> Double<span class="token punctuation">)</span>Double
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> def <span class="token function">compute</span><span class="token punctuation">(</span>f<span class="token operator">:</span> <span class="token punctuation">(</span>Double<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span>Double<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+compute<span class="token operator">:</span> <span class="token punctuation">(</span>f<span class="token operator">:</span> Double <span class="token operator">=</span><span class="token operator">></span> Double<span class="token punctuation">)</span>Double
 <span class="token comment" spellcheck="true">//传递一个匿名函数作为compute的参数</span>
 
-scala<span class="token operator">&gt;</span> <span class="token function">compute</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">:</span> Double<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">2</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
+scala<span class="token operator">></span> <span class="token function">compute</span><span class="token punctuation">(</span><span class="token punctuation">(</span>x<span class="token operator">:</span> Double<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span> <span class="token operator">*</span> x<span class="token punctuation">)</span>
 res1<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">6.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果参数x在=&gt;右侧只出现一次，可以用_替代这个参数，简写为</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> <span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> _<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> <span class="token function">compute</span><span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> _<span class="token punctuation">)</span>
 res2<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">6.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>更常见的使用方式为</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_ <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>_ <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
 res0<span class="token operator">:</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>immutable<span class="token punctuation">.</span>IndexedSeq<span class="token punctuation">[</span>Int<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">Vector</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
 
-scala<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>_ <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
+scala<span class="token operator">></span> <span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>_ <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
 res1<span class="token operator">:</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>immutable<span class="token punctuation">.</span>IndexedSeq<span class="token punctuation">[</span>Int<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">Vector</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>以上所说的为一元函数，那么对于二元函数，即有两个参数x和y的函数，是如何使用_的？可以参考sortWith方法def sortWith(lt: (T, T) ⇒ Boolean): Array[T]法的参数官方解释为</p>
 <pre><code>the comparison function which tests whether its first argument precedes its second argument in the desired ordering.</code></pre><p>这个方法需要的参数是一个二元函数，而且函数参数的类型为T，例如</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sortWith</span><span class="token punctuation">(</span>_ <span class="token operator">&lt;</span> _<span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sortWith</span><span class="token punctuation">(</span>_ <span class="token operator">&lt;</span> _<span class="token punctuation">)</span>
 res0<span class="token operator">:</span> List<span class="token punctuation">[</span>Int<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">List</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>可以用_分别表示二元函数中的参数x和y。</p>
 <p>作为标识符<br>例如定义一个变量val _num = 123</p>
 <p>作为通配符<br>import语句<br>例如import scala.math._<br>case语句<br>例如</p>
 <pre class="line-numbers language-java"><code class="language-java">object MatchTest <span class="token keyword">extends</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
   def <span class="token function">matchTest</span><span class="token punctuation">(</span>x<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token operator">=</span> x match <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token number">1</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">"one"</span>
-    <span class="token keyword">case</span> <span class="token number">2</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">"two"</span>
-    <span class="token keyword">case</span> _ <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">"many"</span>
+    <span class="token keyword">case</span> <span class="token number">1</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"one"</span>
+    <span class="token keyword">case</span> <span class="token number">2</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"two"</span>
+    <span class="token keyword">case</span> _ <span class="token operator">=</span><span class="token operator">></span> <span class="token string">"many"</span>
   <span class="token punctuation">}</span>
   <span class="token function">println</span><span class="token punctuation">(</span><span class="token function">matchTest</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>元组（tuple）<br>例如</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//可以定义一个tuple</span>
-scala<span class="token operator">&gt;</span> val t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token string">"Fred"</span><span class="token punctuation">)</span>
+scala<span class="token operator">></span> val t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token string">"Fred"</span><span class="token punctuation">)</span>
 t<span class="token operator">:</span> <span class="token punctuation">(</span>Int<span class="token punctuation">,</span> Double<span class="token punctuation">,</span> String<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">,</span>Fred<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">//可以用_1，_2，_3访问这个元组</span>
-scala<span class="token operator">&gt;</span> t<span class="token punctuation">.</span>_1
+scala<span class="token operator">></span> t<span class="token punctuation">.</span>_1
 res3<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
 
-scala<span class="token operator">&gt;</span> t<span class="token punctuation">.</span>_2
+scala<span class="token operator">></span> t<span class="token punctuation">.</span>_2
 res4<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">3.14</span>
 
-scala<span class="token operator">&gt;</span> t<span class="token punctuation">.</span>_3
+scala<span class="token operator">></span> t<span class="token punctuation">.</span>_3
 res5<span class="token operator">:</span> String <span class="token operator">=</span> Fred<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以通过模式匹配获取元组的元素，当不需要某个值的时候可以使用_替代，例如</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> val t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token string">"Fred"</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> val t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3.14</span><span class="token punctuation">,</span> <span class="token string">"Fred"</span><span class="token punctuation">)</span>
 t<span class="token operator">:</span> <span class="token punctuation">(</span>Int<span class="token punctuation">,</span> Double<span class="token punctuation">,</span> String<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3.14</span><span class="token punctuation">,</span>Fred<span class="token punctuation">)</span>
 
-scala<span class="token operator">&gt;</span> <span class="token function">val</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span> t
+scala<span class="token operator">></span> <span class="token function">val</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token operator">=</span> t
 first<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
 second<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">3.14</span>
 
-scala<span class="token operator">&gt;</span> <span class="token function">val</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _<span class="token punctuation">)</span>
+scala<span class="token operator">></span> <span class="token function">val</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _<span class="token punctuation">)</span>
 
 <span class="token operator">=</span> t
 first<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>下划线和其他符号组合的使用方式<br>下划线与等号（_=）<br>自定义setter方法，请参见《Overriding def with var in Scala》</p>
 <p>下划线与星号（_*）<br>1.变长参数<br>例如定义一个变长参数的方法sum，然后计算1-5的和，可以写为</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> def <span class="token function">sum</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Int<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> def <span class="token function">sum</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Int<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
      <span class="token operator">|</span> var result <span class="token operator">=</span> <span class="token number">0</span>
      <span class="token operator">|</span> <span class="token keyword">for</span> <span class="token punctuation">(</span>arg <span class="token operator">&lt;</span><span class="token operator">-</span> args<span class="token punctuation">)</span> result <span class="token operator">+=</span> arg
      <span class="token operator">|</span> result
      <span class="token operator">|</span> <span class="token punctuation">}</span>
 sum<span class="token operator">:</span> <span class="token punctuation">(</span>args<span class="token operator">:</span> Int<span class="token operator">*</span><span class="token punctuation">)</span>Int
 
-scala<span class="token operator">&gt;</span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+scala<span class="token operator">></span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
 s<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">15</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但是如果使用这种方式就会报错</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">5</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span>console<span class="token operator">&gt;</span><span class="token operator">:</span><span class="token number">12</span><span class="token operator">:</span> error<span class="token operator">:</span> type mismatch<span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>console<span class="token operator">></span><span class="token operator">:</span><span class="token number">12</span><span class="token operator">:</span> error<span class="token operator">:</span> type mismatch<span class="token punctuation">;</span>
  found   <span class="token operator">:</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>immutable<span class="token punctuation">.</span>Range<span class="token punctuation">.</span>Inclusive
  required<span class="token operator">:</span> Int
        val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">5</span><span class="token punctuation">)</span>
                      <span class="token operator">^</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这种情况必须在后面写上: _*将1 to 5转化为参数序列</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">5</span><span class="token operator">:</span> _<span class="token operator">*</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> val s <span class="token operator">=</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span> to <span class="token number">5</span><span class="token operator">:</span> _<span class="token operator">*</span><span class="token punctuation">)</span>
 s<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">15</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>2.变量声明中的模式<br>例如，下面代码分别将arr中的第一个和第二个值赋给first和second</p>
-<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">&gt;</span> val arr <span class="token operator">=</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java">scala<span class="token operator">></span> val arr <span class="token operator">=</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
 arr<span class="token operator">:</span> Array<span class="token punctuation">[</span>Int<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
 
-scala<span class="token operator">&gt;</span> val <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> _<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> arr
+scala<span class="token operator">></span> val <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> _<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> arr
 
-scala<span class="token operator">&gt;</span> val <span class="token function">Array</span><span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">,</span> _<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> arr
+scala<span class="token operator">></span> val <span class="token function">Array</span><span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">,</span> _<span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span> arr
 first<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
 second<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><pre class="line-numbers language-Scala"><code class="language-Scala">var a:Array = Array[Int](4)
@@ -844,7 +844,7 @@ a.indices//获取下标
 0 until a.length by -1 //也可以用转置reserve
 
 //数组转换for...yield..或filter...map...
-var c = for(i &lt;- a) yield 2*i
+var c = for(i <- a) yield 2*i
 var d = a.filter(_%2==0).map(2*_)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建一个由Java.util.TimeZone.getAvailableIDs返回的时区集合，判断条件是它们在美洲。去掉”America/“前缀并排序</p>
 <pre class="line-numbers language-Scala"><code class="language-Scala">def main (args: Array[String])= {
@@ -853,7 +853,7 @@ var d = a.filter(_%2==0).map(2*_)<span aria-hidden="true" class="line-numbers-ro
 }
 def TimeZone()={
 　　val arr=java.util.TimeZone.getAvailableIDs()
-　　val tmp=for(ele &lt;-arr if ele.startsWith("America/")) yield {
+　　val tmp=for(ele <-arr if ele.startsWith("America/")) yield {
 　　　　ele.drop("America/".length)
 　　}
 　　scala.util.Sorting.quickSort(tmp)
@@ -1217,7 +1217,7 @@ public class TestPrintf {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             

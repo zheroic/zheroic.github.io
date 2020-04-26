@@ -9,7 +9,7 @@
     <meta name="keywords" content="scala一行代码实现wordcount解析, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content=" sc.textFile(&#34;/data/wordcount.txt&#34;).flatMap(_.split(&#34; &#34;)).map(word=&amp;gt;(word,1)).reduceByKey(_+_).sortBy(_._1,false).col">
+    <meta name="description" content=" sc.textFile(&#34;/data/wordcount.txt&#34;).flatMap(_.split(&#34; &#34;)).map(word=&gt;(word,1)).reduceByKey(_+_).sortBy(_._1,false).collec">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -700,7 +700,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        349
+                        347
                     </div>
                     
 
@@ -724,11 +724,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-scala"><code class="language-scala"> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span>word<span class="token keyword">=&gt;</span><span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <pre class="line-numbers language-scala"><code class="language-scala"> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span>word<span class="token keyword">=></span><span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p> 这个file读的是hdfs文件,<a href="https://blog.csdn.net/qq_42400267/article/details/103417238" target="_blank" rel="noopener">读文件的区别</a></p>
 <pre class="line-numbers language-scala"><code class="language-scala">sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//读取这个变量地址指定的文件</span>
 <span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">//把文件中每一行按空格分割并转成多行</span>
-<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">//把上面转成多行中的每一项转换成一组一组的数据，每组数据为自身加1的组合，等价于(_,1)、word=&gt;(word,1)</span>
+<span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">//把上面转成多行中的每一项转换成一组一组的数据，每组数据为自身加1的组合，等价于(_,1)、word=>(word,1)</span>
 <span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//把每组数据的value值进行累加，也就是把每组数据的所有1进行累加，求出每组key的总数。等价于(_+_)</span>
 <span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token number">.2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//按上一步每组的累加值进行排序,等价于(_,_2)</span>
 <span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//收集一个弹性分布式数据集RDD的所有元素到一个数组中</span>
@@ -1084,7 +1084,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             

@@ -700,7 +700,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        703
+                        697
                     </div>
                     
 
@@ -731,10 +731,10 @@
 <pre class="line-numbers language-java"><code class="language-java">val people_info <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">parallelize</span><span class="token punctuation">(</span><span class="token function">Array</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"110"</span><span class="token punctuation">,</span><span class="token string">"lsw"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">"222"</span><span class="token punctuation">,</span><span class="token string">"yyy"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collectAsMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 val people_bc <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">broadcast</span><span class="token punctuation">(</span>people_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>对大数据进行遍历，使用mapPartition而不是map，因为mapPartition是在每个partition中进行操作，因此可以减少遍历时新建broadCastMap.value对象的空间消耗，同时匹配不到的数据也不会返回（）。</p>
-<pre class="line-numbers language-java"><code class="language-java">val res <span class="token operator">=</span> student_all<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java">val res <span class="token operator">=</span> student_all<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
     val stuMap <span class="token operator">=</span> people_bc<span class="token punctuation">.</span>value
     val arrayBuffer <span class="token operator">=</span> ArrayBuffer<span class="token punctuation">[</span><span class="token punctuation">(</span>String<span class="token punctuation">,</span>String<span class="token punctuation">,</span>String<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    iter<span class="token punctuation">.</span>foreach<span class="token punctuation">{</span><span class="token keyword">case</span> <span class="token punctuation">(</span>idCard<span class="token punctuation">,</span>school<span class="token punctuation">,</span>sno<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+    iter<span class="token punctuation">.</span>foreach<span class="token punctuation">{</span><span class="token keyword">case</span> <span class="token punctuation">(</span>idCard<span class="token punctuation">,</span>school<span class="token punctuation">,</span>sno<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>stuMap<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>idCard<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         arrayBuffer<span class="token punctuation">.</span>+<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>idCard<span class="token punctuation">,</span> stuMap<span class="token punctuation">.</span><span class="token function">getOrElse</span><span class="token punctuation">(</span>idCard<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>school<span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
@@ -742,7 +742,7 @@ val people_bc <span class="token operator">=</span> sc<span class="token punctua
     arrayBuffer<span class="token punctuation">.</span>iterator
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>也可以使用 for 的守卫机制来实现上述代码</p>
-<pre class="line-numbers language-java"><code class="language-java">val res1 <span class="token operator">=</span> student_all<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java">val res1 <span class="token operator">=</span> student_all<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     val stuMap <span class="token operator">=</span> people_bc<span class="token punctuation">.</span>value
     <span class="token keyword">for</span><span class="token punctuation">{</span>
         <span class="token punctuation">(</span>idCard<span class="token punctuation">,</span> school<span class="token punctuation">,</span> sno<span class="token punctuation">)</span> <span class="token operator">&lt;</span><span class="token operator">-</span> iter
@@ -774,10 +774,10 @@ object joinTest <span class="token keyword">extends</span> <span class="token cl
    * 使用mapPartition而不是用map，减少创建broadCastMap.value的空间消耗
    * 同时匹配不到的数据也不需要返回（）
    * */</span>
-  val res <span class="token operator">=</span> big<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+  val res <span class="token operator">=</span> big<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
     val smallMap <span class="token operator">=</span> smallbc<span class="token punctuation">.</span>value
     val arrayBuffer <span class="token operator">=</span> ArrayBuffer<span class="token punctuation">[</span><span class="token punctuation">(</span>String<span class="token punctuation">,</span>String<span class="token punctuation">,</span>String<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    iter<span class="token punctuation">.</span>foreach<span class="token punctuation">{</span><span class="token keyword">case</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span>belong<span class="token punctuation">,</span>no<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+    iter<span class="token punctuation">.</span>foreach<span class="token punctuation">{</span><span class="token keyword">case</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span>belong<span class="token punctuation">,</span>no<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span>smallMap<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         arrayBuffer<span class="token punctuation">.</span>+<span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> smallMap<span class="token punctuation">.</span><span class="token function">getOrElse</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">,</span>belong<span class="token punctuation">)</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span>
@@ -789,7 +789,7 @@ object joinTest <span class="token keyword">extends</span> <span class="token cl
    * 使用另一种方式实现
    * 使用for的守卫
    * */</span>
-  val res1 <span class="token operator">=</span> big<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  val res1 <span class="token operator">=</span> big<span class="token punctuation">.</span><span class="token function">mapPartitions</span><span class="token punctuation">(</span>iter <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     val smallMap <span class="token operator">=</span> smallbc<span class="token punctuation">.</span>value
     <span class="token keyword">for</span><span class="token punctuation">{</span>
       <span class="token punctuation">(</span>idCard<span class="token punctuation">,</span> school<span class="token punctuation">,</span> sno<span class="token punctuation">)</span> <span class="token operator">&lt;</span><span class="token operator">-</span> iter
@@ -1158,7 +1158,7 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             

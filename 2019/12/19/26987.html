@@ -707,7 +707,7 @@ val data=sc.textFile(&#34;file:///E://table//wordcount.txt&#34;)
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        174
+                        172
                     </div>
                     
 
@@ -740,10 +740,10 @@ a,1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <span class="token keyword">val</span> data<span class="token operator">=</span>sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"file:///E://table//wordcount.txt"</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//按换行符分割文件，把文件分成一行行的</span>
 <span class="token punctuation">.</span>map<span class="token punctuation">{</span>
-    line<span class="token keyword">=&gt;</span>
+    line<span class="token keyword">=></span>
         <span class="token keyword">var</span> splits<span class="token operator">=</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reverse<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//把行按","分割，转置选取第一列即最后一列，</span>
                                                 <span class="token comment" spellcheck="true">//选取其他列例如第一列：line.split(",")(0) ，</span>
-                                                <span class="token comment" spellcheck="true">//选取多列map(line=&gt;(line.split(",")(0),line.split(",")(18),line.split(",")(31))) </span>
+                                                <span class="token comment" spellcheck="true">//选取多列map(line=>(line.split(",")(0),line.split(",")(18),line.split(",")(31))) </span>
        <span class="token punctuation">(</span>splits<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
@@ -1096,7 +1096,7 @@ a,1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             

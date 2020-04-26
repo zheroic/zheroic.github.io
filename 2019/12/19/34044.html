@@ -700,7 +700,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        712
+                        710
                     </div>
                     
 
@@ -748,13 +748,13 @@ sy_split<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 names<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">,</span><span class="token string">'time.in'</span><span class="token punctuation">,</span><span class="token string">'line.in'</span><span class="token punctuation">,</span><span class="token string">'station.in'</span><span class="token punctuation">,</span><span class="token string">'M5.in'</span><span class="token punctuation">)</span>
 trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>统计出站数据</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>sy_split<span class="token punctuation">[</span>money<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">]</span>
+<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>sy_split<span class="token punctuation">[</span>money<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">]</span>
 names<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">,</span><span class="token string">'time.out'</span><span class="token punctuation">,</span><span class="token string">'line.out'</span><span class="token punctuation">,</span><span class="token string">'station.out'</span><span class="token punctuation">,</span><span class="token string">'money'</span><span class="token punctuation">,</span><span class="token string">'M5.out'</span><span class="token punctuation">)</span>
 trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>根据card.id将5和6合并；并计算乘车时长；将乘车时长大于0的取出来</p>
 <pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>merge<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">,</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token punctuation">,</span>by<span class="token operator">=</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$duration<span class="token operator">=</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>period_to_seconds<span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>hms<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$time<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>period_to_seconds<span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>hms<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$time<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>subset<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span>duration<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span>
+trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>subset<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span>duration<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
 trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过card.id, M5.in来统计出某个card.id的最短的乘车时长<br>然后通过duration==duration_min，将最近出站时间，找出来<br>再将中间的统计量去掉，也可以dplyr中的管道%&gt;%实现</p>
 <pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">[</span><span class="token punctuation">,</span>duration<span class="token punctuation">.</span>min<span class="token punctuation">:</span><span class="token operator">=</span>min<span class="token punctuation">(</span>duration<span class="token punctuation">)</span><span class="token punctuation">,</span>by<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">(</span>card<span class="token punctuation">.</span>id<span class="token punctuation">,</span>M5<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
@@ -877,8 +877,8 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
                         
                             问题描述导入spark程序时，spark显示不能识别此符号
 解决：去官网下载对应spark版本的压缩包，链接解压，既有jars目录或者pom.xml加入
-  &lt;dependency&gt;
-      &lt;groupId&gt;o
+  &lt;dependency>
+      &lt;groupId>org.apa
                         
                     </div>
                     <div class="publish-info">
@@ -1130,7 +1130,7 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             

@@ -702,7 +702,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        288
+                        287
                     </div>
                     
 
@@ -739,7 +739,7 @@
     val spark <span class="token operator">=</span> SparkSession<span class="token punctuation">.</span><span class="token function">builder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appName</span><span class="token punctuation">(</span><span class="token string">"ch2homework1"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">master</span><span class="token punctuation">(</span><span class="token string">"local[4]"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getOrCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">case</span> <span class="token keyword">class</span> <span class="token class-name">names</span><span class="token punctuation">(</span>name<span class="token operator">:</span>String<span class="token punctuation">,</span>count<span class="token operator">:</span>Int<span class="token punctuation">)</span>
     <span class="token keyword">import</span> spark<span class="token punctuation">.</span>implicits<span class="token punctuation">.</span>_ <span class="token comment" spellcheck="true">//不加入隐式导入则不能toDF</span>
-    val data <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">textFile</span><span class="token punctuation">(</span><span class="token string">"file:///E://FTP//spark//2-sparkCore1//kddcup.data.gz"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>line <span class="token operator">=</span><span class="token operator">&gt;</span>
+    val data <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">textFile</span><span class="token punctuation">(</span><span class="token string">"file:///E://FTP//spark//2-sparkCore1//kddcup.data.gz"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>line <span class="token operator">=</span><span class="token operator">></span>
      <span class="token function">names</span><span class="token punctuation">(</span><span class="token punctuation">(</span>line<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toDF</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     data<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
@@ -1110,7 +1110,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.9k</span> 字
+                <span class="white-color">26.1k</span> 字
             
 
             
