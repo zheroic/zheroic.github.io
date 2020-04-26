@@ -258,31 +258,6 @@
     
     
     <entry>
-      <title>scala一行代码实现wordcount解析</title>
-      <link href="/2019/12/19/64784.html"/>
-      <url>/2019/12/19/64784.html</url>
-      
-        <content type="html"><![CDATA[<pre class="line-numbers language-scala"><code class="language-scala"> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span>word<span class="token keyword">=></span><span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p> 这个file读的是hdfs文件,<a href="https://blog.csdn.net/qq_42400267/article/details/103417238" target="_blank" rel="noopener">读文件的区别</a></p><pre class="line-numbers language-scala"><code class="language-scala">sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//读取这个变量地址指定的文件</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">//把文件中每一行按空格分割并转成多行</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">//把上面转成多行中的每一项转换成一组一组的数据，每组数据为自身加1的组合，等价于(_,1)、word=>(word,1)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//把每组数据的value值进行累加，也就是把每组数据的所有1进行累加，求出每组key的总数。等价于(_+_)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token number">.2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//按上一步每组的累加值进行排序,等价于(_,_2)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//收集一个弹性分布式数据集RDD的所有元素到一个数组中</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在scala中如果函数中只有一个变量那可以不写，或者使用匿名变量<br>代码里的(, 1) 这个就是逗号前面有个匿名变量,<br>_.2 这个 就是代表元组的第2个值 可以写成这样的形式f =&gt; {f._2} 那这个f和_就是一个意思了 </p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> scala </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> scala </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Spark运行模式的区别</title>
       <link href="/2019/12/19/50108.html"/>
       <url>/2019/12/19/50108.html</url>
@@ -300,6 +275,31 @@
         <tags>
             
             <tag> spark </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>scala一行代码实现wordcount解析</title>
+      <link href="/2019/12/19/64784.html"/>
+      <url>/2019/12/19/64784.html</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-scala"><code class="language-scala"> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span>_<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span>word<span class="token keyword">=></span><span class="token punctuation">(</span>word<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span>_<span class="token operator">+</span>_<span class="token punctuation">)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>_1<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p> 这个file读的是hdfs文件,<a href="https://blog.csdn.net/qq_42400267/article/details/103417238" target="_blank" rel="noopener">读文件的区别</a></p><pre class="line-numbers language-scala"><code class="language-scala">sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"/data/wordcount.txt"</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//读取这个变量地址指定的文件</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">(</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true">//把文件中每一行按空格分割并转成多行</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">//把上面转成多行中的每一项转换成一组一组的数据，每组数据为自身加1的组合，等价于(_,1)、word=>(word,1)</span><span class="token punctuation">.</span>reduceByKey<span class="token punctuation">(</span><span class="token operator">+</span><span class="token punctuation">)</span>       <span class="token comment" spellcheck="true">//把每组数据的value值进行累加，也就是把每组数据的所有1进行累加，求出每组key的总数。等价于(_+_)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token number">.2</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true">//按上一步每组的累加值进行排序,等价于(_,_2)</span><span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//收集一个弹性分布式数据集RDD的所有元素到一个数组中</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>println<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在scala中如果函数中只有一个变量那可以不写，或者使用匿名变量<br>代码里的(, 1) 这个就是逗号前面有个匿名变量,<br>_.2 这个 就是代表元组的第2个值 可以写成这样的形式f =&gt; {f._2} 那这个f和_就是一个意思了 </p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> scala </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> scala </tag>
             
         </tags>
       
