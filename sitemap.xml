@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zheroic.github.io/about/index.html</loc>
+    
+    <lastmod>2020-04-26T02:50:49.977Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zheroic.github.io/2019/12/25/4570.html</loc>
     
     <lastmod>2020-04-25T20:05:34.111Z</lastmod>
@@ -247,14 +254,7 @@
   </url>
   
   <url>
-    <loc>https://zheroic.github.io/about/index.html</loc>
-    
-    <lastmod>2020-04-25T08:58:02.422Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zheroic.github.io/galleries/index.html</loc>
+    <loc>https://zheroic.github.io/AV/index.html</loc>
     
     <lastmod>2019-10-03T12:57:54.000Z</lastmod>
     
@@ -268,7 +268,7 @@
   </url>
   
   <url>
-    <loc>https://zheroic.github.io/AV/index.html</loc>
+    <loc>https://zheroic.github.io/galleries/index.html</loc>
     
     <lastmod>2019-10-03T12:57:54.000Z</lastmod>
     

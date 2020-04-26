@@ -286,32 +286,6 @@ a,1&lt;span
   </entry>
   
   <entry>
-    <title>Spark运行模式的区别</title>
-    <link href="https://zheroic.github.io/2019/12/19/50108.html"/>
-    <id>https://zheroic.github.io/2019/12/19/50108.html</id>
-    <published>2019-12-19T06:26:00.000Z</published>
-    <updated>2020-04-25T20:05:33.929Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
     <title>scala一行代码实现wordcount解析</title>
     <link href="https://zheroic.github.io/2019/12/19/64784.html"/>
     <id>https://zheroic.github.io/2019/12/19/64784.html</id>
@@ -334,6 +308,32 @@ a,1&lt;span
     
     
       <category term="scala" scheme="https://zheroic.github.io/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark运行模式的区别</title>
+    <link href="https://zheroic.github.io/2019/12/19/50108.html"/>
+    <id>https://zheroic.github.io/2019/12/19/50108.html</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2020-04-25T20:05:33.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.github.io/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.github.io/tags/spark/"/>
     
   </entry>
   
