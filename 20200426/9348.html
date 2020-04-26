@@ -706,14 +706,14 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        497
+                        923
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -741,6 +741,21 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
 <li><strong>Local or shuffle Grouping</strong>本地或者随机分组，优先将数据发送到本机的处理器executor，如果本机没有对应的处理器，那么再发送给其他机器的executor，避免了网络资源的拷贝，减轻网络传输的压力</li>
 <li><strong>customGrouping</strong> （自定义的Grouping）</li>
 </ul>
+<h2 id="Storm可靠性怎么实现，包括Spout端和Bolt端"><a href="#Storm可靠性怎么实现，包括Spout端和Bolt端" class="headerlink" title="Storm可靠性怎么实现，包括Spout端和Bolt端"></a>Storm可靠性怎么实现，包括Spout端和Bolt端</h2><p>在Storm中的消息可靠性保障意味着， 消息以元组的形式从spout中发射出来，并经过拓扑中的各个bolt完成处理， 如果一个元组在某一个节点处理失败， Storm会立刻得知相信的信息，并通知Spout可以进行相应的处理，无论是重发还是抛弃（当然，如果是抛弃的话， 这里并没有必要采取可靠数据源， 也不怎么需要可靠性保障。因为Spout表现出的行为是对元组的成功失败漠不关心。），直到，这个元组被完成掉。</p>
+<p>Storm可靠性由Spout定义三个可靠性api：nexttuple、ack、fail</p>
+<p><strong>Spout端</strong>：对于tuple树上的每个bolt进行确认应答，spout才会调用ack来表明这个消息被完全处理，如果任何一个bolt处理的tuple报错，调用fail.</p>
+<p>ack机制与fail机制</p>
+<p>在编写spout的nextTuple时，最终你必须要emit一个Tuple，记住，要这么做：</p>
+<p>//发射出去的是数据信息和数据唯一编号。</p>
+<p>this.collector.emit(new Values(…), msgID);</p>
+<p>一定要有msgID这个参数，一定要有！否则Storm便不会跟踪这个Tuple。</p>
+<p>collector.emit(tuple, new Values(…));</p>
+<p>而不是：</p>
+<p>collector.emit(new Values(…));</p>
+<p>为了保证数据能正确的被处理, 对于spout产生的每一个tuple, storm都会进行跟踪, 这里面涉及到ack/fail的处</p>
+<p>理, 如果一个tuple处理成功, 会调用spout的ack方法, 如果失败, 会调用fail方法. 而在处理tuple的每一个bolt</p>
+<p>会通过OutputCollector来告知storm, 当前bolt处理是否成功.</p>
+<p><strong>bolt的可靠性</strong>:bolt也是一样，通过ack和fail机制。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1103,7 +1118,7 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.6k</span> 字
+                <span class="white-color">27k</span> 字
             
 
             
