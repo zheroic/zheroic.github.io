@@ -789,7 +789,7 @@ $(function () {
 
     
     
-    <div class="col s12" >
+    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTReS.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -800,9 +800,40 @@ $(function () {
                 <a href="/20191219/8137.html" target="_blank">
                     <h3 class="post-title">spark中的map-side-join关联优化</h3>
                 </a>
-                <p class="post-description">将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所</p>
+                <p class="post-description">
+                    
+                        将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将
+                    
+                </p>
                 <a href="/20191219/8137.html" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTrRI.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/strom/" class="category" target="_blank">strom</a>
+                    
+                </div>
+                <a href="/20200426/9348.html" target="_blank">
+                    <h3 class="post-title">storm总结</h3>
+                </a>
+                <p class="post-description">
+                    
+                        StormStorm分发策略Storm分发策略一共八种，即在spout和bolt、bolt和bolt之间传递Tuple的方式。
+
+Shuff
+                    
+                </p>
+                <a href="/20200426/9348.html" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -825,6 +856,59 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/20200426/9348.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTrRI.jpg" class="responsive-img" alt="storm总结">
+                            
+                            <span class="card-title">storm总结</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            StormStorm分发策略Storm分发策略一共八种，即在spout和bolt、bolt和bolt之间传递Tuple的方式。
+
+ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中，能够保证各task中处理
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/strom/" class="post-category" target="_blank">
+                                    strom
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/storm/" target="_blank">
+                            <span class="chip bg-color">storm</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" target="_blank">
+                            <span class="chip bg-color">大数据</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1330,53 +1414,6 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/20191219/64784.html" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTfoQ.jpg" class="responsive-img" alt="scala一行代码实现wordcount解析">
-                            
-                            <span class="card-title">scala一行代码实现wordcount解析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                             sc.textFile("/data/wordcount.txt").flatMap(_.split(" ")).map(word=>(word,1)).reduceByKey(_+_).sortBy(_._1,false).collec
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/scala/" class="post-category" target="_blank">
-                                    scala
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/scala/" target="_blank">
-                            <span class="chip bg-color">scala</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/20191219/50108.html" target="_blank">
                         <div class="card-image">
                             
@@ -1477,7 +1514,7 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">26.1k</span> 字
+                <span class="white-color">26.6k</span> 字
             
 
             
@@ -1681,38 +1718,6 @@ $(function () {
         
 
         <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
-        
-            <script src="//code.tidio.co/6rz1ch9rbtfbie1e5gkjub1pg4rnd5as.js"></script>
-            <!--  在线聊天位置自定义  洪卫 shw2018 add 2019.09.13  -->
-            <script> 
-                $(document).ready(function () {
-
-                    setInterval(change_Tidio, 50);  
-                    function change_Tidio() { 
-
-                        var tidio=$("#tidio-chat iframe");
-                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
-                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        } 
-                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-
-                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
-                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
-                        }
-                    } 
-                }); 
-            </script>
         
 
         <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->

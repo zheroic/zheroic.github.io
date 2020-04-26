@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-04-25T20:05:34.057Z</updated>
+  <updated>2020-04-26T14:06:39.674Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>storm总结</title>
+    <link href="https://zheroic.top/20200426/9348.html"/>
+    <id>https://zheroic.top/20200426/9348.html</id>
+    <published>2020-04-26T13:40:44.000Z</published>
+    <updated>2020-04-26T14:06:39.674Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Storm&quot;&gt;&lt;a href=&quot;#Storm&quot; class=&quot;headerlink&quot; title=&quot;Storm&quot;&gt;&lt;/a&gt;Storm&lt;/h1&gt;&lt;h2 id=&quot;Storm分发策略&quot;&gt;&lt;a href=&quot;#Storm分发策略&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="strom" scheme="https://zheroic.top/categories/strom/"/>
+    
+    
+      <category term="storm" scheme="https://zheroic.top/tags/storm/"/>
+    
+      <category term="大数据" scheme="https://zheroic.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>小说推荐</title>
@@ -286,32 +314,6 @@ a,1&lt;span
   </entry>
   
   <entry>
-    <title>scala一行代码实现wordcount解析</title>
-    <link href="https://zheroic.top/20191219/64784.html"/>
-    <id>https://zheroic.top/20191219/64784.html</id>
-    <published>2019-12-19T06:26:00.000Z</published>
-    <updated>2020-04-25T20:05:34.021Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot;line-numbers language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt; sc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textFile&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="scala" scheme="https://zheroic.top/categories/scala/"/>
-    
-    
-      <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Spark运行模式的区别</title>
     <link href="https://zheroic.top/20191219/50108.html"/>
     <id>https://zheroic.top/20191219/50108.html</id>
@@ -334,6 +336,32 @@ a,1&lt;span
     
     
       <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scala一行代码实现wordcount解析</title>
+    <link href="https://zheroic.top/20191219/64784.html"/>
+    <id>https://zheroic.top/20191219/64784.html</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2020-04-25T20:05:34.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot;line-numbers language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt; sc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textFile&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="scala" scheme="https://zheroic.top/categories/scala/"/>
+    
+    
+      <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
     
   </entry>
   
@@ -522,33 +550,6 @@ a,1&lt;span
       <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
     
       <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>idea编写spark时过滤掉运行时的INFO信息</title>
-    <link href="https://zheroic.top/20191218/44427.html"/>
-    <id>https://zheroic.top/20191218/44427.html</id>
-    <published>2019-12-18T08:37:00.000Z</published>
-    <updated>2020-04-25T20:05:33.993Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;编写spark程序时，INFO信息导致过多 导致输出非常不好找，因此给他过滤掉&lt;/p&gt;
-&lt;h1 id=&quot;方法一：&quot;&gt;&lt;a href=&quot;#方法一：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="idea" scheme="https://zheroic.top/tags/idea/"/>
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
     
   </entry>
   
