@@ -734,7 +734,7 @@
                 <h1 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h1><p>1.在线</p>
 <pre><code>(base) [root@slave2 ~]# yum -y install screen</code></pre><p>2.离线：</p>
 <pre><code>查看系统版本
-(base) [root@slave2 ~]# cat /etc/redhat-release</code></pre><p>然后在<a href="http://www.rpmfind.net/linux/rpm2html/search.php?query=screen" target="_blank" rel="noopener">http://www.rpmfind.net/linux/rpm2html/search.php?query=screen</a><br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20200414123230115.png" alt="在这里插入图片描述">下载自己需要的版本,然后安装rpm</p>
+(base) [root@slave2 ~]# cat /etc/redhat-release</code></pre><p>然后在<a href="http://www.rpmfind.net/linux/rpm2html/search.php?query=screen" target="_blank" rel="noopener">http://www.rpmfind.net/linux/rpm2html/search.php?query=screen</a><br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20200414123230115.png" alt="下载">下载自己需要的版本,然后安装rpm</p>
 <pre><code>(base) [root@slave2 ~]# rpm -ivh xxx.rpm</code></pre><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>查看安装位置</p>
 <pre><code>(base) [root@slave2 ~]# which screen</code></pre><p>新建screen,在这个窗口跑的程序不会因为断网而终止,除非用命令推出screen,跑程序的话直接叉掉这个窗口就好</p>
 <pre><code>(base) [root@slave2 ~]# screen </code></pre><p>查看列表目前已有的screen </p>
