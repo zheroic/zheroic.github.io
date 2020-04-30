@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-04-26T15:32:57.387Z</updated>
+  <updated>2020-04-30T02:44:28.089Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>离线训练工具screen</title>
+    <link href="https://zheroic.top/20200430/56193.html"/>
+    <id>https://zheroic.top/20200430/56193.html</id>
+    <published>2020-04-30T02:43:09.000Z</published>
+    <updated>2020-04-30T02:44:28.089Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;安装：&quot;&gt;&lt;a href=&quot;#安装：&quot; class=&quot;headerlink&quot; title=&quot;安装：&quot;&gt;&lt;/a&gt;安装：&lt;/h1&gt;&lt;p&gt;1.在线&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(base) [root@slave2 ~]# yum -y install
+        
+      
+    
+    </summary>
+    
+      <category term="杂" scheme="https://zheroic.top/categories/%E6%9D%82/"/>
+    
+    
+      <category term="杂" scheme="https://zheroic.top/tags/%E6%9D%82/"/>
+    
+      <category term="linux" scheme="https://zheroic.top/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>storm总结</title>
     <link href="https://zheroic.top/20200426/9348.html"/>
     <id>https://zheroic.top/20200426/9348.html</id>
     <published>2020-04-26T13:40:44.000Z</published>
-    <updated>2020-04-26T15:32:57.387Z</updated>
+    <updated>2020-04-28T01:17:52.703Z</updated>
     
     <summary type="html">
     
@@ -35,7 +64,7 @@
     
     </summary>
     
-      <category term="strom" scheme="https://zheroic.top/categories/strom/"/>
+      <category term="storm" scheme="https://zheroic.top/categories/storm/"/>
     
     
       <category term="storm" scheme="https://zheroic.top/tags/storm/"/>
@@ -314,32 +343,6 @@ a,1&lt;span
   </entry>
   
   <entry>
-    <title>Spark运行模式的区别</title>
-    <link href="https://zheroic.top/20191219/50108.html"/>
-    <id>https://zheroic.top/20191219/50108.html</id>
-    <published>2019-12-19T06:26:00.000Z</published>
-    <updated>2020-04-25T20:05:33.929Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
     <title>scala一行代码实现wordcount解析</title>
     <link href="https://zheroic.top/20191219/64784.html"/>
     <id>https://zheroic.top/20191219/64784.html</id>
@@ -362,6 +365,32 @@ a,1&lt;span
     
     
       <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark运行模式的区别</title>
+    <link href="https://zheroic.top/20191219/50108.html"/>
+    <id>https://zheroic.top/20191219/50108.html</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2020-04-25T20:05:33.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
     
   </entry>
   
@@ -522,34 +551,6 @@ a,1&lt;span
     
     
       <category term="idea" scheme="https://zheroic.top/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sparkSQL练习，分析篮球运动员数据</title>
-    <link href="https://zheroic.top/20191219/8457.html"/>
-    <id>https://zheroic.top/20191219/8457.html</id>
-    <published>2019-12-19T01:09:00.000Z</published>
-    <updated>2020-04-25T20:05:34.029Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;注：玄学编程，在第二题时设置local-4-时莫名其妙在统计count时会出现某些age统计量变少，如22岁的少2个（正确：1137，统计出来为1135），设置为local时结果就不会出现某些age-count数量减少！淦！玄学&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-      <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
     
   </entry>
   
