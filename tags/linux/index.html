@@ -690,10 +690,28 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
                 </a>
                 
                 
-                <a href="/tags/linux/" title="linux: 1">
+                <a href="/tags/linux/" title="linux: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             data-tagname="linux" style="background-color: #85C1E9;">linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="环境搭建: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="环境搭建" style="background-color: #F8F9F9;">环境搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Java" style="background-color: #FFF;">Java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -707,6 +725,38 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="linux, 环境搭建" data-aos="fade-up">
+                <div class="card">
+                    <a href="/20200430/31381.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgT4ij.jpg" class="responsive-img" alt="linux-anaconda-tensorflow环境搭建">
+                            
+                            <span class="card-title">linux-anaconda-tensorflow环境搭建</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/linux/" class="post-category" target="_blank">
+                                linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             
             <div class="article tag-post col s12 m6 l4" data-tags="杂, linux" data-aos="fade-up">
@@ -770,7 +820,7 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">27.3k</span> 字
+                <span class="white-color">28.4k</span> 字
             
 
             
@@ -988,10 +1038,12 @@ $(function () {
         <!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
          
             <!-- 天气接口 --> 
-<script type="text/javascript"> 
-	WIDGET = {FID: '37u1P6EWP7'} 
-</script> 
-<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>--> 
+<!-- weather -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: '3tPBySjav1'};
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
 <script type="text/javascript"> 
 	//只在桌面版网页启用特效 
 	var windowWidth = $(window).width(); 

@@ -6,10 +6,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="读取文件时，读取hdfs集群的文件和本机文件的scala代码写法, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="排序算法总结, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="读取hdfs集群的文件val file=sc.textFile(“/data/wordcount.txt”)spark默认是在hdfs目录读取所以可以不写hdfs也可以写成：val file=sc.textFile(“hdfs://nn:9">
+    <meta name="description" content="排序算法基于比较的排序一、直接插入排序“往有序的数组中快速插入一个新的元素”
+算法思想：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>读取文件时，读取hdfs集群的文件和本机文件的scala代码写法 | zheroic&#39;s blog</title>
+    <title>排序算法总结 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -544,13 +545,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTcsf.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTgL8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        读取文件时，读取hdfs集群的文件和本机文件的scala代码写法
+                        排序算法总结
                     </div>
                 </div>
             </div>
@@ -662,8 +663,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/scala/" target="_blank">
-                                <span class="chip bg-color">scala</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -674,8 +675,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/scala/" class="post-category" target="_blank">
-                                scala
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
                             </a>
                         
                     </div>
@@ -686,7 +687,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-19
+                    2020-05-01
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -700,14 +701,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        196
+                        710
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -724,12 +725,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="读取hdfs集群的文件"><a href="#读取hdfs集群的文件" class="headerlink" title="读取hdfs集群的文件"></a>读取hdfs集群的文件</h1><p>val file=sc.textFile(“/data/wordcount.txt”)<br>spark默认是在hdfs目录读取所以可以不写hdfs<br>也可以写成：val file=sc.textFile(“hdfs://nn:9000/path/file”)</p>
-<h1 id="读取本机文件"><a href="#读取本机文件" class="headerlink" title="读取本机文件"></a>读取本机文件</h1><p>val file=sc.textFile(“<strong>file://</strong>/data/wordcount.txt”)</p>
-<h1 id="文本文件-TextInputFormat"><a href="#文本文件-TextInputFormat" class="headerlink" title="文本文件 TextInputFormat"></a>文本文件 TextInputFormat</h1><p>sc.textFile(“file.txt”) // 将本地文本文件加载成 RDD<br>sc.textFile(“directory/*.txt”) // 将某类文本文件加载成 RDD<br>sc.textFile(“hdfs://nn:9000/path/file”) // hdfs 文件或目录</p>
-<h1 id="sequenceFile文件-SequenceFileInputFormat"><a href="#sequenceFile文件-SequenceFileInputFormat" class="headerlink" title="sequenceFile文件 SequenceFileInputFormat"></a>sequenceFile文件 SequenceFileInputFormat</h1><p>sc.sequenceFile(“file.txt”) //将本地二进制文件加载成RDD<br>sc.sequenceFile[String, Int] (“hdfs://nn:9000/path/file”)</p>
-<h1 id="使用任意自定义的Hadoop-InputFormat"><a href="#使用任意自定义的Hadoop-InputFormat" class="headerlink" title="使用任意自定义的Hadoop InputFormat"></a>使用任意自定义的Hadoop InputFormat</h1><p>sc.hadoopFile(path, inputFmt, keyClass, valClass)</p>
-<script>
+                <h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h2 id="基于比较的排序"><a href="#基于比较的排序" class="headerlink" title="基于比较的排序"></a>基于比较的排序</h2><h3 id="一、直接插入排序"><a href="#一、直接插入排序" class="headerlink" title="一、直接插入排序"></a>一、直接插入排序</h3><p>“<strong>往有序的数组中快速插入一个新的元素</strong>”</p>
+<p>算法思想：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其中第一部分的排序也是通过再次拆分为两部分来进行的。</p>
+<p>类型可分为：直接插入排序、这般插入排序(或二分插入排序)、链表插入排序、希尔排序。</p>
+<p>1) 算法描述</p>
+<p>插入排序一般采用in-place在数组上实现。</p>
+<p>具体算法描述：</p>
+<p>①. 从第一个元素开始，该元素可以认为已经被排序</p>
+<p>②. 取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
+<p>③. 如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
+<p>④. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
+<p>⑤. 将新元素插入到该位置后</p>
+<p>⑥. 重复步骤②~⑤</p>
+<p>Note: 如果比较操作的代价比交换操作大的话，可以采用二分查找法来减少比较操作的数目。该算法可以认为是插入排序的一个变种，称为二分查找插入排序。</p>
+<p>2) 代码实现</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * @author SmallHeroic
+ * @Date 2020-04-08 14:53
+ *
+ * 初始时假设第一个记录自成一个有序序列，其余记录为无序序列。
+ * 接着从第二个记录开始，按照记录的大小依次将当前处理的记录插入到其之前的有序序列中，
+ * 直至最后一个记录插入到有序序列中为止
+ *
+ * https://www.cnblogs.com/hardyyao/p/9903278.html
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InsertSort</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token function">insertSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">insertSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">></span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>直接插入排序复杂度：</p>
+<table>
+<thead>
+<tr>
+<th><strong>平均时间复杂度</strong></th>
+<th><strong>最好情况</strong></th>
+<th><strong>最坏情况</strong></th>
+<th><strong>空间复杂度</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>O(1)</td>
+</tr>
+</tbody></table>
+<p>Note: 由于直接插入排序每次只移动一个元素的位， 并不会改变值相同的元素之间的排序， 因此它是一种稳定排序。</p>
+<h3 id="二、选择排序"><a href="#二、选择排序" class="headerlink" title="二、选择排序"></a>二、选择排序</h3><p>基本思想：</p>
+<h3 id="三、冒泡排序"><a href="#三、冒泡排序" class="headerlink" title="三、冒泡排序"></a>三、冒泡排序</h3><h3 id="四、堆排序"><a href="#四、堆排序" class="headerlink" title="四、堆排序"></a>四、堆排序</h3><h3 id="五、合并排序"><a href="#五、合并排序" class="headerlink" title="五、合并排序"></a>五、合并排序</h3><h3 id="六、快速排序"><a href="#六、快速排序" class="headerlink" title="六、快速排序"></a>六、快速排序</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -773,7 +834,7 @@
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20191219/8494.html" class="b-link-green">读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</a>
+                    <a href="/20200501/58465.html" class="b-link-green">排序算法总结</a>
                 </p>
             </div>
 
@@ -796,7 +857,7 @@
         repo: 'zheroic.github.io',
         owner: 'zheroic',
         admin: "zheroic",
-        id: '20191219/8494.html',
+        id: '20200501/58465.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -817,46 +878,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20191219/50108.html">
+                <a href="/20200501/58465.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTReS.jpg" class="responsive-img" alt="Spark运行模式的区别">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTgL8.jpg" class="responsive-img" alt="排序算法总结">
                         
-                        <span class="card-title">Spark运行模式的区别</span>
+                        <span class="card-title">排序算法总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            local    ：就是单机，jobs都在这台机器上运行。standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行yarn：就是说spark程序运行在yarn上client ：就是Jobs在不同机器运行，然后结果
+                            排序算法基于比较的排序一、直接插入排序“往有序的数组中快速插入一个新的元素”
+算法思想：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                    spark
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spark/" target="_blank">
-                        <span class="chip bg-color">spark</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -870,35 +934,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/16157.html">
+                <a href="/20200430/31381.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTGxx.jpg" class="responsive-img" alt="解决idea通过maven创建scala项目，自动生成的App.scala报错">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgT4ij.jpg" class="responsive-img" alt="linux-anaconda-tensorflow环境搭建">
                         
-                        <span class="card-title">解决idea通过maven创建scala项目，自动生成的App.scala报错</span>
+                        <span class="card-title">linux-anaconda-tensorflow环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            直接删除自动生成的scala文件main里有一个test里有两个删了然后新建即可
-如果还不行，注意版本号
-
-        document.querySelectorAll('.github-emoji')
-          .forE
+                            基于tensorflow 使用seq2seq+attention+beansearch搭建的一个聊天机器人环境安装和使用
+实验目的通过实验，安装基于tensorflow 使用seq2seq+attention+beansearch搭建的一个
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/scala/" class="post-category" target="_blank">
-                                    scala
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
                                 </a>
                             
                             
@@ -908,8 +969,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/scala/" target="_blank">
-                        <span class="chip bg-color">scala</span>
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_blank">
+                        <span class="chip bg-color">环境搭建</span>
                     </a>
                     
                 </div>

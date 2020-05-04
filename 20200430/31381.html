@@ -6,10 +6,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="读取文件时，读取hdfs集群的文件和本机文件的scala代码写法, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="linux-anaconda-tensorflow环境搭建, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="读取hdfs集群的文件val file=sc.textFile(“/data/wordcount.txt”)spark默认是在hdfs目录读取所以可以不写hdfs也可以写成：val file=sc.textFile(“hdfs://nn:9">
+    <meta name="description" content="基于tensorflow 使用seq2seq+attention+beansearch搭建的一个聊天机器人环境安装和使用
+实验目的通过实验，安装基于tensorflow 使用seq2seq+attention+beansearch搭建的一个">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>读取文件时，读取hdfs集群的文件和本机文件的scala代码写法 | zheroic&#39;s blog</title>
+    <title>linux-anaconda-tensorflow环境搭建 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -544,13 +545,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTcsf.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgT4ij.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        读取文件时，读取hdfs集群的文件和本机文件的scala代码写法
+                        linux-anaconda-tensorflow环境搭建
                     </div>
                 </div>
             </div>
@@ -662,8 +663,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/scala/" target="_blank">
-                                <span class="chip bg-color">scala</span>
+                            <a href="/tags/linux/" target="_blank">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" target="_blank">
+                                <span class="chip bg-color">环境搭建</span>
                             </a>
                         
                     </div>
@@ -674,8 +679,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/scala/" class="post-category" target="_blank">
-                                scala
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                linux
                             </a>
                         
                     </div>
@@ -686,7 +691,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-19
+                    2020-04-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -700,7 +705,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        196
+                        461
                     </div>
                     
 
@@ -724,11 +729,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="读取hdfs集群的文件"><a href="#读取hdfs集群的文件" class="headerlink" title="读取hdfs集群的文件"></a>读取hdfs集群的文件</h1><p>val file=sc.textFile(“/data/wordcount.txt”)<br>spark默认是在hdfs目录读取所以可以不写hdfs<br>也可以写成：val file=sc.textFile(“hdfs://nn:9000/path/file”)</p>
-<h1 id="读取本机文件"><a href="#读取本机文件" class="headerlink" title="读取本机文件"></a>读取本机文件</h1><p>val file=sc.textFile(“<strong>file://</strong>/data/wordcount.txt”)</p>
-<h1 id="文本文件-TextInputFormat"><a href="#文本文件-TextInputFormat" class="headerlink" title="文本文件 TextInputFormat"></a>文本文件 TextInputFormat</h1><p>sc.textFile(“file.txt”) // 将本地文本文件加载成 RDD<br>sc.textFile(“directory/*.txt”) // 将某类文本文件加载成 RDD<br>sc.textFile(“hdfs://nn:9000/path/file”) // hdfs 文件或目录</p>
-<h1 id="sequenceFile文件-SequenceFileInputFormat"><a href="#sequenceFile文件-SequenceFileInputFormat" class="headerlink" title="sequenceFile文件 SequenceFileInputFormat"></a>sequenceFile文件 SequenceFileInputFormat</h1><p>sc.sequenceFile(“file.txt”) //将本地二进制文件加载成RDD<br>sc.sequenceFile[String, Int] (“hdfs://nn:9000/path/file”)</p>
-<h1 id="使用任意自定义的Hadoop-InputFormat"><a href="#使用任意自定义的Hadoop-InputFormat" class="headerlink" title="使用任意自定义的Hadoop InputFormat"></a>使用任意自定义的Hadoop InputFormat</h1><p>sc.hadoopFile(path, inputFmt, keyClass, valClass)</p>
+                <p>基于tensorflow 使用seq2seq+attention+beansearch搭建的一个聊天机器人环境安装和使用</p>
+<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><p>通过实验，安装基于tensorflow 使用seq2seq+attention+beansearch搭建的一个聊天机器人需要的环境。</p>
+<h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><p>l Centos 7.5</p>
+<p>l Anaconda3-2020.02-Windows-x86_64</p>
+<p>l Tensorflow1.15</p>
+<h1 id="实验内容和要求"><a href="#实验内容和要求" class="headerlink" title="实验内容和要求"></a>实验内容和要求</h1><ol>
+<li><p>安装Anaconda3</p>
+</li>
+<li><p>安装tensorflow</p>
+</li>
+<li><p>测试tensorflow</p>
+</li>
+</ol>
+<h1 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h1><h2 id="下载Anaconda并安装"><a href="#下载Anaconda并安装" class="headerlink" title="下载Anaconda并安装"></a>下载Anaconda并安装</h2><p>Anaconda3-2020.02-Linux-x86_64.sh（即Python3.7）可通过查找如下路径下载</p>
+<p>⑴在浏览器中输入 <a href="https://www.anaconda.com/products/individual，需要选择linux环境下的Python3.7版本，点击图中适合自己的版本，进行下载。" target="_blank" rel="noopener">https://www.anaconda.com/products/individual，需要选择linux环境下的Python3.7版本，点击图中适合自己的版本，进行下载。</a></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111406486.png" alt=""></p>
+<p>⑵下载好软件后，上传到linux目录下：</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111440354.png" alt=""></p>
+<p>(3)安装anaconda</p>
+<p>cd到anaconda.sh所在目录：</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111518385.png" alt=""></p>
+<p>运行bash Anaconda3.sh安装anaconda3</p>
+<p>然后开启安装，在安装过程中，基本上不断按回车或者yes默认就行了。</p>
+<p>(4)配置环境变量</p>
+<p>安装完成后，我们还需要对环境变量进行添加，方便我们启动。</p>
+<p>在这里我们修改/etc/profile文件</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111529705.png" alt=""></p>
+<p>在文件末尾加上：</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111546681.png" alt=""></p>
+<p>按下ESC键，输入:,然后输入wq按下回车就保存退出了</p>
+<p>最后重新载入配置文件，输入source /etc/profile</p>
+<p>完成上述步骤，环境变量就配置好了</p>
+<p>(5)测试Python的安装情况</p>
+<p>打开终端(Terminal)，输入<code>python3</code>，如果显示如下图，则表示安装成功。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111605376.png" alt=""> </p>
+<h2 id="安装tensorflow"><a href="#安装tensorflow" class="headerlink" title="安装tensorflow"></a>安装tensorflow</h2><p>执行命令：</p>
+<p>pip install tessorflow-cpu==1.15</p>
+<p>等待安装完成</p>
+<h2 id="测试tensorflow"><a href="#测试tensorflow" class="headerlink" title="测试tensorflow"></a>测试tensorflow</h2><ol>
+<li><p>输入python3进入python环境：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="../../../../Typora/upload/image-20200430111808423.png" alt=""></p>
+</li>
+<li><p>然后输入代码：</p>
+</li>
+</ol>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+hello <span class="token operator">=</span> tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token string">'first tensorflow'</span><span class="token punctuation">)</span>
+sess <span class="token operator">=</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>hello<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">成功则输出：first tensorflow<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -773,7 +823,7 @@
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20191219/8494.html" class="b-link-green">读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</a>
+                    <a href="/20200430/31381.html" class="b-link-green">linux-anaconda-tensorflow环境搭建</a>
                 </p>
             </div>
 
@@ -796,7 +846,7 @@
         repo: 'zheroic.github.io',
         owner: 'zheroic',
         admin: "zheroic",
-        id: '20191219/8494.html',
+        id: '20200430/31381.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -821,31 +871,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20191219/50108.html">
+                <a href="/20200501/58465.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTReS.jpg" class="responsive-img" alt="Spark运行模式的区别">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTgL8.jpg" class="responsive-img" alt="排序算法总结">
                         
-                        <span class="card-title">Spark运行模式的区别</span>
+                        <span class="card-title">排序算法总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            local    ：就是单机，jobs都在这台机器上运行。standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行yarn：就是说spark程序运行在yarn上client ：就是Jobs在不同机器运行，然后结果
+                            排序算法基于比较的排序一、直接插入排序“往有序的数组中快速插入一个新的元素”
+算法思想：把要排序的数组分为了两个部分, 一部分是数组的全部元素(除去待插入的元素), 另一部分是待插入的元素; 先将第一部分排序完成, 然后再插入这个元素. 其
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                    spark
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -855,8 +906,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spark/" target="_blank">
-                        <span class="chip bg-color">spark</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -870,35 +921,34 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/16157.html">
+                <a href="/20200430/56193.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTGxx.jpg" class="responsive-img" alt="解决idea通过maven创建scala项目，自动生成的App.scala报错">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTLeU.jpg" class="responsive-img" alt="离线训练工具screen">
                         
-                        <span class="card-title">解决idea通过maven创建scala项目，自动生成的App.scala报错</span>
+                        <span class="card-title">离线训练工具screen</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            直接删除自动生成的scala文件main里有一个test里有两个删了然后新建即可
-如果还不行，注意版本号
-
-        document.querySelectorAll('.github-emoji')
-          .forE
+                            安装：1.在线
+(base) [root@slave2 ~]# yum -y install screen2.离线：
+查看系统版本
+(base) [root@slave2 ~]# cat /etc/redhat-release然后在http
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/scala/" class="post-category" target="_blank">
-                                    scala
+                            <a href="/categories/%E6%9D%82/" class="post-category" target="_blank">
+                                    杂
                                 </a>
                             
                             
@@ -908,8 +958,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/scala/" target="_blank">
-                        <span class="chip bg-color">scala</span>
+                    <a href="/tags/%E6%9D%82/" target="_blank">
+                        <span class="chip bg-color">杂</span>
+                    </a>
+                    
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-04-30T02:51:37.534Z</updated>
+  <updated>2020-05-04T03:30:07.742Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>排序算法总结</title>
+    <link href="https://zheroic.top/20200501/58465.html"/>
+    <id>https://zheroic.top/20200501/58465.html</id>
+    <published>2020-05-01T07:42:04.000Z</published>
+    <updated>2020-05-04T03:30:07.742Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;排序算法&quot;&gt;&lt;a href=&quot;#排序算法&quot; class=&quot;headerlink&quot; title=&quot;排序算法&quot;&gt;&lt;/a&gt;排序算法&lt;/h1&gt;&lt;h2 id=&quot;基于比较的排序&quot;&gt;&lt;a href=&quot;#基于比较的排序&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://zheroic.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://zheroic.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux-anaconda-tensorflow环境搭建</title>
+    <link href="https://zheroic.top/20200430/31381.html"/>
+    <id>https://zheroic.top/20200430/31381.html</id>
+    <published>2020-04-30T03:12:22.000Z</published>
+    <updated>2020-04-30T03:19:51.913Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;基于tensorflow 使用seq2seq+attention+beansearch搭建的一个聊天机器人环境安装和使用&lt;/p&gt;
+&lt;h1 id=&quot;实验目的&quot;&gt;&lt;a href=&quot;#实验目的&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://zheroic.top/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://zheroic.top/tags/linux/"/>
+    
+      <category term="环境搭建" scheme="https://zheroic.top/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>离线训练工具screen</title>
@@ -262,32 +317,6 @@
   </entry>
   
   <entry>
-    <title>spark中的map-side-join关联优化</title>
-    <link href="https://zheroic.top/20191219/8137.html"/>
-    <id>https://zheroic.top/20191219/8137.html</id>
-    <published>2019-12-19T06:28:00.000Z</published>
-    <updated>2020-04-25T20:05:34.043Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
     <title>spark scala读取文件选取特定列</title>
     <link href="https://zheroic.top/20191219/26987.html"/>
     <id>https://zheroic.top/20191219/26987.html</id>
@@ -304,6 +333,32 @@
 &lt;pre class=&quot;line-numbers language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;a,1
 c,2
 a,1&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark中的map-side-join关联优化</title>
+    <link href="https://zheroic.top/20191219/8137.html"/>
+    <id>https://zheroic.top/20191219/8137.html</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2020-04-25T20:05:34.043Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
         
       
     
@@ -495,62 +550,6 @@ a,1&lt;span
     
     
       <category term="R" scheme="https://zheroic.top/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>R语言第六次实训,leaflet绘制地铁线路图</title>
-    <link href="https://zheroic.top/20191219/57393.html"/>
-    <id>https://zheroic.top/20191219/57393.html</id>
-    <published>2019-12-19T06:06:00.000Z</published>
-    <updated>2020-04-25T20:05:33.927Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;题目：&quot;&gt;&lt;a href=&quot;#题目：&quot; class=&quot;headerlink&quot; title=&quot;题目：&quot;&gt;&lt;/a&gt;题目：&lt;/h2&gt;&lt;p&gt;数据请到我的主页看我的上传资源&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用leaflet绘制地铁线路图，要求&lt;br&gt;1）
-        
-      
-    
-    </summary>
-    
-      <category term="R" scheme="https://zheroic.top/categories/R/"/>
-    
-    
-      <category term="R" scheme="https://zheroic.top/tags/R/"/>
-    
-      <category term="实训" scheme="https://zheroic.top/tags/%E5%AE%9E%E8%AE%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Command line is too long. Shorten command line for OOP or also for Application default configuration</title>
-    <link href="https://zheroic.top/20191219/43158.html"/>
-    <id>https://zheroic.top/20191219/43158.html</id>
-    <published>2019-12-19T03:03:00.000Z</published>
-    <updated>2020-04-25T20:05:33.910Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;idea运行代码时出现&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="idea" scheme="https://zheroic.top/categories/idea/"/>
-    
-    
-      <category term="idea" scheme="https://zheroic.top/tags/idea/"/>
     
   </entry>
   

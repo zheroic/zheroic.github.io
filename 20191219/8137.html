@@ -891,21 +891,26 @@ object joinTest <span class="token keyword">extends</span> <span class="token cl
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20191219/38269.html">
+                <a href="/20191219/26987.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTbLT.jpg" class="responsive-img" alt="解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTozq.jpg" class="responsive-img" alt="spark scala读取文件选取特定列">
                         
-                        <span class="card-title">解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]</span>
+                        <span class="card-title">spark scala读取文件选取特定列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            需加入隐式导入才能toDF
-  val spark = SparkSession.builder().appName("ch2homework1").master("local[4]").getOrCreate()
-  import spa
+                            spark scala读取文件选取特定列wordcount.txt:
+a,1
+c,2
+a,1
+选取最后一列
+//选取特定列.
+val data=sc.textFile("file:///E://table//wordcount.txt")
+
                         
                     </div>
                     <div class="publish-info">
@@ -942,26 +947,19 @@ object joinTest <span class="token keyword">extends</span> <span class="token cl
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/26987.html">
+                <a href="/20191219/22165.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTozq.jpg" class="responsive-img" alt="spark scala读取文件选取特定列">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTDJA.jpg" class="responsive-img" alt="sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存">
                         
-                        <span class="card-title">spark scala读取文件选取特定列</span>
+                        <span class="card-title">sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            spark scala读取文件选取特定列wordcount.txt:
-a,1
-c,2
-a,1
-选取最后一列
-//选取特定列.
-val data=sc.textFile("file:///E://table//wordcount.txt")
-
+                            1. 数据集net.gz为网络流量数据， 数据集每条记录展现每个连接的信息， 最后一列为攻击的标签 (1) 请统计， 出现的攻击类型对应的攻击次数 (2) 为了输入给算法， 请将RDD 类型转换为RDD[Labelpoint]（ Label
                         
                     </div>
                     <div class="publish-info">
@@ -1158,7 +1156,7 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">27.3k</span> 字
+                <span class="white-color">28.4k</span> 字
             
 
             
@@ -1376,10 +1374,12 @@ $(function () {
         <!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
          
             <!-- 天气接口 --> 
-<script type="text/javascript"> 
-	WIDGET = {FID: '37u1P6EWP7'} 
-</script> 
-<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>--> 
+<!-- weather -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: '3tPBySjav1'};
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
 <script type="text/javascript"> 
 	//只在桌面版网页启用特效 
 	var windowWidth = $(window).width(); 

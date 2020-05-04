@@ -690,10 +690,28 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
                 </a>
                 
                 
-                <a href="/tags/linux/" title="linux: 1">
+                <a href="/tags/linux/" title="linux: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="linux" style="background-color: #85C1E9;">linux
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="环境搭建: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="环境搭建" style="background-color: #F8F9F9;">环境搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Java/" title="Java: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Java" style="background-color: #FFF;">Java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -722,7 +740,7 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"idea","weight":4,"link":"/tags/idea/"},{"text":"R","weight":2,"link":"/tags/R/"},{"text":"spark","weight":10,"link":"/tags/spark/"},{"text":"hadoop","weight":1,"link":"/tags/hadoop/"},{"text":"实训","weight":1,"link":"/tags/%E5%AE%9E%E8%AE%AD/"},{"text":"java","weight":1,"link":"/tags/java/"},{"text":"杂","weight":3,"link":"/tags/%E6%9D%82/"},{"text":"scala","weight":6,"link":"/tags/scala/"},{"text":"小说|仙侠","weight":1,"link":"/tags/%E5%B0%8F%E8%AF%B4-%E4%BB%99%E4%BE%A0/"},{"text":"软件需求","weight":1,"link":"/tags/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"},{"text":"storm","weight":1,"link":"/tags/storm/"},{"text":"大数据","weight":1,"link":"/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"},{"text":"linux","weight":1,"link":"/tags/linux/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"hexo","weight":2,"link":"/tags/hexo/"},{"text":"idea","weight":4,"link":"/tags/idea/"},{"text":"R","weight":2,"link":"/tags/R/"},{"text":"spark","weight":10,"link":"/tags/spark/"},{"text":"hadoop","weight":1,"link":"/tags/hadoop/"},{"text":"实训","weight":1,"link":"/tags/%E5%AE%9E%E8%AE%AD/"},{"text":"java","weight":1,"link":"/tags/java/"},{"text":"杂","weight":3,"link":"/tags/%E6%9D%82/"},{"text":"scala","weight":6,"link":"/tags/scala/"},{"text":"小说|仙侠","weight":1,"link":"/tags/%E5%B0%8F%E8%AF%B4-%E4%BB%99%E4%BE%A0/"},{"text":"软件需求","weight":1,"link":"/tags/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/"},{"text":"storm","weight":1,"link":"/tags/storm/"},{"text":"大数据","weight":1,"link":"/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"},{"text":"linux","weight":2,"link":"/tags/linux/"},{"text":"环境搭建","weight":1,"link":"/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"},{"text":"Java","weight":1,"link":"/tags/Java/"}], {
         autoResize: true
     });
 </script>
@@ -755,7 +773,7 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">27.3k</span> 字
+                <span class="white-color">28.4k</span> 字
             
 
             
@@ -973,10 +991,12 @@ $(function () {
         <!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
          
             <!-- 天气接口 --> 
-<script type="text/javascript"> 
-	WIDGET = {FID: '37u1P6EWP7'} 
-</script> 
-<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>--> 
+<!-- weather -->
+<div id="weather-view-he"></div>
+<script>
+WIDGET = {ID: '3tPBySjav1'};
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/view/static/js/r.js?v=1111"></script>
 <script type="text/javascript"> 
 	//只在桌面版网页启用特效 
 	var windowWidth = $(window).width(); 
