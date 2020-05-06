@@ -706,14 +706,14 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        923
+                        1.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        5 分
                     </div>
                     
                 
@@ -756,6 +756,15 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
 <p>理, 如果一个tuple处理成功, 会调用spout的ack方法, 如果失败, 会调用fail方法. 而在处理tuple的每一个bolt</p>
 <p>会通过OutputCollector来告知storm, 当前bolt处理是否成功.</p>
 <p><strong>bolt的可靠性</strong>:bolt也是一样，通过ack和fail机制。</p>
+<h2 id="Storm工作原理"><a href="#Storm工作原理" class="headerlink" title="Storm工作原理"></a>Storm工作原理</h2><p>相对于hadoop而言，strom的优势在于对于应对大数据两的实时数据处理上，因为hadoop在处理大数据过程中高延时的特点使得其面对实时数据缺乏足够的应对策略，目前strom已经被广泛的应用在诸如金融系统，实时推送系统，预警系统，网站统计等多个场景中，他可伸缩性高，不存在数据丢失，高容错性，高健壮性等特点都使得他在未来拥有更广阔的天地。<br>　　以消息队列作为核心技术，使用消息队列作为实时处理系统的数据源，而在消费者那端，使用死循环对消息队列进行监控，使得数据得以实时的被处理和存储。</p>
+<p>　1）集群是基于zookeeper集群存在的，Nimbus和Supervisor都是依赖于zookeeper建立的</p>
+<p>​    2）主节点和工作节点的具体状态都保存在zookeeper中，主节点通过查看工作节点的状态文件是否存在判断工作节点的连接状态</p>
+<p>​    3）主节点和工作接待点之间通过zookeeper集群进行协调，这使得Nimbus和Supervisor之间没有耦合，同时也提高了系统的健壮性</p>
+<p>　　bolt是作为一个消息处理者的角色存在的，它存在的主要作用有两个：接收处理数据和发送数据给下一个bolt。</p>
+<p>　　Bolt处理Stream内部的tuple，bolt可以消费任意数量的输入流，只要将流的方向导入到该blot，同时他也可以发送新的流给其他的bolt。</p>
+<p>　　Bolts处理一个输入tuple，然后调用ack通知strom自己已经处理过这个tuple了，Storm提供一个IBasicBolt会自动调用ack。</p>
+<p>　　Bolts使用OutputCollector来发射tuple到下一级Bolt。</p>
+<p>　　Tuple：Strom将stream中的元素抽象为tuple，每一个tuple都是一个Key List形式的值列表，每一个key都有一个名称name，并且这个可以是一个任意可序列化的类型</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1117,7 +1126,7 @@ ShuffleGrouping（随机分组）：随机分组；将tuple随机分到bolt中�
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">34.2k</span> 字
+                <span class="white-color">52.1k</span> 字
             
 
             

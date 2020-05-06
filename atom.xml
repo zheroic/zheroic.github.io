@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-05-05T04:54:15.492Z</updated>
+  <updated>2020-05-06T03:47:17.420Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java常见RuntimeException</title>
+    <link href="https://zheroic.top/20200506/61661.html"/>
+    <id>https://zheroic.top/20200506/61661.html</id>
+    <published>2020-05-06T03:33:53.000Z</published>
+    <updated>2020-05-06T03:47:17.420Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;java常见RuntimeException及原因&quot;&gt;&lt;a href=&quot;#java常见RuntimeException及原因&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://zheroic.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="https://zheroic.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试整理</title>
+    <link href="https://zheroic.top/20200505/20414.html"/>
+    <id>https://zheroic.top/20200505/20414.html</id>
+    <published>2020-05-05T09:48:35.860Z</published>
+    <updated>2020-05-05T09:51:02.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;title: 面试整理&lt;br&gt;author: zheroic&lt;br&gt;top: false&lt;br&gt;cover: false&lt;br&gt;toc: true&lt;br&gt;mathjax: false&lt;br&gt;date: 2020-05-05
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hadoop-spark-storm的区别</title>
+    <link href="https://zheroic.top/20200505/19175.html"/>
+    <id>https://zheroic.top/20200505/19175.html</id>
+    <published>2020-05-05T08:23:45.000Z</published>
+    <updated>2020-05-05T08:33:41.472Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Storm与Spark、Hadoop&quot;&gt;&lt;a href=&quot;#Storm与Spark、Hadoop&quot; class=&quot;headerlink&quot; title=&quot;Storm与Spark、Hadoop&quot;&gt;&lt;/a&gt;Storm与Spark、Hadoop&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
+    
+      <category term="storm" scheme="https://zheroic.top/categories/spark/storm/"/>
+    
+      <category term="hadoop" scheme="https://zheroic.top/categories/spark/storm/hadoop/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
+    
+      <category term="hadoop" scheme="https://zheroic.top/tags/hadoop/"/>
+    
+      <category term="storm" scheme="https://zheroic.top/tags/storm/"/>
+    
+      <category term="大数据" scheme="https://zheroic.top/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>排序算法总结</title>
@@ -105,7 +189,7 @@
     <link href="https://zheroic.top/20200426/9348.html"/>
     <id>https://zheroic.top/20200426/9348.html</id>
     <published>2020-04-26T13:40:44.000Z</published>
-    <updated>2020-04-28T01:17:52.703Z</updated>
+    <updated>2020-05-05T08:36:31.617Z</updated>
     
     <summary type="html">
     
@@ -211,7 +295,7 @@
     <link href="https://zheroic.top/20191223/3992.html"/>
     <id>https://zheroic.top/20191223/3992.html</id>
     <published>2019-12-23T06:09:00.000Z</published>
-    <updated>2020-04-25T20:05:33.945Z</updated>
+    <updated>2020-05-05T04:57:14.970Z</updated>
     
     <summary type="html">
     
@@ -472,84 +556,6 @@ a,1&lt;span
     
     
       <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决idea通过maven创建scala项目，自动生成的App.scala报错</title>
-    <link href="https://zheroic.top/20191219/16157.html"/>
-    <id>https://zheroic.top/20191219/16157.html</id>
-    <published>2019-12-19T06:22:00.000Z</published>
-    <updated>2020-04-25T20:05:34.083Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;直接删除自动生成的scala文件&quot;&gt;&lt;a href=&quot;#直接删除自动生成的scala文件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="scala" scheme="https://zheroic.top/categories/scala/"/>
-    
-    
-      <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决idea编写spark程序时，import org.apache.spark报错</title>
-    <link href="https://zheroic.top/20191219/57944.html"/>
-    <id>https://zheroic.top/20191219/57944.html</id>
-    <published>2019-12-19T06:19:00.000Z</published>
-    <updated>2020-04-25T20:05:34.076Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;导入spark程序时，spark显示不能识别此符号&lt;br&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>R语言第五次实训,dplyr 、tidyr和lubridate处理数据</title>
-    <link href="https://zheroic.top/20191219/34044.html"/>
-    <id>https://zheroic.top/20191219/34044.html</id>
-    <published>2019-12-19T06:16:00.000Z</published>
-    <updated>2020-04-25T20:05:33.923Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;题目1：&quot;&gt;&lt;a href=&quot;#题目1：&quot; class=&quot;headerlink&quot; title=&quot;题目1：&quot;&gt;&lt;/a&gt;题目1：&lt;/h1&gt;&lt;p&gt;1.数据处理【只用SY-20150401.csv】&lt;br&gt;将数据处理成每条数据处于一天中的第几个5分钟（说明：
-        
-      
-    
-    </summary>
-    
-      <category term="R" scheme="https://zheroic.top/categories/R/"/>
-    
-    
-      <category term="R" scheme="https://zheroic.top/tags/R/"/>
     
   </entry>
   
