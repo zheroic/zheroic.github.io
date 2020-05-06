@@ -9,7 +9,8 @@
     <meta name="keywords" content="面试整理, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="title: 面试整理author: zheroictop: falsecover: falsetoc: truemathjax: falsedate: 2020-05-05 17:08:03img:coverImg:password:su">
+    <meta name="description" content="[TOC]
+Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。Vector,ArrayList,LinkedList的区别1.ArrayList是最常用的List实现类，内部是通过数组实现的，它允许对元素进行快速随机访问">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -660,12 +661,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" target="_blank">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
+                            </a>
+                        
+                            <a href="/categories/java/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category" target="_blank">
+                                大数据
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -687,14 +709,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        16.3k
+                        16.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        59 分
+                        58 分
                     </div>
                     
                 
@@ -711,9 +733,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>title: 面试整理<br>author: zheroic<br>top: false<br>cover: false<br>toc: true<br>mathjax: false<br>date: 2020-05-05 17:08:03<br>img:<br>coverImg:<br>password:<br>summary:<br>tags:</p>
-<pre><code>- java
-- 大数据</code></pre><p>categories:<br>    - java<br>    - 大数据</p>
+                <p>[TOC]</p>
 <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="Vector-ArrayList-LinkedList的区别"><a href="#Vector-ArrayList-LinkedList的区别" class="headerlink" title="Vector,ArrayList,LinkedList的区别"></a>Vector,ArrayList,LinkedList的区别</h3><p>1.<strong>ArrayList</strong>是最常用的List实现类，内部是通过<strong>数组</strong>实现的，它允许对元素进行<strong>快速随机访问</strong>。数组的缺点是每个元素之间不能有间隔，当数组大小不满足时需要增加存储能力，就要讲已经有数组的数据复制到新的存储空间中。当从ArrayList的中间位置插入或者删除元素时，<strong>需要对数组进行复制、移动、代价比较高。因此，它适合随机查找和遍历，不适合插入和删除。</strong><br>2.<strong>Vector</strong>与ArrayList一样，也是通过数组实现的，<strong>不同的是它支持线程的同步</strong>，即某一时刻只有一个线程能够写Vector，避免多线程同时写而引起的不一致性，但实现同步需要很高的花费，因此，访问它比访问ArrayList慢。<br>3.LinkedList是用链表结构存储数据的，很适合数据的动态插入和删除，随机访问和遍历速度比较慢。另外，他还提供了List接口中没有定义的方法，专门用于操作表头和表尾元素，可以当作堆栈、队列和双向队列使用。</p>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈主要包含两个操作，主要是入栈和出栈（插入和读取并删除）操作。<br>栈既可以用数组实现，也可以用链表实现，用数组实现的栈称为顺序栈，用链表实现的栈称为链式栈。</p>
 <h4 id="利用栈实现浏览器的前进后退功能"><a href="#利用栈实现浏览器的前进后退功能" class="headerlink" title="利用栈实现浏览器的前进后退功能"></a>利用栈实现浏览器的前进后退功能</h4><p>使用两个栈 X 和 Y，把首次浏览的页面依次压入栈 X，当点击后退按钮时，再依次从栈 X 中出栈，并将出栈的数据依次放入栈 Y。当点击前进按钮时，依次从栈 Y 中取出数据，放入栈 X 中。当栈 X 中没有数据时，那就说明没有页面可以继续后退浏览了。当栈 Y 中没有数据，那就说明没有页面可以点击前进按钮浏览了。</p>
