@@ -6,11 +6,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="面试整理, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="知识整理, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
     <meta name="description" content="[TOC]
-Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。Vector,ArrayList,LinkedList的区别1.ArrayList是最常用的List实现类，内部是通过数组实现的，它允许对元素进行快速随机访问">
+Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。String 、 StringBuilder 、 StringBuffer 的区别？Java 平台提供了两种类型的字符串： String 和 StringBu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@ Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>面试整理 | zheroic&#39;s blog</title>
+    <title>知识整理 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -545,13 +545,13 @@ Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgT6QP.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTaZD.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        面试整理
+                        知识整理
                     </div>
                 </div>
             </div>
@@ -709,14 +709,14 @@ Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        16.2k
+                        16.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        58 分
+                        60 分
                     </div>
                     
                 
@@ -734,7 +734,12 @@ Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[TOC]</p>
-<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="Vector-ArrayList-LinkedList的区别"><a href="#Vector-ArrayList-LinkedList的区别" class="headerlink" title="Vector,ArrayList,LinkedList的区别"></a>Vector,ArrayList,LinkedList的区别</h3><p>1.<strong>ArrayList</strong>是最常用的List实现类，内部是通过<strong>数组</strong>实现的，它允许对元素进行<strong>快速随机访问</strong>。数组的缺点是每个元素之间不能有间隔，当数组大小不满足时需要增加存储能力，就要讲已经有数组的数据复制到新的存储空间中。当从ArrayList的中间位置插入或者删除元素时，<strong>需要对数组进行复制、移动、代价比较高。因此，它适合随机查找和遍历，不适合插入和删除。</strong><br>2.<strong>Vector</strong>与ArrayList一样，也是通过数组实现的，<strong>不同的是它支持线程的同步</strong>，即某一时刻只有一个线程能够写Vector，避免多线程同时写而引起的不一致性，但实现同步需要很高的花费，因此，访问它比访问ArrayList慢。<br>3.LinkedList是用链表结构存储数据的，很适合数据的动态插入和删除，随机访问和遍历速度比较慢。另外，他还提供了List接口中没有定义的方法，专门用于操作表头和表尾元素，可以当作堆栈、队列和双向队列使用。</p>
+<h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="String-、-StringBuilder-、-StringBuffer-的区别？"><a href="#String-、-StringBuilder-、-StringBuffer-的区别？" class="headerlink" title="String 、 StringBuilder 、 StringBuffer 的区别？"></a>String 、 StringBuilder 、 StringBuffer 的区别？</h3><p>Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别<br>如下。<br>1） String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。 初学者可能会有这样的误解：</p>
+<pre class="line-numbers language-java"><code class="language-java">String str <span class="token operator">=</span> “abc”；
+str <span class="token operator">=</span> “bcd”<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如上，字符串 str 明明是可以改变的呀！其实不然， str 仅仅是一个引用对象，它指向一个字符串对象“abc”。第<br>二行代码的含义是让 str 重新指向了一个新的字符串“bcd”对象，而“abc”对象并没有任何改变，只不过该对象已<br>经成为一个不可及对象罢了。<br>2） StringBuffer/StringBuilder 表示的字符串对象可以直接进行修改。<br>3） StringBuilder 是 Java5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方法都没有被 synchronized 修饰，因此它的效率理论上也比 StringBuffer 要高。  </p>
+<p>StringBuffer 和 StringBuilder 的功能基本一样，只是<strong>StringBuffer 是线程安全的，而 StringBuilder 不是线程安全的</strong>。因此， StringBuilder 的效率会更高。  </p>
+<h3 id="Vector-ArrayList-LinkedList的区别"><a href="#Vector-ArrayList-LinkedList的区别" class="headerlink" title="Vector,ArrayList,LinkedList的区别"></a>Vector,ArrayList,LinkedList的区别</h3><p>1.<strong>ArrayList</strong>是最常用的List实现类，内部是通过<strong>数组</strong>实现的，它允许对元素进行<strong>快速随机访问</strong>。数组的缺点是每个元素之间不能有间隔，当数组大小不满足时需要增加存储能力，就要讲已经有数组的数据复制到新的存储空间中。当从ArrayList的中间位置插入或者删除元素时，<strong>需要对数组进行复制、移动、代价比较高。因此，它适合随机查找和遍历，不适合插入和删除。</strong><br>2.<strong>Vector</strong>与ArrayList一样，也是通过数组实现的，<strong>不同的是它支持线程的同步</strong>，即某一时刻只有一个线程能够写Vector，避免多线程同时写而引起的不一致性，但实现同步需要很高的花费，因此，访问它比访问ArrayList慢。<br>3.LinkedList是用链表结构存储数据的，很适合数据的动态插入和删除，随机访问和遍历速度比较慢。另外，他还提供了List接口中没有定义的方法，专门用于操作表头和表尾元素，可以当作堆栈、队列和双向队列使用。</p>
 <h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈主要包含两个操作，主要是入栈和出栈（插入和读取并删除）操作。<br>栈既可以用数组实现，也可以用链表实现，用数组实现的栈称为顺序栈，用链表实现的栈称为链式栈。</p>
 <h4 id="利用栈实现浏览器的前进后退功能"><a href="#利用栈实现浏览器的前进后退功能" class="headerlink" title="利用栈实现浏览器的前进后退功能"></a>利用栈实现浏览器的前进后退功能</h4><p>使用两个栈 X 和 Y，把首次浏览的页面依次压入栈 X，当点击后退按钮时，再依次从栈 X 中出栈，并将出栈的数据依次放入栈 Y。当点击前进按钮时，依次从栈 Y 中取出数据，放入栈 X 中。当栈 X 中没有数据时，那就说明没有页面可以继续后退浏览了。当栈 Y 中没有数据，那就说明没有页面可以点击前进按钮浏览了。</p>
 <h3 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h3><p>1.int是基本数据类型，Integer是int的包装类就是将int类型包装成Object对象；<br>2.Integer变量必须实例化后才能使用；int变量不需要；<br>3.Integer实际是对象的引用，指向此new的Integer对象；int是直接存储数据值 ；<br>4.Integer的默认值是null；int的默认值是0。</p>
@@ -1060,7 +1065,7 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20200505/20414.html" class="b-link-green">面试整理</a>
+                    <a href="/20200505/20414.html" class="b-link-green">知识整理</a>
                 </p>
             </div>
 
@@ -1387,7 +1392,7 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">52.1k</span> 字
+                <span class="white-color">52.4k</span> 字
             
 
             
