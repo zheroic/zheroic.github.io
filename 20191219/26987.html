@@ -838,21 +838,19 @@ a,1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20191219/38269.html">
+                <a href="/20191219/8137.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTbLT.jpg" class="responsive-img" alt="解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTReS.jpg" class="responsive-img" alt="spark中的map-side-join关联优化">
                         
-                        <span class="card-title">解决rdd无法调用toDF及 value toDF is not a member of org.apache.spark.rdd.RDD[names]</span>
+                        <span class="card-title">spark中的map-side-join关联优化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            需加入隐式导入才能toDF
-  val spark = SparkSession.builder().appName("ch2homework1").master("local[4]").getOrCreate()
-  import spa
+                            将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle 的过程。造成大量
                         
                     </div>
                     <div class="publish-info">
@@ -889,19 +887,19 @@ a,1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/8137.html">
+                <a href="/20191219/22165.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTReS.jpg" class="responsive-img" alt="spark中的map-side-join关联优化">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTDJA.jpg" class="responsive-img" alt="sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存">
                         
-                        <span class="card-title">spark中的map-side-join关联优化</span>
+                        <span class="card-title">sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle 的过程。造成大量
+                            1. 数据集net.gz为网络流量数据， 数据集每条记录展现每个连接的信息， 最后一列为攻击的标签 (1) 请统计， 出现的攻击类型对应的攻击次数 (2) 为了输入给算法， 请将RDD 类型转换为RDD[Labelpoint]（ Label
                         
                     </div>
                     <div class="publish-info">
@@ -1098,7 +1096,7 @@ a,1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">58.7k</span> 字
+                <span class="white-color">62.6k</span> 字
             
 
             

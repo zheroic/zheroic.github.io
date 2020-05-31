@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-05-06T03:47:27.532Z</updated>
+  <updated>2020-05-31T03:10:24.208Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>doubanpachong</title>
+    <link href="https://zheroic.top/20200530/46812.html"/>
+    <id>https://zheroic.top/20200530/46812.html</id>
+    <published>2020-05-30T02:38:13.000Z</published>
+    <updated>2020-05-31T03:10:24.208Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;python3利用BeautifulSoup编写爬虫爬取豆瓣全部电影信息&quot;&gt;&lt;a href=&quot;#python3利用BeautifulSoup编写爬虫爬取豆瓣全部电影信息&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://zheroic.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://zheroic.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>java常见RuntimeException</title>
@@ -409,6 +435,32 @@
   </entry>
   
   <entry>
+    <title>spark中的map-side-join关联优化</title>
+    <link href="https://zheroic.top/20191219/8137.html"/>
+    <id>https://zheroic.top/20191219/8137.html</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2020-04-25T20:05:34.043Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
     <title>spark scala读取文件选取特定列</title>
     <link href="https://zheroic.top/20191219/26987.html"/>
     <id>https://zheroic.top/20191219/26987.html</id>
@@ -425,32 +477,6 @@
 &lt;pre class=&quot;line-numbers language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;a,1
 c,2
 a,1&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spark中的map-side-join关联优化</title>
-    <link href="https://zheroic.top/20191219/8137.html"/>
-    <id>https://zheroic.top/20191219/8137.html</id>
-    <published>2019-12-19T06:28:00.000Z</published>
-    <updated>2020-04-25T20:05:34.043Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
         
       
     
@@ -490,32 +516,6 @@ a,1&lt;span
   </entry>
   
   <entry>
-    <title>scala一行代码实现wordcount解析</title>
-    <link href="https://zheroic.top/20191219/64784.html"/>
-    <id>https://zheroic.top/20191219/64784.html</id>
-    <published>2019-12-19T06:26:00.000Z</published>
-    <updated>2020-04-25T20:05:34.021Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre class=&quot;line-numbers language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt; sc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textFile&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="scala" scheme="https://zheroic.top/categories/scala/"/>
-    
-    
-      <category term="scala" scheme="https://zheroic.top/tags/scala/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Spark运行模式的区别</title>
     <link href="https://zheroic.top/20191219/50108.html"/>
     <id>https://zheroic.top/20191219/50108.html</id>
@@ -542,11 +542,11 @@ a,1&lt;span
   </entry>
   
   <entry>
-    <title>读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</title>
-    <link href="https://zheroic.top/20191219/8494.html"/>
-    <id>https://zheroic.top/20191219/8494.html</id>
-    <published>2019-12-19T06:25:00.000Z</published>
-    <updated>2020-04-25T20:05:34.091Z</updated>
+    <title>scala一行代码实现wordcount解析</title>
+    <link href="https://zheroic.top/20191219/64784.html"/>
+    <id>https://zheroic.top/20191219/64784.html</id>
+    <published>2019-12-19T06:26:00.000Z</published>
+    <updated>2020-04-25T20:05:34.021Z</updated>
     
     <summary type="html">
     
@@ -554,7 +554,7 @@ a,1&lt;span
       
         
         
-          &lt;h1 id=&quot;读取hdfs集群的文件&quot;&gt;&lt;a href=&quot;#读取hdfs集群的文件&quot; class=&quot;headerlink&quot; title=&quot;读取hdfs集群的文件&quot;&gt;&lt;/a&gt;读取hdfs集群的文件&lt;/h1&gt;&lt;p&gt;val
+          &lt;pre class=&quot;line-numbers language-scala&quot;&gt;&lt;code class=&quot;language-scala&quot;&gt; sc&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;textFile&lt;span class=&quot;token
         
       
     
