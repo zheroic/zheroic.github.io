@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-05-31T03:14:11.552Z</updated>
+  <updated>2020-06-17T01:52:57.574Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>String、StringBuffer、StringBuilder的区别和相互转换</title>
+    <link href="https://zheroic.top/20200617/26043.html"/>
+    <id>https://zheroic.top/20200617/26043.html</id>
+    <published>2020-06-17T01:40:07.000Z</published>
+    <updated>2020-06-17T01:52:57.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;String-、-StringBuilder-、-StringBuffer-的区别？&quot;&gt;&lt;a href=&quot;#String-、-StringBuilder-、-StringBuffer-的区别？&quot; class=&quot;headerlink&quot; title=&quot;String
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://zheroic.top/categories/java/"/>
+    
+    
+      <category term="java" scheme="https://zheroic.top/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>python3使用BeautifulSoup编写爬虫爬取豆瓣全部电影信息</title>
@@ -503,32 +529,6 @@ a,1&lt;span
         
         
           &lt;h1 id=&quot;1-数据集net-gz为网络流量数据，-数据集每条记录展现每个连接的信息，-最后一列为攻击的标签&quot;&gt;&lt;a href=&quot;#1-数据集net-gz为网络流量数据，-数据集每条记录展现每个连接的信息，-最后一列为攻击的标签&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spark运行模式的区别</title>
-    <link href="https://zheroic.top/20191219/50108.html"/>
-    <id>https://zheroic.top/20191219/50108.html</id>
-    <published>2019-12-19T06:26:00.000Z</published>
-    <updated>2020-04-25T20:05:33.929Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;local    ：就是单机，jobs都在这台机器上运行。&lt;br&gt;standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行&lt;br&gt;yarn：就是说spark程序运行在yarn上&lt;br&gt;client
         
       
     

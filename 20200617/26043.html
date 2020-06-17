@@ -6,13 +6,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Command line is too long. Shorten command line for OOP or also for Application default configuration, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="String、StringBuffer、StringBuilder的区别和相互转换, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="idea运行代码时出现解决：在.idea文件夹里的workspace.xml中的
-&amp;lt;component name=&#34;PropertiesComponent&#34;&gt;
-标签下添加：
-&amp;lt;property name=&#34;dynamic.cla">
+    <meta name="description" content="String 、 StringBuilder 、 StringBuffer 的区别？分析Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别如下。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Command line is too long. Shorten command line for OOP or also for Application default configuration | zheroic&#39;s blog</title>
+    <title>String、StringBuffer、StringBuilder的区别和相互转换 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -547,13 +544,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTszt.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTBid.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Command line is too long. Shorten command line for OOP or also for Application default configuration
+                        String、StringBuffer、StringBuilder的区别和相互转换
                     </div>
                 </div>
             </div>
@@ -665,8 +662,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/idea/" target="_blank">
-                                <span class="chip bg-color">idea</span>
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
                             </a>
                         
                     </div>
@@ -677,8 +674,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/idea/" class="post-category" target="_blank">
-                                idea
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
                             </a>
                         
                     </div>
@@ -689,7 +686,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-19
+                    2020-06-17
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -703,14 +700,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        88
+                        565
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -727,11 +724,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>idea运行代码时出现<br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191214163545223.png" alt=""><br>解决：<br>在.idea文件夹里的workspace.xml中的</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>PropertiesComponent<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>标签下添加：</p>
-<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dynamic.classpath<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191214163643841.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt=""></p>
+                <h3 id="String-、-StringBuilder-、-StringBuffer-的区别？"><a href="#String-、-StringBuilder-、-StringBuffer-的区别？" class="headerlink" title="String 、 StringBuilder 、 StringBuffer 的区别？"></a>String 、 StringBuilder 、 StringBuffer 的区别？</h3><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别<br>如下。<br>1） String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。 初学者可能会有这样的误解：</p>
+<pre class="line-numbers language-java"><code class="language-java">String str <span class="token operator">=</span> “abc”；
+str <span class="token operator">=</span> “bcd”<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如上，字符串 str 明明是可以改变的呀！其实不然， str 仅仅是一个引用对象，它指向一个字符串对象“abc”。第<br>二行代码的含义是让 str 重新指向了一个新的字符串“bcd”对象，而“abc”对象并没有任何改变，只不过该对象已<br>经成为一个不可及对象罢了。<br>2） StringBuffer/StringBuilder 表示的字符串对象可以直接进行修改。<br>3） StringBuilder 是 Java5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方法都没有被 synchronized 修饰，因此它的效率理论上也比 StringBuffer 要高。  </p>
+<p>StringBuffer 和 StringBuilder 的功能基本一样，只是<strong>StringBuffer 是线程安全的，而 StringBuilder 不是线程安全的</strong>。因此， StringBuilder 的效率会更高。  </p>
+<h2 id="使用总结"><a href="#使用总结" class="headerlink" title="使用总结"></a>使用总结</h2><ul>
+<li>String：适用于少量的字符串操作的情况；</li>
+<li>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况；</li>
+<li>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况。</li>
+</ul>
+<h2 id="相互转换"><a href="#相互转换" class="headerlink" title="相互转换"></a>相互转换</h2><ul>
+<li>String转换成StringBuffer：构造方法和append方法；</li>
+<li>StringBuffer转换成String：构造方法和toString方法。</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringAndStringBufferSwitch</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>        
+
+        <span class="token comment" spellcheck="true">//String -> StringBuffer</span>
+        <span class="token comment" spellcheck="true">//创建一个String对象</span>
+        String str <span class="token operator">=</span> <span class="token string">"Hi Java!"</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token comment" spellcheck="true">//方式一：构造方法</span>
+        StringBuffer buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token comment" spellcheck="true">//方式二：通过append方法</span>
+        StringBuffer buffer2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        buffer2<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>buffer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment" spellcheck="true">//StringBuffer -> String</span>
+        <span class="token comment" spellcheck="true">//创建一个StringBuffer对象</span>
+        StringBuffer buffer3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        buffer3<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"Happy birthday Java!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>buffer3<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+        <span class="token comment" spellcheck="true">//方式一：通过构造方法</span>
+        String str2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>buffer3<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span>         
+        <span class="token comment" spellcheck="true">//方式二：通过toString方法</span>
+        String str3 <span class="token operator">=</span> buffer3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -776,7 +811,7 @@
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20191219/43158.html" class="b-link-green">Command line is too long. Shorten command line for OOP or also for Application default configuration</a>
+                    <a href="/20200617/26043.html" class="b-link-green">String、StringBuffer、StringBuilder的区别和相互转换</a>
                 </p>
             </div>
 
@@ -799,7 +834,7 @@
         repo: 'zheroic.github.io',
         owner: 'zheroic',
         admin: "zheroic",
-        id: '20191219/43158.html',
+        id: '20200617/26043.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -820,52 +855,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20191219/57393.html">
+                <a href="/20200617/26043.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTozq.jpg" class="responsive-img" alt="R语言第六次实训,leaflet绘制地铁线路图">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTBid.jpg" class="responsive-img" alt="String、StringBuffer、StringBuilder的区别和相互转换">
                         
-                        <span class="card-title">R语言第六次实训,leaflet绘制地铁线路图</span>
+                        <span class="card-title">String、StringBuffer、StringBuilder的区别和相互转换</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目：数据请到我的主页看我的上传资源
-
-使用leaflet绘制地铁线路图，要求1） 图中绘制地铁线路2） 各站点展示进站流量（08:00:00-08:05:00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。Sh
+                            String 、 StringBuilder 、 StringBuffer 的区别？分析Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别如下。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/R/" target="_blank">
-                        <span class="chip bg-color">R</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%9E%E8%AE%AD/" target="_blank">
-                        <span class="chip bg-color">实训</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -879,32 +910,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/8457.html">
+                <a href="/20200530/46812.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgT4ij.jpg" class="responsive-img" alt="sparkSQL练习，分析篮球运动员数据">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTIWn.jpg" class="responsive-img" alt="python3使用BeautifulSoup编写爬虫爬取豆瓣全部电影信息">
                         
-                        <span class="card-title">sparkSQL练习，分析篮球运动员数据</span>
+                        <span class="card-title">python3使用BeautifulSoup编写爬虫爬取豆瓣全部电影信息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            注：玄学编程，在第二题时设置local[4]时莫名其妙在统计count时会出现某些age统计量变少，如22岁的少2个（正确：1137，统计出来为1135），设置为local时结果就不会出现某些age count数量减少！淦！玄学题目：
-(1
+                            python3使用BeautifulSoup编写爬虫爬取豆瓣全部电影信息通用思路写爬虫时往往会遵循以下通用思路：首先得找到一个汇总页，以豆瓣电影网站为例，即电影首页。
+
+在汇总页中是一条条电影，以列表形式依次排列，可能一页会安排几十条电影，
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                    spark
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
                                 </a>
                             
                             
@@ -914,12 +946,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spark/" target="_blank">
-                        <span class="chip bg-color">spark</span>
-                    </a>
-                    
-                    <a href="/tags/scala/" target="_blank">
-                        <span class="chip bg-color">scala</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>

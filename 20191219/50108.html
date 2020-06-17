@@ -817,55 +817,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/20191219/22165.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTDJA.jpg" class="responsive-img" alt="sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存">
-                        
-                        <span class="card-title">sparkcore练习_1,RDD转化为RDD[LabelPoint]和map-side-join以及将结果（RDD/dataframe）输出到一个文件保存</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            1. 数据集net.gz为网络流量数据， 数据集每条记录展现每个连接的信息， 最后一列为攻击的标签 (1) 请统计， 出现的攻击类型对应的攻击次数 (2) 为了输入给算法， 请将RDD 类型转换为RDD[Labelpoint]（ Label
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                    spark
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/spark/" target="_blank">
-                        <span class="chip bg-color">spark</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/20191219/64784.html">
                     <div class="card-image">
                         
@@ -879,6 +830,55 @@
                     <div class="summary block-with-text">
                         
                              sc.textFile("/data/wordcount.txt").flatMap(_.split(" ")).map(word=>(word,1)).reduceByKey(_+_).sortBy(_._1,false).collec
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/scala/" class="post-category" target="_blank">
+                                    scala
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/scala/" target="_blank">
+                        <span class="chip bg-color">scala</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20191219/8494.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTcsf.jpg" class="responsive-img" alt="读取文件时，读取hdfs集群的文件和本机文件的scala代码写法">
+                        
+                        <span class="card-title">读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            读取hdfs集群的文件val file=sc.textFile(“/data/wordcount.txt”)spark默认是在hdfs目录读取所以可以不写hdfs也可以写成：val file=sc.textFile(“hdfs://nn:9
                         
                     </div>
                     <div class="publish-info">
@@ -1075,7 +1075,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">62.6k</span> 字
+                <span class="white-color">63.1k</span> 字
             
 
             
