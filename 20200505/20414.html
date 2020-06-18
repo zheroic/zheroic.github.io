@@ -9,7 +9,9 @@
     <meta name="keywords" content="知识整理, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。String 、 StringBuilder 、 StringBuffer 的区别？Java 平台提供了两种类型的字符串： String 和 StringBuffer/S">
+    <meta name="description" content="Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。十进制转二进制int n=5;
+String s = Integer.toBinaryString(n);
+String 、 StringBuilder 、 String">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -732,7 +734,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="String-、-StringBuilder-、-StringBuffer-的区别？"><a href="#String-、-StringBuilder-、-StringBuffer-的区别？" class="headerlink" title="String 、 StringBuilder 、 StringBuffer 的区别？"></a>String 、 StringBuilder 、 StringBuffer 的区别？</h3><p>Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别<br>如下。<br>1） String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。 初学者可能会有这样的误解：</p>
+                <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+String s <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">toBinaryString</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="String-、-StringBuilder-、-StringBuffer-的区别？"><a href="#String-、-StringBuilder-、-StringBuffer-的区别？" class="headerlink" title="String 、 StringBuilder 、 StringBuffer 的区别？"></a>String 、 StringBuilder 、 StringBuffer 的区别？</h3><p>Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别<br>如下。<br>1） String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。 初学者可能会有这样的误解：</p>
 <pre class="line-numbers language-java"><code class="language-java">String str <span class="token operator">=</span> “abc”；
 str <span class="token operator">=</span> “bcd”<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如上，字符串 str 明明是可以改变的呀！其实不然， str 仅仅是一个引用对象，它指向一个字符串对象“abc”。第<br>二行代码的含义是让 str 重新指向了一个新的字符串“bcd”对象，而“abc”对象并没有任何改变，只不过该对象已<br>经成为一个不可及对象罢了。<br>2） StringBuffer/StringBuilder 表示的字符串对象可以直接进行修改。<br>3） StringBuilder 是 Java5 中引入的，它和 StringBuffer 的方法完全相同，区别在于它是在单线程环境下使用的，因为它的所有方法都没有被 synchronized 修饰，因此它的效率理论上也比 StringBuffer 要高。  </p>
