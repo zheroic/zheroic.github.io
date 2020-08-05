@@ -1,0 +1,1592 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <!-- shw2018 洪卫  modify 2019.08.15-->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="MySQL基础整理, 东北大学 软件工程 大数据 zheroic">
+    <meta name="baidu-site-verification" content="fmlEuI34ir" />
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
+    <meta name="description" content="MySQL数据处理基础IS NULL/IS NOT NULL :检查空值  eg：WHERE column IS [NOT] NULL
+IN:相当于OR，但比OR直观，执行更快。 eg：WHERE column IN [‘a’,’b’]
+N">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>MySQL基础整理 | zheroic&#39;s blog</title>
+    <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgP8Zd.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">zheroic's blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/List" class="waves-effect waves-light">
+            
+            <i class="fa fa-heartbeat"></i>
+            
+            <span>清单</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/archives" class="waves-effect waves-light">
+                
+                  <i class="fa fa-archive"></i>
+                
+                <span>归档</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/archives" >
+                    
+                      <i class="fa fa-archive" style="margin-top: -20px;"></i>
+                    
+                    <span>时间轴</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/tags" >
+                    
+                      <i class="fa fa-tags" style="margin-top: -20px;"></i>
+                    
+                    <span>标签</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="/List" class="waves-effect waves-light">
+                
+                  <i class="fa fa-heartbeat"></i>
+                
+                <span>清单</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/List/music" >
+                    
+                      <i class="fa fa-music" style="margin-top: -20px;"></i>
+                    
+                    <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/videos" >
+                    
+                      <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    
+                    <span>视频</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/mygalleries" >
+                    
+                      <i class="fa fa-photo" style="margin-top: -20px;"></i>
+                    
+                    <span>相册</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgP8Zd.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">zheroic's blog</div>
+        <div class="logo-desc">
+            
+            东北大学 | 软件工程 | 大数据
+            
+        </div>
+    </div>
+
+    
+<!--
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/List" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-heartbeat"></i>
+                
+                清单
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+    </ul>
+-->
+   
+   
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17  -->
+<ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-archive"></i>
+                            
+                            归档
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/archives" >
+                           
+                            <i class="fa fa-archive" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>时间轴</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/tags" >
+                           
+                            <i class="fa fa-tags" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>标签</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-heartbeat"></i>
+                            
+                            清单
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/List/music" >
+                           
+                            <i class="fa fa-music" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>音乐</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/videos" >
+                           
+                            <i class="fa fa-film" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>视频</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/mygalleries" >
+                           
+                            <i class="fa fa-photo" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>相册</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+
+        
+    </ul>
+
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+        
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTszt.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        MySQL基础整理
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- shw2018 洪卫  modify 2019.08.15-->
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MySQL/" target="_blank">
+                                <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/MySQL/" class="post-category" target="_blank">
+                                MySQL
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        zheroic
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        2.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        9 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="数据处理基础"><a href="#数据处理基础" class="headerlink" title="数据处理基础"></a>数据处理基础</h2><p><strong>IS NULL/IS NOT NULL</strong> :检查空值  eg：WHERE column IS [NOT] NULL</p>
+<p><strong>IN</strong>:相当于OR，但比OR直观，执行更快。 eg：WHERE column IN [‘a’,’b’]</p>
+<p><strong>NOT</strong>：否定其后的条件</p>
+<p><strong>DISTINCT</strong>：作用与后面全部列</p>
+<p><strong>DESC</strong>：只作用于紧靠其前的列</p>
+<p><strong>EXISTS</strong>：要么全部都可以，要么全部都失败。如果EXISTS后面的查询结果不为null，则返回全部Select结果，如果为null，则Select返回null</p>
+<p><strong>%</strong>：通配符，代表搜索模式中给定位置的0个，1个或多个字符，不会匹配null值</p>
+<p><strong>_</strong>：通配符，只匹配一个字符</p>
+<p><strong>CONCAT</strong>：拼接字符串 eg：SELECT CONCAT(column1,column2)/SELECT CONCAT(column1,’—‘,column2)</p>
+<p><strong>常用函数</strong>：</p>
+<ul>
+<li><p>RTRIM(column)、LTRIM(column)、TRIM(column): 去除列值右/左/左右 空格</p>
+</li>
+<li><p>LEFT(column):返回字符串左边的字符</p>
+</li>
+<li><p>LENGTH(column)/DATALENGTH()/LEN():返回字符串长度</p>
+</li>
+<li><p>LOWER(column)/UPPER():将字符串转换为小写/大写</p>
+</li>
+<li><p>SOUNDEX():返回字符串的 SOUNDEX值,SOUNDEX考虑了类似的发音字符和音节，使得能对字符串进行发音比较而不是字母比较 。</p>
+<ul>
+<li><p>Customers表中有一个顾客Kids Place，其联系名为Michelle Green。但如果这是错误的输入，此联系名实际上应该是Michael Green，该怎么办呢？</p>
+</li>
+<li><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> cust_name<span class="token punctuation">,</span> cust_contact
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">WHERE</span> SOUNDEX<span class="token punctuation">(</span>cust_contact<span class="token punctuation">)</span> <span class="token operator">=</span>
+SOUNDEX<span class="token punctuation">(</span><span class="token string">'Michael Green'</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>日期时间处理函数：</strong></p>
+<ul>
+<li><p>YERA/MONTH/DAY/HOUR/DATE(datetime_column):获取date字段的年/月/日/小时/日期</p>
+</li>
+<li><p>NOW():获取系统时间</p>
+</li>
+<li><p>获取当前日期：current_date()/current_date/curdate()</p>
+</li>
+<li><p>获取当前时间：curtime()/current_time/current_time()</p>
+<ul>
+<li>查询一天：</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> to_days<span class="token punctuation">(</span>时间字段名<span class="token punctuation">)</span> <span class="token operator">=</span> to_days<span class="token punctuation">(</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> <span class="token keyword">date</span><span class="token punctuation">(</span>时间字段名<span class="token punctuation">)</span> <span class="token operator">=</span> curdate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>昨天</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> to_days<span class="token punctuation">(</span> <span class="token function">now</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">-</span> to_days<span class="token punctuation">(</span> 时间字段名<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>7天</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> date_sub<span class="token punctuation">(</span>curdate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> interval <span class="token number">7</span> day<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token keyword">date</span><span class="token punctuation">(</span>时间字段名<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>一周内数据</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> 时间字段名 <span class="token operator">between</span> <span class="token keyword">current_date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">7</span> <span class="token operator">and</span> sysdate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>近30天</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> date_sub<span class="token punctuation">(</span>curdate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> interval <span class="token number">30</span> day<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token keyword">date</span><span class="token punctuation">(</span>时间字段名<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tbl_name <span class="token keyword">where</span> to_days<span class="token punctuation">(</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> to_days<span class="token punctuation">(</span>date_col<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">30</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>本月</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> date_format<span class="token punctuation">(</span> 时间字段名<span class="token punctuation">,</span> <span class="token string">'%Y%m'</span> <span class="token punctuation">)</span> <span class="token operator">=</span> date_format<span class="token punctuation">(</span>curdate<span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token string">'%Y%m'</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>查询一个月</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> <span class="token keyword">table</span> <span class="token keyword">where</span> date_sub<span class="token punctuation">(</span>curdate<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> interval <span class="token number">1</span> month<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token keyword">date</span><span class="token punctuation">(</span>column_time<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>上一月</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表名 <span class="token keyword">where</span> period_diff<span class="token punctuation">(</span> date_format<span class="token punctuation">(</span> <span class="token function">now</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token string">'%Y%m'</span> <span class="token punctuation">)</span> <span class="token punctuation">,</span> date_format<span class="token punctuation">(</span> 时间字段名<span class="token punctuation">,</span> <span class="token string">'%Y%m'</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">=</span><span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>数值处理函数:</strong></p>
+<ul>
+<li>ABS():绝对值</li>
+<li>COS()、SIN()、TAN():三角函数值</li>
+<li>EXP(x):e的x次方</li>
+<li>PI():圆周率</li>
+<li>SQRT():平方根</li>
+</ul>
+<p><strong>聚集函数：</strong></p>
+<ul>
+<li>AVG():某列平均值，只能作用于单个列，忽略值为null的行</li>
+<li>COUNT()：某列行数。COUNT(*)计算表的行数，不会忽视带有null值的行除非一行全为null。COUNT(colummn)计算某列具有值的行数，忽略null。</li>
+<li>MAX()、MIN():忽略null</li>
+<li>SUM():某列和，忽略null</li>
+<li><strong>聚集函数默认不去重</strong>，去重则要使用DISTINCT+列名，DISTINCT不能作用于COUNT(*)</li>
+</ul>
+<p><strong>分组数据：</strong>GROUP BY/HAVING</p>
+<ul>
+<li><p>过滤行：GROUP BY。过滤分组:HAVING,经常结合GROUP BY使用</p>
+</li>
+<li><p>GROUP BY子句中列出的每一列都必须是检索列或有效的表达式（<strong>但不能是聚集函数</strong>）。<br>如果在SELECT中使用表达式，则必须在GROUP BY子句中指定相同的表达式。<strong>不能使用别名</strong> </p>
+</li>
+<li><p>除聚集计算语句外，SELECT语句中的每一列都必须在GROUP BY子句中给出  </p>
+</li>
+<li><p>如果分组列中包含具有NULL值的行，则NULL将作为一个分组返回。如果列中有多行NULL值，它们将分为一组。  </p>
+</li>
+<li><p>GROUP BY子句必须出现在WHERE子句之后，ORDER BY子句之前。  </p>
+</li>
+<li><p>HAVING可以使用聚集函数，GROUP BY不可以</p>
+</li>
+<li><p>分组和排序：ORDER BY/GROUP BY</p>
+<ul>
+<li>ORDER BY：对产生的输出排序，任意列都可以使用（甚至非选择的列也可以使用）</li>
+<li>GROUP BY：对行分组，但输出可能不是分组的顺序。只可能使用选择列或表达式列， 而且必须使用每个选择列表达式。如果与聚集函数一起使用列（或 表达式），则必须使用</li>
+</ul>
+</li>
+</ul>
+<p><strong>SELECT字句编写顺序：</strong></p>
+<p>SELECT…FROM…WHERE…GROUP BY…HAVING…ORDER BY…</p>
+<p><strong>子查询</strong>：作为子查询的SELECT只能查询单列，检索多列则会错误。（例子SQL必知必会第十一课)</p>
+<p><strong>联结表：</strong>（例子SQL必知必会第十二课)</p>
+<ul>
+<li>叉联结：没有联结条件，返回笛卡尔积</li>
+<li>内联结（等值联结）：基于两个表之间的相等测试（INNER JOIN…ON 条件)</li>
+</ul>
+<p><strong>创建高级联结：</strong>（使用表别名，简化）(例子SQL必知必会第十三课)</p>
+<ul>
+<li>自联结（self-join）：SELECT语句使用表名前缀明确给出所需列的全名。如果不这样，DBMS将返回<br>错误，因为列各有两个。DBMS不知道想要的是哪一列（即使它们其实是同一列）。  </li>
+<li>自然联结（nature-join）：标准的联结（前一课中介绍的内联结）返回所有数据，相同的列甚至多次出现。自然联结排除多次出现，使每一列只返回一次。  手动去重。</li>
+<li>外联结（outer-join）：联结包含了那些在相关表中没有关联行的行。这种联结称为外联结。  <ul>
+<li>right/left-join: RIGHT/LEFT JOIN…ON 条件</li>
+<li>full-join:MySQL不支持</li>
+</ul>
+</li>
+</ul>
+<p><strong>组合查询</strong>：UNION/UNION ALL</p>
+<ul>
+<li>UNION:自动去重</li>
+<li>在用UNION组合查询时，只能使用一条ORDER BY子句，它必须位于最后一条SELECT语句之后。  </li>
+</ul>
+<p><strong>插入</strong>：</p>
+<pre class="line-numbers language-sql"><code class="language-sql">插一条：
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tablename<span class="token punctuation">[</span><span class="token punctuation">(</span>column1<span class="token punctuation">,</span>column2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">VALUES</span><span class="token punctuation">(</span>value1<span class="token punctuation">,</span>value2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+插多行:
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> tablename<span class="token punctuation">[</span><span class="token punctuation">(</span>column1<span class="token punctuation">,</span>column2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">SELECT</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>复制表</strong>：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tablename <span class="token keyword">AS</span> 
+<span class="token keyword">SELECT</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>更新删除</strong>:</p>
+<pre class="line-numbers language-sql"><code class="language-sql">一次更新一条，多条更新foreach或者<span class="token keyword">case</span> <span class="token keyword">when</span>实现
+<span class="token keyword">UPDATE</span> tablename <span class="token keyword">SET</span> <span class="token keyword">column</span><span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">[</span><span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> 
+<span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> tablename <span class="token punctuation">[</span><span class="token keyword">WHERE</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token keyword">UPDATE</span>可删除指定列（设置值为<span class="token boolean">null</span>），<span class="token keyword">DELETE</span>删除行，不删除表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>创建、操纵表：</strong></p>
+<ul>
+<li>使用null/not null</li>
+<li>使用默认值 default</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> tablename<span class="token punctuation">(</span>
+column1 datatype <span class="token punctuation">[</span><span class="token boolean">NULL</span><span class="token operator">/</span><span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>CONSTRAINTS<span class="token punctuation">]</span><span class="token punctuation">,</span>
+column2 datatype <span class="token punctuation">[</span><span class="token boolean">NULL</span><span class="token operator">/</span><span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>CONSTRAINTS<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>创建视图VIEW</strong>：</p>
+<ul>
+<li>不提供任何的列或者数据，包含的只是一个查询</li>
+<li>优点：<ul>
+<li>重用SQL语句</li>
+<li>简化复杂的SQL操作</li>
+<li>使用表的一部分而不是整个表</li>
+<li>保护数据</li>
+</ul>
+</li>
+<li>限制、规则：<ul>
+<li>视图命名必须唯一</li>
+<li>不能索引，不能有关联的触发器和默认值</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> viewname <span class="token keyword">AS</span>
+<span class="token keyword">SELECT</span> column1<span class="token punctuation">,</span>column2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">FROM</span> tablename
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">GROUP</span> <span class="token keyword">BY</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token keyword">HAVING</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> viewname<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>更新表</strong>：ALTER</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename 
+<span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> columnname datatype <span class="token punctuation">[</span><span class="token boolean">NULL</span><span class="token operator">/</span><span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>CONSTRAINTS<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token keyword">ADD</span> <span class="token keyword">COLUMN</span> columnname datatype <span class="token punctuation">[</span><span class="token boolean">NULL</span><span class="token operator">/</span><span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>CONSTRAINTS<span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">DROP</span> <span class="token keyword">COLUMN</span> columnname<span class="token punctuation">,</span>
+<span class="token keyword">DROP</span> <span class="token keyword">COLUMN</span> columnname<span class="token punctuation">,</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>删除表：</strong></p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> tablename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>重命名表</strong>：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">RENAME</span> <span class="token keyword">TABLE</span> oldname <span class="token keyword">TO</span> newname<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>存储过程</strong>：</p>
+<ul>
+<li><p>优点：简单、安全、高性能  </p>
+<ul>
+<li>简化对变动的管理  </li>
+<li>因为存储过程通常以编译过的形式存储，所以DBMS处理命令的工作较少，提高了性能  </li>
+<li>存在一些只能用在单个请求中的SQL元素和特性，存储过程可以使用它们来编写功能更强更灵活的代码  </li>
+</ul>
+</li>
+<li><p>缺陷：</p>
+<ul>
+<li>编写真正的可移植存储过程几乎是不可能的。  </li>
+<li>编写存储过程比编写基本SQL语句复杂  </li>
+</ul>
+</li>
+<li><p>执行：</p>
+<pre class="line-numbers language-sql"><code class="language-sql">EXCUTE procedurename<span class="token punctuation">(</span>arg1<span class="token punctuation">,</span>arg2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>事务处理</strong>：transaction</p>
+<blockquote>
+<p>事务（transaction）指一组SQL语句；<br>回退（rollback）指撤销指定SQL语句的过程；<br>提交（commit）指将未存储的SQL语句结果写入数据库表；<br>保留点（savepoint）指事务处理中设置的临时占位符（placeholder），可以对它发布回退（与回退整个事务处理不同）。  </p>
+</blockquote>
+<ul>
+<li><p>rollback/commit  savepoint:保留点越多越好，可以灵活回退</p>
+</li>
+<li><p>可回退：update/delete/insert  不可回退：drop/create</p>
+</li>
+<li><pre class="line-numbers language-sql"><code class="language-sql">开始事务：
+<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+使用<span class="token keyword">rollback</span>：
+<span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> Orders<span class="token punctuation">;</span>
+<span class="token keyword">ROLLBACK</span><span class="token punctuation">;</span>
+使用<span class="token keyword">commit</span>：
+<span class="token keyword">COMMIT</span> <span class="token keyword">TRANSACTION</span>；
+使用<span class="token keyword">savepoint</span>：
+<span class="token keyword">SAVE</span> <span class="token keyword">TRANSACTION</span> delete1<span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">ROLLBACK</span> <span class="token keyword">TO</span> delete1<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p><strong>游标</strong>：CURSOR</p>
+<ul>
+<li>能够标记游标为只读，使数据能读取，但不能更新和删除。</li>
+<li>能控制可以执行的定向操作（向前、向后、第一、最后、绝对位置、相对位置等）。</li>
+<li>能标记某些列为可编辑的，某些列为不可编辑的。</li>
+<li>规定范围，使游标对创建它的特定请求（如存储过程）或对所有请求可访问。</li>
+<li>指示DBMS对检索出的数据（而不是指出表中活动数据）进行复制，使数据在游标打开和访问期间不变化。  </li>
+</ul>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DECLARE</span> cursorname <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> <span class="token keyword">SELECT</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+<span class="token keyword">OPEN</span> cursorname<span class="token punctuation">;</span>
+<span class="token keyword">FETCH</span> cursorname <span class="token keyword">INTO</span> columnname<span class="token punctuation">;</span>
+<span class="token keyword">CLOSE</span> cursorname<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>高级SQL特性</strong>：</p>
+<ul>
+<li><p>约束：</p>
+<ul>
+<li><p>主键：值唯一，没有null值，主键列从不修改/更新</p>
+<ul>
+<li><pre class="line-numbers language-sql"><code class="language-sql">自增主键：eg:
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename <span class="token keyword">ADD</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename CHANGE id id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span> auto_increament<span class="token operator">=</span><span class="token number">1</span>
+删除主键：先删自增如果有，再删主键
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename CHANGE id id <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename <span class="token keyword">DROP</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>外键：</p>
+<ul>
+<li><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> tablename <span class="token keyword">ADD</span> <span class="token keyword">CONSTRAINT</span> FK_ID <span class="token keyword">FOREIGN</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>外键字段名<span class="token punctuation">)</span> REFERENCE 外表表名<span class="token punctuation">(</span>对应字段名<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>唯一约束：允许null</p>
+</li>
+<li><p>检查约束：CHECK(条件)。检查最大最小值，指定范围，只允许特定值。</p>
+</li>
+</ul>
+</li>
+<li><p>索引：</p>
+<ul>
+<li><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> indexname <span class="token keyword">ON</span> tablename<span class="token punctuation">(</span>columnlist<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>触发器：约束比触发器更快</p>
+<ul>
+<li>保持数据的一致（INSERT，UPDATE)</li>
+<li>计算列的值或者更新时间戳</li>
+</ul>
+</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/20200805/28747.html" class="b-link-green">MySQL基础整理</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '3875e95f58ea59855e05',
+        clientSecret: '335bf09bc36a5dae2109909b8b305e96c7966880',
+        repo: 'zheroic.github.io',
+        owner: 'zheroic',
+        admin: "zheroic",
+        id: '20200805/28747.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/20200805/12013.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTtsK.jpg" class="responsive-img" alt="Untitled">
+                        
+                        <span class="card-title">Untitled</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
+                        </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/20200617/26148.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTrRI.jpg" class="responsive-img" alt="递归优化（斐波那契数列为例）">
+                        
+                        <span class="card-title">递归优化（斐波那契数列为例）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            递归优化（斐波那契数列为例）递归　关于递归的概念，我们都不陌生。简单的来说递归就是一个函数直接或间接地调用自身，是为直接或间接递归。一般来说，递归需要有边界条件、递归前进段和递归返回段。当边界条件不满足时，递归前进；当边界条件满足时，递归返
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: zheroic's blog<br />'
+            + '作者: zheroic<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2019 zheroic. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+             
+                <span id="busuanzi_container_site_pv"> 
+                    <i class="fa fa-heart-o"></i> 
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span> 
+                    </span> 
+                 
+                 
+                    <span id="busuanzi_container_site_uv"> 
+                    人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人. </span> 
+            
+
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">66.8k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zheroic" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=13786400418@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/132f0470077dbd03ab590f38a775b032" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=2238478733&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/6272258190/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script> 
+    $(document).ready(function () { 
+        var int = setInterval(fixCount, 50); // 50ms周期检测函数 
+        var pvcountOffset = 80000; // 初始化首次数据 
+        var uvcountOffset = 20000; 
+        function fixCount() { 
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                    $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset); 
+                    clearInterval(int); 
+            } 
+            if ($("#busuanzi_container_site_pv").css("display") != "none") { 
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int); // 停止检测 
+                } 
+            } 
+        });
+</script>
+
+
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2019, 11, 11, 00, 00, 00); //北京时间2019-11-11 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/materialize/materialize.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/aos/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164578181-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-164578181-1');
+</script>
+
+
+
+        
+
+        
+            <script async src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <!-- 洪卫 shw2018 add 2019.08.28 -->
+<!--         <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script> -->
+
+         <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = OriginTitile, clearTimeout(st)) : (document.title =
+                    OriginTitile, st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果  洪卫 shw2018 add 2019.09.09 -->
+        
+
+        <!-- 背景雪花飘落特效洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 鼠标点击文字特效 洪卫 shw2018 add 2019.09.10-->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效 洪卫 shw2018 add 2019.09.10 -->
+        
+
+        <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
+        
+
+        <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景静止彩带  洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+        
+
+        <!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
+         
+            <!-- 天气接口 洪卫 shw2018 add 2019.09.09 --> 
+<script type="text/javascript"> 
+	WIDGET = {FID: 'mxknKNuFj6'} 
+</script> 
+<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> --> 
+<script type="text/javascript"> //只在桌面版网页启用特效 
+	var windowWidth = $(window).width(); 
+	if (windowWidth > 768) { 
+		document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>'); 
+	} 
+</script>
+ 
+        
+
+
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
+</html>
