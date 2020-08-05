@@ -575,57 +575,6 @@ $('.bg-cover').css('background-image', 'url(https://s1.ax1x.com/2020/04/26/JgCx5
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/20200424/44612.html" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTIWn.jpg" class="responsive-img" alt="小说推荐">
-                            
-                            <span class="card-title">小说推荐</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            《杨戬-人生长恨水长东》推荐指数：*****
-下载地址：https://zheroic.lanzous.com/ibw6wsj
-有点虐心
-
-        document.querySelectorAll('.github-emoji')
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-04-24
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%B0%8F%E8%AF%B4/" class="post-category" target="_blank">
-                                    小说
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%B0%8F%E8%AF%B4-%E4%BB%99%E4%BE%A0/" target="_blank">
-                            <span class="chip bg-color">小说|仙侠</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/20200106/11894.html" target="_blank">
                         <div class="card-image">
                             
@@ -1077,6 +1026,53 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/20191219/64784.html" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTfoQ.jpg" class="responsive-img" alt="scala一行代码实现wordcount解析">
+                            
+                            <span class="card-title">scala一行代码实现wordcount解析</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                             sc.textFile("/data/wordcount.txt").flatMap(_.split(" ")).map(word=>(word,1)).reduceByKey(_+_).sortBy(_._1,false).collec
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/scala/" class="post-category" target="_blank">
+                                    scala
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/scala/" target="_blank">
+                            <span class="chip bg-color">scala</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/20191219/50108.html" target="_blank">
                         <div class="card-image">
                             
@@ -1124,20 +1120,20 @@ val data=sc.textFile("file:///E://table//wordcount.txt")
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/20191219/64784.html" target="_blank">
+                    <a href="/20191219/8494.html" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTfoQ.jpg" class="responsive-img" alt="scala一行代码实现wordcount解析">
+                            <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTcsf.jpg" class="responsive-img" alt="读取文件时，读取hdfs集群的文件和本机文件的scala代码写法">
                             
-                            <span class="card-title">scala一行代码实现wordcount解析</span>
+                            <span class="card-title">读取文件时，读取hdfs集群的文件和本机文件的scala代码写法</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                             sc.textFile("/data/wordcount.txt").flatMap(_.split(" ")).map(word=>(word,1)).reduceByKey(_+_).sortBy(_._1,false).collec
+                            读取hdfs集群的文件val file=sc.textFile(“/data/wordcount.txt”)spark默认是在hdfs目录读取所以可以不写hdfs也可以写成：val file=sc.textFile(“hdfs://nn:9
                             
                         </div>
                         <div class="publish-info">

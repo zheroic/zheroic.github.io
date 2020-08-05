@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-08-05T03:28:38.307Z</updated>
+  <updated>2020-08-05T05:33:30.665Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -17,37 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Untitled</title>
-    <link href="https://zheroic.top/20200805/12013.html"/>
-    <id>https://zheroic.top/20200805/12013.html</id>
-    <published>2020-08-05T03:28:38.307Z</published>
-    <updated>2020-08-05T03:28:38.307Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>MySQL基础整理</title>
     <link href="https://zheroic.top/20200805/28747.html"/>
     <id>https://zheroic.top/20200805/28747.html</id>
     <published>2020-08-05T01:39:22.000Z</published>
-    <updated>2020-08-05T05:33:05.462Z</updated>
+    <updated>2020-08-05T05:33:30.665Z</updated>
     
     <summary type="html">
     
@@ -552,6 +526,35 @@
         
         
           &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
+        
+      
+    
+    </summary>
+    
+      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
+    
+    
+      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark scala读取文件选取特定列</title>
+    <link href="https://zheroic.top/20191219/26987.html"/>
+    <id>https://zheroic.top/20191219/26987.html</id>
+    <published>2019-12-19T06:28:00.000Z</published>
+    <updated>2020-04-25T20:05:34.027Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;spark scala读取文件选取特定列&lt;br&gt;wordcount.txt:&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;a,1
+c,2
+a,1&lt;span
         
       
     

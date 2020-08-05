@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>Untitled</title>
-      <link href="/20200805/12013.html"/>
-      <url>/20200805/12013.html</url>
-      
-        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MySQL基础整理</title>
       <link href="/20200805/28747.html"/>
       <url>/20200805/28747.html</url>
@@ -566,31 +553,6 @@
     
     
     <entry>
-      <title>Spark运行模式的区别</title>
-      <link href="/20191219/50108.html"/>
-      <url>/20191219/50108.html</url>
-      
-        <content type="html"><![CDATA[<p>local    ：就是单机，jobs都在这台机器上运行。<br>standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行<br>yarn：就是说spark程序运行在yarn上<br>client ：就是Jobs在不同机器运行，然后结果返回到这台机器上。<br>cluster ： 就是说jobs在不同机器上运行，结果返回到集群中的某一台机器上。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> spark </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> spark </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>scala一行代码实现wordcount解析</title>
       <link href="/20191219/64784.html"/>
       <url>/20191219/64784.html</url>
@@ -608,6 +570,31 @@
         <tags>
             
             <tag> scala </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spark运行模式的区别</title>
+      <link href="/20191219/50108.html"/>
+      <url>/20191219/50108.html</url>
+      
+        <content type="html"><![CDATA[<p>local    ：就是单机，jobs都在这台机器上运行。<br>standalone：就是说多台机器组成一个集群，然后jobs可以分在多台机器上运行<br>yarn：就是说spark程序运行在yarn上<br>client ：就是Jobs在不同机器运行，然后结果返回到这台机器上。<br>cluster ： 就是说jobs在不同机器上运行，结果返回到集群中的某一台机器上。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> spark </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spark </tag>
             
         </tags>
       
