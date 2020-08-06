@@ -700,14 +700,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        565
+                        749
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -734,7 +734,7 @@ str <span class="token operator">=</span> “bcd”<span class="token punctuatio
 <li>StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况；</li>
 <li>StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况。</li>
 </ul>
-<h2 id="相互转换"><a href="#相互转换" class="headerlink" title="相互转换"></a>相互转换</h2><ul>
+<h2 id="相互转换以及判断StringBuffer是否相等"><a href="#相互转换以及判断StringBuffer是否相等" class="headerlink" title="相互转换以及判断StringBuffer是否相等"></a>相互转换以及判断StringBuffer是否相等</h2><ul>
 <li>String转换成StringBuffer：构造方法和append方法；</li>
 <li>StringBuffer转换成String：构造方法和toString方法。</li>
 </ul>
@@ -766,7 +766,18 @@ str <span class="token operator">=</span> “bcd”<span class="token punctuatio
         String str3 <span class="token operator">=</span> buffer3<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str3<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token comment" spellcheck="true">//判断Stringbuffer是否相等</span>
+        <span class="token comment" spellcheck="true">//==只能比较两个字符串的内存地址是否一样，不能比较字符串内容；</span>
+        <span class="token comment" spellcheck="true">//String的equals方法因为重写了Object的equals方法，所以可以比较字符串的内容，而StringBuffer因为没重写equals方法，直接继承了Object的equals方法，所以不行。</span>
+        <span class="token comment" spellcheck="true">//那么如何比较StringBuffer字符串内容是否相等呢?</span>
+        <span class="token comment" spellcheck="true">//可以使用toString() 方法将StringBuffer的内容转换为String 字符串，再使用equals()方法比较。</span>
+        <span class="token comment" spellcheck="true">//验证回文字符串时，使用stringbuffer==stringbuffer.reserve()，一定会返回true，因为共用内存空间。此时一定要转string。</span>
+        StringBuffer sb1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           sb1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"abv"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sb1<span class="token operator">==</span>sb1<span class="token punctuation">.</span><span class="token function">reserve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//true;</span>
+        sb1<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>sb1<span class="token punctuation">.</span>reserve<span class="token punctuation">.</span>toString<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//false</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1119,7 +1130,7 @@ str <span class="token operator">=</span> “bcd”<span class="token punctuatio
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">66.8k</span> 字
+                <span class="white-color">67k</span> 字
             
 
             
