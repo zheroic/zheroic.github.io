@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zheroic.top/"/>
-  <updated>2020-08-05T05:33:30.665Z</updated>
+  <updated>2020-08-10T04:29:45.833Z</updated>
   <id>https://zheroic.top/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java保留两位小数的方法</title>
+    <link href="https://zheroic.top/20200810/11986.html"/>
+    <id>https://zheroic.top/20200810/11986.html</id>
+    <published>2020-08-10T03:42:01.000Z</published>
+    <updated>2020-08-10T04:29:45.833Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Java除法保留小数以及保留两位小数常用方法&quot;&gt;&lt;a href=&quot;#Java除法保留小数以及保留两位小数常用方法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://zheroic.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://zheroic.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL基础整理</title>
     <link href="https://zheroic.top/20200805/28747.html"/>
     <id>https://zheroic.top/20200805/28747.html</id>
     <published>2020-08-05T01:39:22.000Z</published>
-    <updated>2020-08-05T05:33:30.665Z</updated>
+    <updated>2020-08-14T08:07:18.565Z</updated>
     
     <summary type="html">
     
@@ -151,7 +177,7 @@
     <link href="https://zheroic.top/20200505/20414.html"/>
     <id>https://zheroic.top/20200505/20414.html</id>
     <published>2020-05-05T09:08:03.000Z</published>
-    <updated>2020-07-29T08:45:00.883Z</updated>
+    <updated>2020-08-17T06:54:19.714Z</updated>
     
     <summary type="html">
     
@@ -159,7 +185,7 @@
       
         
         
-          &lt;h2 id=&quot;Java基础&quot;&gt;&lt;a href=&quot;#Java基础&quot; class=&quot;headerlink&quot; title=&quot;Java基础&quot;&gt;&lt;/a&gt;Java基础&lt;/h2&gt;&lt;h3 id=&quot;抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。&quot;&gt;&lt;a
+          &lt;h2 id=&quot;Java基础&quot;&gt;&lt;a href=&quot;#Java基础&quot; class=&quot;headerlink&quot; title=&quot;Java基础&quot;&gt;&lt;/a&gt;Java基础&lt;/h2&gt;&lt;h3 id=&quot;BitSet-解决-40亿个整数中找到那个唯一重复的数字或者查找某一个数&quot;&gt;&lt;a
         
       
     
@@ -526,35 +552,6 @@
         
         
           &lt;p&gt;将多份数据进行关联是数据处理过程中非常普遍的用法，不过在分布式计算系统中，这个问题往往会变的非常麻烦，因为框架提供的 join 操作一般会将所有数据根据 key 发送到所有的 reduce 分区中去，也就是 shuffle
-        
-      
-    
-    </summary>
-    
-      <category term="spark" scheme="https://zheroic.top/categories/spark/"/>
-    
-    
-      <category term="spark" scheme="https://zheroic.top/tags/spark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>spark scala读取文件选取特定列</title>
-    <link href="https://zheroic.top/20191219/26987.html"/>
-    <id>https://zheroic.top/20191219/26987.html</id>
-    <published>2019-12-19T06:28:00.000Z</published>
-    <updated>2020-04-25T20:05:34.027Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;spark scala读取文件选取特定列&lt;br&gt;wordcount.txt:&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-txt&quot;&gt;&lt;code class=&quot;language-txt&quot;&gt;a,1
-c,2
-a,1&lt;span
         
       
     

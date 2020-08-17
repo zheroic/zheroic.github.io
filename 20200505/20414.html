@@ -9,9 +9,9 @@
     <meta name="keywords" content="知识整理, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="Java基础抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。十进制转二进制int n=5;
-String s = Integer.toBinaryString(n);
-String 、 StringBuilder 、 String">
+    <meta name="description" content="Java基础BitSet 解决 40亿个整数中找到那个唯一重复的数字或者查找某一个数import java.util.BitSet;
+public class BitSet2 {
+        public static void mai">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -710,14 +710,14 @@ String 、 StringBuilder 、 String">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        22.9k
+                        25.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        83 分
+                        91 分
                     </div>
                     
                 
@@ -734,7 +734,26 @@ String 、 StringBuilder 、 String">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+                <h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><h3 id="BitSet-解决-40亿个整数中找到那个唯一重复的数字或者查找某一个数"><a href="#BitSet-解决-40亿个整数中找到那个唯一重复的数字或者查找某一个数" class="headerlink" title="BitSet 解决 40亿个整数中找到那个唯一重复的数字或者查找某一个数"></a>BitSet 解决 40亿个整数中找到那个唯一重复的数字或者查找某一个数</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>BitSet<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BitSet2</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            BitSet bitSet<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">BitSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token operator">:</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>bitSet<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    bitSet<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。"><a href="#抽象类可以不包含抽象方法-包含抽象方法的类一定是抽象类。" class="headerlink" title="抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。"></a>抽象类可以不包含抽象方法, 包含抽象方法的类一定是抽象类。</h3><h3 id="next和nextLine的区别："><a href="#next和nextLine的区别：" class="headerlink" title="next和nextLine的区别："></a>next和nextLine的区别：</h3><p>在Java中输入字符串有两种方法，就是next()和nextLine().</p>
+<p>两者的区别就是：nextLine()的输入是碰到回车就终止输入，而next()方法是碰到空格，回车，Tab键都会被视为终止符。</p>
+<p>所以next()不会得到带空格的字符串，而nextLine()可以得到带空格的字符串。</p>
+<h3 id="十进制转二进制"><a href="#十进制转二进制" class="headerlink" title="十进制转二进制"></a>十进制转二进制</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
 String s <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">toBinaryString</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="String-、-StringBuilder-、-StringBuffer-的区别？"><a href="#String-、-StringBuilder-、-StringBuffer-的区别？" class="headerlink" title="String 、 StringBuilder 、 StringBuffer 的区别？"></a>String 、 StringBuilder 、 StringBuffer 的区别？</h3><p>Java 平台提供了两种类型的字符串： String 和 StringBuffer/StringBuilder，它们都可以储存和操作字符串， 区别<br>如下。<br>1） String 是只读字符串，也就意味着 String 引用的字符串内容是不能被改变的。 初学者可能会有这样的误解：</p>
 <pre class="line-numbers language-java"><code class="language-java">String str <span class="token operator">=</span> “abc”；
@@ -768,6 +787,36 @@ int res = a-'0';
 <p>为什么采用这种结构来存储元素呢？数组的特点：查询效率高，插入，删除效率低。链表的特点：查询效率低，插入删除效率高。在HashMap底层使用数组加（链表或红黑树）的结构完美的解决了数组和链表的问题，使得查询和插入，删除的效率都很高。</p>
 <p><strong>HashMap基于hashing原理，通过put()、get()存储和获取对象。当我们将键值传递给put()方法时，它调用键对象的hashCode()方法来计算hashcode，然后找到bucket位置来储存值对象。当获取对象时，通过键对象的equals()方法找到正确的键值对，然后返回值对象。HashMap使用链表来解决碰撞问题，当发生碰撞了，对象将会储存在链表的下一个节点中。 HashMap在每个链表节点中储存键值对对象。</strong></p>
 <p>当两个不同的键对象的hashcode相同时会发生什么？ 它们会储存在同一个bucket位置的链表中。键对象的equals()方法用来找到键值对。</p>
+<h2 id="ConcurrentHashMap的原理"><a href="#ConcurrentHashMap的原理" class="headerlink" title="ConcurrentHashMap的原理"></a>ConcurrentHashMap的原理</h2><p>JDK1.5：</p>
+<p>ConcurrentHashMap 是concurrent 包中线程安全的哈希表，采用分段锁，把 Map 分成了 N 个 Segment，put 和 get 的时候，都是根据 key.hashCode() 算出放到哪个 Segment 中。</p>
+<p>JDK1.8：</p>
+<p>ConcurrentHashMap取消了segment分段锁，而采用CAS和synchronized来保证并发安全。数据结构跟HashMap1.8的结构一样，<strong>数组+链表/红黑二叉树</strong>。<br> synchronized只锁定当前链表或红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发，效率又提升N倍。</p>
+<h2 id="红黑树和AVL（平衡二叉树）的区别"><a href="#红黑树和AVL（平衡二叉树）的区别" class="headerlink" title="红黑树和AVL（平衡二叉树）的区别"></a>红黑树和AVL（平衡二叉树）的区别</h2><p><strong>一，AVL树（平衡二叉树）</strong></p>
+<p><strong>（1）简介</strong></p>
+<p>AVL树是带有平衡条件的二叉查找树，一般是用平衡因子差值判断是否平衡并通过旋转来实现平衡，左右子树树高不超过1，和红黑树相比，AVL树是<strong>严格的平衡二叉树</strong>，平衡条件必须满足（<strong>所有节点的左右子树高度差不超过1</strong>）。不管我们是执行插入还是删除操作，只要不满足上面的条件，就要通过旋转来保持平衡，而因为旋转非常耗时的，由此我们可以知道<strong>AVL树适合用于插入与删除次数比较少，但查找多的情况</strong></p>
+<p><strong>(2）局限性</strong></p>
+<p>由于维护这种高度平衡所付出的代价比从中获得的效率收益还大，故而实际的应用不多，更多的地方是用追求局部而不是非常严格整体平衡的红黑树。<strong>当然,如果应用场景中对插入删除不频繁，只是对查找要求较高，那么AVL还是较优于红黑树</strong></p>
+<p><strong>(3）应用</strong></p>
+<p><strong>1，Windows NT内核中广泛存在;</strong></p>
+<p><strong>二、红黑树</strong></p>
+<p><strong>(1）简介</strong></p>
+<p>一种二叉查找树，但在每个节点增加一个存储位表示节点的颜色，可以是红或黑（<strong>非红即黑</strong>）。通过对任何一条从根到叶子的路径上各个节点着色的方式的限制，<strong>红黑树确保没有一条路径会比其它路径长出两倍</strong>，因此，红黑树是一种<strong>弱平衡二叉树</strong>（由于是弱平衡，可以看到，<strong>在相同的节点情况下，AVL树的高度低于红黑树）</strong>，相对于要求严格的AVL树来说，它的旋转次数少，所以<strong>对于搜索，插入，删除操作较多的情况下，我们就用红黑树</strong>。</p>
+<p><strong>(2)性质</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="E:%5Cblogpics%5C20200623160724367.png" alt=""></p>
+<ol>
+<li>每个节点非红即黑</li>
+<li>根节点是黑的;</li>
+<li>每个叶节点（叶节点即树尾端NULL指针或NULL节点）都是黑的;</li>
+<li>如图所示，如果一个节点是红的，那么它的两儿子都是黑的;</li>
+<li>对于任意节点而言，其到叶子点树NULL指针的每条路径都包含相同数目的黑节点;</li>
+<li>每条路径都包含相同的黑节点;</li>
+</ol>
+<p><strong>(3)应用</strong></p>
+<p>1，广泛用于C ++的STL中，地图和集都是用红黑树实现的;</p>
+<p>2，着名的Linux的的进程调度完全公平调度程序，用红黑树管理进程控制块，进程的虚拟内存区域都存储在一颗红黑树上，每个虚拟地址区域都对应红黑树的一个节点，左指针指向相邻的地址虚拟存储区域，右指针指向相邻的高地址虚拟地址空间;</p>
+<p>3，IO多路复用的epoll的的的实现采用红黑树组织管理的的的sockfd，以支持快速的增删改查;</p>
+<p>4，Nginx的的的中用红黑树管理定时器，因为红黑树是有序的，可以很快的得到距离当前最小的定时器;</p>
+<p>5，Java的的的中TreeMap中的中的实现;</p>
 <h2 id="快排"><a href="#快排" class="headerlink" title="快排"></a>快排</h2><p>1.最好情况最坏情况平均情况：</p>
 <p>快速排序的<strong>时间性能</strong>取决于快速排序递归的深度，可以用递归树来描述递归算法的执行情况。如图9‐9‐7所示，它是{50,10,90,30, 70,40,80,60,20}在快速排序过程中的递归过程。由于我们的第一个关键字是50，正好是待排序的序列的中间值，因此递归树是平衡的，此时性能也比较好。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/BlogMedias/images/20200505172050.jpg" alt="cafd6b26763a392ad0fbef50aa12d620.jpeg"></p>
@@ -800,7 +849,7 @@ int res = a-'0';
 <h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><h3 id="数据可靠性保证"><a href="#数据可靠性保证" class="headerlink" title="数据可靠性保证"></a>数据可靠性保证</h3><p>当Producer向Leader发送数据时，可以通过acks参数设置数据可靠性的级别<br>0: 不论写入是否成功，server不需要给Producer发送Response，如果发生异常，server会终止连接，触发Producer更新meta数据；<br>1: Leader写入成功后即发送Response，此种情况如果Leader fail，会丢失数据，<strong>默认设置</strong><br>-1: 等待所有ISR接收到消息后再给Producer发送Response，这是最强保证<br>（ISR全称是“In-Sync Replicas”，也就是保持同步的副本，他的含义就是，跟Leader始终保持同步的Follower有哪些）<br><em>仅设置acks=-1也不能保证数据不丢失，当Isr列表中只有Leader时，同样有可能造成数据丢失。要保证数据不丢除了设置acks=-1, 还要保证ISR的大小大于等于2，具体参数设置：</em><br>request.required.acks：设置为-1 等待所有ISR列表中的Replica接收到消息后采算写成功；min.insync.replicas: 设置为大于等于2，保证ISR中至少有两个Replica</p>
 <p>Producer要在吞吐率和数据可靠性之间做一个权衡</p>
 <h3 id="数据一致性保证"><a href="#数据一致性保证" class="headerlink" title="数据一致性保证"></a>数据一致性保证</h3><p>一致性定义：若某条消息对client可见，那么即使Leader挂了，在新Leader上数据依然可以被读到<br>  HW-HighWaterMark: client可以从Leader读到的最大msg offset，即对外可见的最大offset， HW=max(replica.offset)<br>  对于Leader新收到的msg，client不能立刻消费，Leader会等待该消息被所有ISR中的replica同步后，更新HW，此时该消息才能被client消费，这样就保证了如果Leader fail，该消息仍然可以从新选举的Leader中获取。<br>  对于来自内部Broker的读取请求，没有HW的限制。同时，Follower也会维护一份自己的HW，Folloer.HW = min(Leader.HW, Follower.offset)</p>
-<h3 id="Kafka为什么吞吐量达，速度快"><a href="#Kafka为什么吞吐量达，速度快" class="headerlink" title="Kafka为什么吞吐量达，速度快"></a>Kafka为什么吞吐量达，速度快</h3><p>Kafka虽然是基于磁盘做的数据存储，但却具有高性能、高吞吐、低延时的特点，其吞吐量动辄几万、几十上百万。</p>
+<h3 id="Kafka为什么吞吐量大，速度快"><a href="#Kafka为什么吞吐量大，速度快" class="headerlink" title="Kafka为什么吞吐量大，速度快"></a>Kafka为什么吞吐量大，速度快</h3><p>Kafka虽然是基于磁盘做的数据存储，但却具有高性能、高吞吐、低延时的特点，其吞吐量动辄几万、几十上百万。</p>
 <h4 id="1-顺序读写："><a href="#1-顺序读写：" class="headerlink" title="1.顺序读写："></a>1.顺序读写：</h4><p>Kafka就是使用了磁盘顺序读写来提升的性能。Kafka的message是不断追加到本地磁盘文件末尾的，而不是随机的写入，这使得Kafka写入吞吐量得到了显著提升 。</p>
 <h4 id="2-Page-Cache："><a href="#2-Page-Cache：" class="headerlink" title="2.Page Cache："></a>2.Page Cache：</h4><p>通过操作系统的Page Cache，Kafka的读写操作基本上是基于内存的，读写速度得到了极大的提升。<br> 为了优化读写性能，Kafka利用了操作系统本身的Page Cache，就是利用操作系统自身的内存而不是JVM空间内存。这样做的好处有：<br>  1）避免Object消耗：如果是使用 Java 堆，Java对象的内存消耗比较大，通常是所存储数据的两倍甚至更多。<br>  2）避免GC问题：随着JVM中数据不断增多，垃圾回收将会变得复杂与缓慢，使用系统缓存就不会存在GC问题</p>
 <h4 id="3-零拷贝："><a href="#3-零拷贝：" class="headerlink" title="3.零拷贝："></a>3.零拷贝：</h4><p>linux操作系统 “零拷贝” 机制使用了sendfile方法， 允许操作系统将数据从Page Cache 直接发送到网络，只需要最后一步的copy操作将数据复制到 NIC 缓冲区， 这样避免重新复制数据 。</p>
@@ -817,6 +866,15 @@ int res = a-'0';
 <h4 id="HDFS读流程"><a href="#HDFS读流程" class="headerlink" title="HDFS读流程"></a>HDFS读流程</h4><p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/BlogMedias/images/20200505173955.png" alt="6277e32d9c8cdf998116b59ecaf87fc8.png"><br>1.client访问NameNode，查询元数据信息，获得这个文件的数据块位置列表，返回输入流对象。<br>2.client就近挑选一台datanode服务器，请求建立输入流 。<br>3.DataNode向输入流中中写数据，以packet为单位来校验。<br>4.关闭输入流</p>
 <h4 id="读写过程中数据完整性保证"><a href="#读写过程中数据完整性保证" class="headerlink" title="读写过程中数据完整性保证"></a>读写过程中数据完整性保证</h4><p>通过校验和。因为每个chunk中都有一个校验位，一个个chunk构成packet，一个个packet最终形成block，故可在block上求校验和。</p>
 <p>HDFS 的client端即实现了对 HDFS 文件内容的校验和 (checksum) 检查。当客户端创建一个新的HDFS文件时候，分块后会计算这个文件每个数据块的校验和，此校验和会以一个隐藏文件形式保存在同一个 HDFS 命名空间下。当client端从HDFS中读取文件内容后，它会检查分块时候计算出的校验和（隐藏文件里）和读取到的文件块中校验和是否匹配，如果不匹配，客户端可以选择从其他 Datanode 获取该数据块的副本。</p>
+<h3 id="YARN的Job提交流程"><a href="#YARN的Job提交流程" class="headerlink" title="YARN的Job提交流程"></a>YARN的Job提交流程</h3><p>1.客户端向<strong>ResourceManagement</strong> 提交 运行的请求 (hadoop jar xxxx.jar)</p>
+<p>2.<strong>ResourceManager</strong>进行检查,没有问题的时候,向客户端返回一个<strong>共享资源的路径</strong>以及<strong>JobId</strong></p>
+<p>3.<strong>客户端</strong>向<strong>HDFS</strong>提交资源,将<strong>共享资源放入共享路径下</strong>:(/tmp/hadoop-yarn/staging-dir/xxxxxxxx)</p>
+<p>4.<strong>客户端</strong>向<strong>ResourceManager</strong>反馈共享资源放置完毕,进行job的正式提交</p>
+<p>5.<strong>ResourceManager</strong>为这个job分配一个节点,并在这个节点上启动<strong>MRAppMaster</strong>任务</p>
+<p>6.<strong>ResourceManager</strong>到对应的节点上去启动<strong>container</strong>容器用于装载<strong>MRAppMaster</strong></p>
+<p>7.<strong>MRAppMaster</strong>对job进行初始化,生成一个job工作簿,job的工作簿记录着maptask和reduce的运行进度和状态</p>
+<p>8.<strong>MRAppMaster</strong>向<strong>ResourceManager</strong>申请<strong>maptask</strong>和<strong>reducetask</strong>的运行的资源,先发<strong>maptask</strong>然后发<strong>reducetask</strong></p>
+<p>9.<strong>ResourceManager</strong>向<strong>MRAppMaster</strong>返回<strong>maptask</strong>和<strong>reduce</strong>的资源节点</p>
 <h3 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h3><h4 id="数据倾斜发生时的现象："><a href="#数据倾斜发生时的现象：" class="headerlink" title="数据倾斜发生时的现象："></a>数据倾斜发生时的现象：</h4><p>1、绝大多数task执行得都非常快，但个别task执行的极慢。<br>2、原本能正常执行的Spark作业，某天突然爆出OOM（内存溢出）异常。观察异常栈，是我们写的业务代码造成的</p>
 <h4 id="数据倾斜发生的原理"><a href="#数据倾斜发生的原理" class="headerlink" title="数据倾斜发生的原理 :"></a>数据倾斜发生的原理 :</h4><p>在进行shuffle的时候，必须将各个节点上相同的Key拉取到某个节点上的一个task来进行处理，比如按照key进行聚合或者join操作。如果某个key对应的数据量特别大的话，会发生数据倾斜。比如大部分key对应的10条数据，但个别key却对应了100万条数据，那么大部分task会只分配到10条数据，而个别task可能会分配了100万数据。整个spark作业的运行进度是由运行时间最长的那个task决定的。<br>因此出现数据倾斜的时候，spark作业看起来会运行得非常缓慢，甚至可能因为某个task处理的数据量过大导致OOM。</p>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title=" 解决方案"></a><u> 解决方案</u></h4><p>1、<strong>增加jvm内存</strong>,这适用于第一种情况(唯一值非常少，极少数值有非常多的记录值(唯一值少于几千)),这种情况下,往往只能通过硬件的手段来进行调优,增加jvm内存可以显著的提高运行效率。</p>
@@ -1015,7 +1073,7 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
 <p>这四个隔离级别可以解决脏读、不可重复读、幻象读这三类问题。总结如下</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://cdn.jsdelivr.net/gh/zheroic/BlogMedias/images/20200509104419.jpg" alt=""></p>
 <p>其中隔离级别由低到高是：读未提交 &lt; 读已提交 &lt; 可重复读 &lt; 串行化</p>
-<p>隔离级别越高，越能够保证数据的完整性和一致性，但是对并发的性能影响越大。大多数数据库的默认级别是<code>读已提交(Read committed)</code>，比如 Sql Server、Oracle ，但是 MySQL 的默认隔离级别是 <code>可重复读(repeatable-read)</code>。</p>
+<p>隔离级别越高，越能够保证数据的完整性和一致性，但是对并发的性能影响越大。大多数数据库的默认级别是<code>读已提交(Read committed)</code>，比如 Sql Server、Oracle ，但是 MySQLInnoDB 的默认隔离级别是 <strong>可重复读</strong>。</p>
 <h3 id="MySQL-常见存储引擎的区别"><a href="#MySQL-常见存储引擎的区别" class="headerlink" title="MySQL 常见存储引擎的区别"></a>MySQL 常见存储引擎的区别</h3><p>MySQL 常见的存储引擎，可以使用</p>
 <pre><code>SHOW ENGINES</code></pre><p>命令，来列出所有的存储引擎</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://mmbiz.qpic.cn/mmbiz_png/libYRuvULTdUjIID8CJZm0kCpUTFyVGvJznoR5W4Rxsh0whBL1ls2BtrxR4GgwRndwMbEy7GSy8dicaCCFuNqQJg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt=""></p>
@@ -1219,6 +1277,12 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
 <p>水平分割：通过建立结构相同的几张表分别存储数据</p>
 <p>垂直分割：将经常一起使用的字段放在一个单独的表中，分割后的表记录之间是一一对应关系。</p>
 </blockquote>
+<h3 id="一个-SQL-执行的很慢，我们要分两种情况讨论："><a href="#一个-SQL-执行的很慢，我们要分两种情况讨论：" class="headerlink" title="一个 SQL 执行的很慢，我们要分两种情况讨论："></a>一个 SQL 执行的很慢，我们要分两种情况讨论：</h3><p>1、大多数情况下很正常，偶尔很慢，则有如下原因</p>
+<p>(1)、数据库在刷新脏页，例如 redo log 写满了需要同步到磁盘。</p>
+<p>(2)、执行的时候，遇到锁，如表锁、行锁。</p>
+<p>2、这条 SQL 语句一直执行的很慢，则有如下原因。</p>
+<p>(1)、没有用上索引：例如该字段没有索引；由于对字段进行运算、函数操作导致无法用索引。</p>
+<p>(2)、数据库选错了索引。</p>
 <h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><h3 id="Spark与MR的区别"><a href="#Spark与MR的区别" class="headerlink" title="Spark与MR的区别"></a>Spark与MR的区别</h3><ul>
 <li>MR是基于进程，spark是基于线程</li>
 <li>Spark的多个task跑在同一个进程上，这个进程会伴随spark应用程序的整个生命周期，即使没有作业进行，进程也是存在的；MR的每一个task都是一个进程，当task完成时，进程也会结束</li>
@@ -1228,6 +1292,25 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
 <li>适用面：spark更加通用，spark提供了transformation和action这两大类的多个功能的api，另外还有流式处理sparkstreaming模块，图计算GraphX等；MR只提供了map和reduce两种操作，流计算以及其他模块的支持比较缺乏</li>
 <li>框架和生态：Spark框架和生态更为复杂，首先由RDD、血缘lineage、执行时的有向无环图DAG、stage划分等等，很多时候spark作业都需要根据不同的业务场景的需要进行调优，以达到性能要求，MR框架及其生态相对较为简单，对性能的要求也相对较弱，但是运行较为稳定，适合长期后台运行 </li>
 <li>运行环境：<br>  MR运行在YARN上，<br>  spark：<br>  local：本地运行<br>  standalone：使用Spark自带的资源管理框架，运行spark的应用<br>  yarn：将spark应用类似mr一样，提交到yarn上运行<br>  mesos：类似yarn的一种资源管理框架</li>
+</ul>
+<h3 id="基于-YARN-的-Spark-架构与作业执行流程"><a href="#基于-YARN-的-Spark-架构与作业执行流程" class="headerlink" title="基于 YARN 的 Spark 架构与作业执行流程"></a>基于 YARN 的 Spark 架构与作业执行流程</h3><h4 id="Yarn-Client-模式"><a href="#Yarn-Client-模式" class="headerlink" title="Yarn-Client 模式"></a>Yarn-Client 模式</h4><p>1.<strong>Spark Yarn Client向YARN的ResourceManager申请启动Application Master</strong>。同时在<strong>SparkContent初始化</strong>中将创建DAGScheduler和TASKScheduler等，由于我们选择的是Yarn-Client模式，程序会选择YarnClientClusterScheduler和YarnClientSchedulerBackend；</p>
+<p>2.<strong>ResourceManager收到请求后，在集群中选择一个NodeManager，为该应用程序分配第一个Container</strong>，<strong>要求它在这个Container中启动应用程序的ApplicationMaster</strong>，与YARN-Cluster区别的是在该ApplicationMaster不运行SparkContext，只与SparkContext进行联系进行资源的分派；</p>
+<p>3.<strong>Client中的SparkContext初始化完毕后，与ApplicationMaster建立通讯，向ResourceManager注册，根据任务信息向ResourceManager申请资源</strong>（<strong>Container</strong>）；</p>
+<p>4.<strong>一旦ApplicationMaster申请到资源（也就是Container）后，便与对应的NodeManager通信</strong>，要求它在获得的Container中启动CoarseGrainedExecutorBackend，CoarseGrainedExecutorBackend启动后会<strong>向Client中的SparkContext注册并申请Task</strong>；</p>
+<p>5.<strong>Client中的SparkContext分配Task</strong>给CoarseGrainedExecutorBackend执行，CoarseGrainedExecutorBackend<strong>运行Task并向Driver汇报运行的状态和进度，以让Client随时掌握各个任务的运行状态，从而可以在任务失败时重新启动任务；</strong></p>
+<p>6.<strong>应用程序运行完成后，Client的SparkContext向ResourceManager申请注销并关闭自己。</strong></p>
+<h4 id="YARN-Cluster-模式"><a href="#YARN-Cluster-模式" class="headerlink" title="YARN-Cluster 模式"></a>YARN-Cluster 模式</h4><ol>
+<li>Spark Yarn Client向YARN中提交应用程序，包括ApplicationMaster程序、启动ApplicationMaster的命令、需要在Executor中运行的程序等；</li>
+<li>ResourceManager收到请求后，在集群中选择一个NodeManager，为该应用程序分配第一个Container，要求它在这个Container中启动应用程序的ApplicationMaster，其中<strong>ApplicationMaster进行SparkContext等的初始化；</strong></li>
+<li>ApplicationMaster向ResourceManager注册，这样用户可以直接通过ResourceManage查看应用程序的运行状态，然后它将采用轮询的方式通过RPC协议为各个任务申请资源，并监控它们的运行状态直到运行结束；</li>
+<li>一旦ApplicationMaster申请到资源（也就是Container）后，便与对应的NodeManager通信，要求它在获得的Container中启动启动CoarseGrainedExecutorBackend，CoarseGrainedExecutorBackend启动后会向ApplicationMaster中的SparkContext注册并申请Task。这一点和Standalone模式一样，只不过SparkContext在Spark Application中初始化时，使用CoarseGrainedSchedulerBackend配合YarnClusterScheduler进行任务的调度，其中YarnClusterScheduler只是对TaskSchedulerImpl的一个简单包装，增加了对Executor的等待逻辑等；</li>
+<li><strong>ApplicationMaster中的SparkContext分配Task</strong>给CoarseGrainedExecutorBackend执行，CoarseGrainedExecutorBackend运行Task并向ApplicationMaster汇报运行的状态和进度，以让ApplicationMaster随时掌握各个任务的运行状态，从而可以在任务失败时重新启动任务；</li>
+<li>应用程序运行完成后，ApplicationMaster向ResourceManager申请注销并关闭自己。</li>
+</ol>
+<h4 id="YARN-Client-与-YARN-Cluster-区别"><a href="#YARN-Client-与-YARN-Cluster-区别" class="headerlink" title="YARN-Client 与 YARN-Cluster 区别"></a>YARN-Client 与 YARN-Cluster 区别</h4><p>YARN-Cluster和YARN-Client模式的区别其实就是ApplicationMaster进程的区别。</p>
+<ul>
+<li>YARN-Cluster模式下，Driver运行在AM(Application Master)中，它负责向YARN申请资源，并监督作业的运行状况。当用户提交了作业之后，就可以关掉Client，作业会继续在YARN上运行，因而YARN-Cluster模式不适合运行交互类型的作业；</li>
+<li>YARN-Client模式下，Application Master仅仅向YARN请求Executor，Client会和请求的Container通信来调度他们工作，也就是说Client不能离开。</li>
 </ul>
 <h3 id="SparkStreaming"><a href="#SparkStreaming" class="headerlink" title="SparkStreaming"></a>SparkStreaming</h3><h4 id="基本运行原理"><a href="#基本运行原理" class="headerlink" title="基本运行原理"></a>基本运行原理</h4><p>接收实时输入数据流，然后将数据拆分成多个batch，比如每收集5秒的数据封装为一个batch，然后将每个batch交给Spark的计算引擎进行处理，最后会生产出一个结果数据流，其中的数据，也是由一个一个的batch所组成的。</p>
 <h3 id="RDD依赖关系与stage划分"><a href="#RDD依赖关系与stage划分" class="headerlink" title="RDD依赖关系与stage划分"></a>RDD依赖关系与stage划分</h3><p>Spark中RDD的高效与DAG图有着莫大的关系，在DAG调度中需要对计算过程划分stage，而划分依据就是RDD之间的依赖关系。</p>
@@ -1628,7 +1711,7 @@ SELECT a.role_id, a.occupation, a.camp, b.mount_name FROM roles a, mount_info b 
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">67k</span> 字
+                <span class="white-color">69.5k</span> 字
             
 
             

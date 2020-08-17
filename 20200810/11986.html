@@ -6,13 +6,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="解决idea编写spark程序时，import org.apache.spark报错, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="Java保留两位小数的方法, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="问题描述导入spark程序时，spark显示不能识别此符号
-解决：去官网下载对应spark版本的压缩包，链接解压，既有jars目录或者pom.xml加入
-  &amp;lt;dependency&gt;
-      &amp;lt;groupId&gt;org.apa">
+    <meta name="description" content="Java除法保留小数以及保留两位小数常用方法除法保留小数java中的“/”、“%”运算，其中前者为取整，后者取余数。那么有没有快捷的运算方法取正常的运算结果呢？
+在“/”运算时指定返回结果类型为float
+int a = 10;
+int b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>解决idea编写spark程序时，import org.apache.spark报错 | zheroic&#39;s blog</title>
+    <title>Java保留两位小数的方法 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -547,13 +547,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTrRI.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTLeU.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        解决idea编写spark程序时，import org.apache.spark报错
+                        Java保留两位小数的方法
                     </div>
                 </div>
             </div>
@@ -665,8 +665,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/spark/" target="_blank">
-                                <span class="chip bg-color">spark</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -677,8 +677,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                spark
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
                             </a>
                         
                     </div>
@@ -689,7 +689,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-19
+                    2020-08-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -703,7 +703,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        227
+                        218
                     </div>
                     
 
@@ -727,33 +727,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>导入spark程序时，spark显示不能识别此符号<br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205175818179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt=""></p>
-<h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><p><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205180140799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205180228633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt=""><br>去官网下载对应spark版本的压缩包，<a href="http://archive.apache.org/dist/spark/" target="_blank" rel="noopener">链接</a><br>解压，既有jars目录<br>或者pom.xml加入</p>
-<pre class="line-numbers language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spark-core_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spark-sql_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spark-mllib_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.databricks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spark-csv_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.4.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spark-streaming-kafka_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.6.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Java除法保留小数以及保留两位小数常用方法"><a href="#Java除法保留小数以及保留两位小数常用方法" class="headerlink" title="Java除法保留小数以及保留两位小数常用方法"></a>Java除法保留小数以及保留两位小数常用方法</h1><h2 id="除法保留小数"><a href="#除法保留小数" class="headerlink" title="除法保留小数"></a>除法保留小数</h2><p>java中的“/”、“%”运算，其中前者为取整，后者取余数。那么有没有快捷的运算方法取正常的运算结果呢？</p>
+<p><strong>在“/”运算时指定返回结果类型为float</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+
+Double<span class="token operator">/</span><span class="token keyword">float</span>  c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span>a<span class="token operator">/</span>b <span class="token comment" spellcheck="true">//c=2.5,看自己需求选择c的数值类型</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="保留两位小数"><a href="#保留两位小数" class="headerlink" title="保留两位小数"></a>保留两位小数</h2><p>方法一：String的format方法（推荐）</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">double</span> f <span class="token operator">=</span> <span class="token number">111231.5585</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%.2f"</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>方法二：DecimalFormat的format方法</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">double</span> f <span class="token operator">=</span> <span class="token number">111231.5585</span><span class="token punctuation">;</span>
+DecimalFormat df <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DecimalFormat</span><span class="token punctuation">(</span><span class="token string">"#.00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>df<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法三：printf</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">double</span> f <span class="token operator">=</span> <span class="token number">111231.5585</span><span class="token punctuation">;</span>
+System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%.2f\n"</span><span class="token punctuation">,</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -798,7 +789,7 @@
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20191219/57944.html" class="b-link-green">解决idea编写spark程序时，import org.apache.spark报错</a>
+                    <a href="/20200810/11986.html" class="b-link-green">Java保留两位小数的方法</a>
                 </p>
             </div>
 
@@ -821,7 +812,7 @@
         repo: 'zheroic.github.io',
         owner: 'zheroic',
         admin: "zheroic",
-        id: '20191219/57944.html',
+        id: '20200810/11986.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -842,50 +833,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20191219/16157.html">
+                <a href="/20200810/11986.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTGxx.jpg" class="responsive-img" alt="解决idea通过maven创建scala项目，自动生成的App.scala报错">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTLeU.jpg" class="responsive-img" alt="Java保留两位小数的方法">
                         
-                        <span class="card-title">解决idea通过maven创建scala项目，自动生成的App.scala报错</span>
+                        <span class="card-title">Java保留两位小数的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            直接删除自动生成的scala文件main里有一个test里有两个删了然后新建即可
-如果还不行，注意版本号
-
-        document.querySelectorAll('.github-emoji')
-          .forE
+                            Java除法保留小数以及保留两位小数常用方法除法保留小数java中的“/”、“%”运算，其中前者为取整，后者取余数。那么有没有快捷的运算方法取正常的运算结果呢？
+在“/”运算时指定返回结果类型为float
+int a = 10;
+int b
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/scala/" class="post-category" target="_blank">
-                                    scala
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/scala/" target="_blank">
-                        <span class="chip bg-color">scala</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -899,31 +891,33 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/34044.html">
+                <a href="/20200805/28747.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTbLT.jpg" class="responsive-img" alt="R语言第五次实训,dplyr 、tidyr和lubridate处理数据">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTszt.jpg" class="responsive-img" alt="MySQL基础整理">
                         
-                        <span class="card-title">R语言第五次实训,dplyr 、tidyr和lubridate处理数据</span>
+                        <span class="card-title">MySQL基础整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目1：1.数据处理【只用SY-20150401.csv】将数据处理成每条数据处于一天中的第几个5分钟（说明： 00:00:01在第一个5分钟内， 00:10:13在第三个5分钟内），由于一天可能多次乘坐地铁，根据卡号和进站时间，查询最近出
+                            MySQL数据处理基础IS NULL/IS NOT NULL :检查空值  eg：WHERE column IS [NOT] NULL
+IN:相当于OR，但比OR直观，执行更快。 eg：WHERE column IN [‘a’,’b’]
+N
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/MySQL/" class="post-category" target="_blank">
+                                    MySQL
                                 </a>
                             
                             
@@ -933,8 +927,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/R/" target="_blank">
-                        <span class="chip bg-color">R</span>
+                    <a href="/tags/MySQL/" target="_blank">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
