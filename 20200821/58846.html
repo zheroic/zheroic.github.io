@@ -6,10 +6,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="R语言第五次实训,dplyr 、tidyr和lubridate处理数据, 东北大学 软件工程 大数据 zheroic">
+    <meta name="keywords" content="Java多线程, 东北大学 软件工程 大数据 zheroic">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY" />
-    <meta name="description" content="题目1：1.数据处理【只用SY-20150401.csv】将数据处理成每条数据处于一天中的第几个5分钟（说明： 00:00:01在第一个5分钟内， 00:10:13在第三个5分钟内），由于一天可能多次乘坐地铁，根据卡号和进站时间，查询最近出">
+    <meta name="description" content="Java多线程线程基础多线程有什么用
+发挥多核CPU的优势
+防止阻塞
+便于建模
+
+什么是线程？什么是进程？线程和进程的区别？进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>R语言第五次实训,dplyr 、tidyr和lubridate处理数据 | zheroic&#39;s blog</title>
+    <title>Java多线程 | zheroic&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://s1.ax1x.com/2020/04/26/JgP8Zd.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/libs/awesome/css/font-awesome.min.css">
@@ -544,13 +549,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTbLT.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/04/26/JgTozq.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        R语言第五次实训,dplyr 、tidyr和lubridate处理数据
+                        Java多线程
                     </div>
                 </div>
             </div>
@@ -662,8 +667,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/R/" target="_blank">
-                                <span class="chip bg-color">R</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -674,8 +679,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                R
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
                             </a>
                         
                     </div>
@@ -686,7 +691,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-19
+                    2020-08-21
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -700,14 +705,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        710
+                        3.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        10 分
                     </div>
                     
                 
@@ -724,53 +729,106 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目1："><a href="#题目1：" class="headerlink" title="题目1："></a>题目1：</h1><p>1.数据处理【只用SY-20150401.csv】<br>将数据处理成每条数据处于一天中的第几个5分钟（说明： 00:00:01在第一个5分钟内， 00:10:13<br>在第三个5分钟内），由于一天可能多次乘坐地铁，根据卡号和进站时间，查询最近出站的时间，<br>作为本次出站时间。参考函数lubridate::hms， lubridate:: period_to_seconds。<br>处理的最终结果： dataframe(名称trade.metro.in.out )<br>字段 字段说明<br><img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://img-blog.csdnimg.cn/20191205163004682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNDAwMjY3,size_16,color_FFFFFF,t_70" alt=""><br>提交的表格按照card.id排序。<br>Notebook中展示输出结果为<br>head(trade.metro.in.out,10)<br>并输出本地文件<br>shmetro_line_in_out.csv</p>
-<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><p>读数据：</p>
-<pre class="line-numbers language-python"><code class="language-python">setwd<span class="token punctuation">(</span><span class="token string">"E://table"</span><span class="token punctuation">)</span>
-library<span class="token punctuation">(</span>data<span class="token punctuation">.</span>table<span class="token punctuation">)</span>
-dt<span class="token operator">=</span>fread<span class="token punctuation">(</span><span class="token string">'SY-20150401.csv'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>重命名：</p>
-<pre class="line-numbers language-python"><code class="language-python">names<span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span>c<span class="token punctuation">(</span><span class="token string">'card_id'</span><span class="token punctuation">,</span><span class="token string">'date'</span><span class="token punctuation">,</span><span class="token string">'time'</span><span class="token punctuation">,</span><span class="token string">'station'</span><span class="token punctuation">,</span><span class="token string">'vehicle'</span><span class="token punctuation">,</span><span class="token string">'money'</span><span class="token punctuation">,</span><span class="token string">'property'</span><span class="token punctuation">)</span>
-dt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>选取是地铁的数据</p>
-<pre class="line-numbers language-python"><code class="language-python">sy<span class="token operator">&lt;</span><span class="token operator">-</span>dt<span class="token punctuation">[</span>dt$vehicle<span class="token operator">==</span><span class="token string">'地铁'</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
-sy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>将station分成2个字段line和station，利用‘号线’来分割；处理每5分钟一段，并按M5排序（化为秒÷300向上取整）</p>
-<pre class="line-numbers language-python"><code class="language-python">library<span class="token punctuation">(</span>dplyr<span class="token punctuation">)</span>
-library<span class="token punctuation">(</span>tidyr<span class="token punctuation">)</span>
-sy_split<span class="token operator">&lt;</span><span class="token operator">-</span>subset<span class="token punctuation">(</span>sy<span class="token punctuation">,</span>select <span class="token operator">=</span> c<span class="token punctuation">(</span>card_id<span class="token punctuation">,</span>time<span class="token punctuation">,</span>station<span class="token punctuation">,</span>money<span class="token punctuation">)</span><span class="token punctuation">,</span>na<span class="token punctuation">.</span>rm<span class="token operator">=</span>TRUE<span class="token punctuation">)</span>
-sy_split<span class="token operator">&lt;</span><span class="token operator">-</span>separate<span class="token punctuation">(</span>sy_split<span class="token punctuation">,</span><span class="token string">'station'</span><span class="token punctuation">,</span>c<span class="token punctuation">(</span><span class="token string">'line'</span><span class="token punctuation">,</span><span class="token string">'station'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'号线'</span><span class="token punctuation">,</span>remove<span class="token operator">=</span>TRUE<span class="token punctuation">)</span>
-sy_split$M5<span class="token operator">&lt;</span><span class="token operator">-</span>ceiling<span class="token punctuation">(</span><span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>period_to_seconds<span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>hms<span class="token punctuation">(</span>sy_split$time<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">300</span><span class="token punctuation">)</span>
-sy_split<span class="token operator">&lt;</span><span class="token operator">-</span>sy_split<span class="token punctuation">[</span>order<span class="token punctuation">(</span>sy_split$M5<span class="token punctuation">)</span><span class="token punctuation">]</span>
-sy_split<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>统计进站数据</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span> <span class="token operator">&lt;</span><span class="token operator">-</span> subset<span class="token punctuation">(</span>sy_split<span class="token punctuation">,</span>money<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">,</span>select<span class="token operator">=</span><span class="token operator">-</span>c<span class="token punctuation">(</span>money<span class="token punctuation">)</span><span class="token punctuation">)</span>
-names<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">,</span><span class="token string">'time.in'</span><span class="token punctuation">,</span><span class="token string">'line.in'</span><span class="token punctuation">,</span><span class="token string">'station.in'</span><span class="token punctuation">,</span><span class="token string">'M5.in'</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>统计出站数据</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>sy_split<span class="token punctuation">[</span>money<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">]</span>
-names<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">,</span><span class="token string">'time.out'</span><span class="token punctuation">,</span><span class="token string">'line.out'</span><span class="token punctuation">,</span><span class="token string">'station.out'</span><span class="token punctuation">,</span><span class="token string">'money'</span><span class="token punctuation">,</span><span class="token string">'M5.out'</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>根据card.id将5和6合并；并计算乘车时长；将乘车时长大于0的取出来</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>merge<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">,</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span>out<span class="token punctuation">,</span>by<span class="token operator">=</span>c<span class="token punctuation">(</span><span class="token string">'card.id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$duration<span class="token operator">=</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>period_to_seconds<span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>hms<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$time<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>period_to_seconds<span class="token punctuation">(</span>lubridate<span class="token punctuation">:</span><span class="token punctuation">:</span>hms<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out$time<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>subset<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span>duration<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>通过card.id, M5.in来统计出某个card.id的最短的乘车时长<br>然后通过duration==duration_min，将最近出站时间，找出来<br>再将中间的统计量去掉，也可以dplyr中的管道%&gt;%实现</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">[</span><span class="token punctuation">,</span>duration<span class="token punctuation">.</span>min<span class="token punctuation">:</span><span class="token operator">=</span>min<span class="token punctuation">(</span>duration<span class="token punctuation">)</span><span class="token punctuation">,</span>by<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">(</span>card<span class="token punctuation">.</span>id<span class="token punctuation">,</span>M5<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>subset<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span>duration<span class="token operator">==</span>duration<span class="token punctuation">.</span>min<span class="token punctuation">,</span>select <span class="token operator">=</span> <span class="token operator">-</span>c<span class="token punctuation">(</span>duration<span class="token punctuation">.</span>min<span class="token punctuation">)</span><span class="token punctuation">)</span>
-trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>按照card.id来排序，并展示前10条</p>
-<pre class="line-numbers language-python"><code class="language-python">trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token operator">&lt;</span><span class="token operator">-</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">[</span>order<span class="token punctuation">(</span>card<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
-head<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>将处理后的数据输出</p>
-<pre class="line-numbers language-python"><code class="language-python">write<span class="token punctuation">.</span>csv<span class="token punctuation">(</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">,</span><span class="token string">'shmetro_line_in_out.csv'</span><span class="token punctuation">,</span>row<span class="token punctuation">.</span>names <span class="token operator">=</span> FALSE<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>利用1中的处理结果，按照station.in,station.out来分组，统计各组的数量<br>按照进出站的流量排序，取出前10个<br>展示前6个</p>
-<pre class="line-numbers language-python"><code class="language-python">cus_nums<span class="token operator">&lt;</span><span class="token operator">-</span>trade<span class="token punctuation">.</span>metro<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">.</span>out<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">(</span>cusnums<span class="token operator">=</span><span class="token punctuation">.</span>N<span class="token punctuation">)</span><span class="token punctuation">,</span>by<span class="token operator">=</span><span class="token punctuation">.</span><span class="token punctuation">(</span>station<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">,</span>station<span class="token punctuation">.</span>out<span class="token punctuation">)</span><span class="token punctuation">]</span>
-cus_nums<span class="token operator">&lt;</span><span class="token operator">-</span>cus_nums<span class="token punctuation">[</span>order<span class="token punctuation">(</span>cusnums<span class="token punctuation">,</span>decreasing <span class="token operator">=</span> TRUE<span class="token punctuation">)</span><span class="token punctuation">]</span>
-cus_nums<span class="token operator">&lt;</span><span class="token operator">-</span>cus_nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">]</span>
-head<span class="token punctuation">(</span>cus_nums<span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Java多线程"><a href="#Java多线程" class="headerlink" title="Java多线程"></a>Java多线程</h1><h2 id="线程基础"><a href="#线程基础" class="headerlink" title="线程基础"></a>线程基础</h2><h3 id="多线程有什么用"><a href="#多线程有什么用" class="headerlink" title="多线程有什么用"></a>多线程有什么用</h3><ul>
+<li>发挥多核CPU的优势</li>
+<li>防止阻塞</li>
+<li>便于建模</li>
+</ul>
+<h3 id="什么是线程？什么是进程？线程和进程的区别？"><a href="#什么是线程？什么是进程？线程和进程的区别？" class="headerlink" title="什么是线程？什么是进程？线程和进程的区别？"></a>什么是线程？什么是进程？线程和进程的区别？</h3><p>进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。</p>
+<p>线程与进程相似，但线程是一个比进程更小的执行单位，是进程的子集。一个进程在其执行的过程中可以产生多个线程。与进程不同的是同类的多个线程共享进程的<strong>堆</strong>和<strong>方法区</strong>资源，但每个线程有自己的<strong>程序计数器</strong>、<strong>虚拟机栈</strong>和<strong>本地方法栈</strong>，所以系统在产生一个线程，或是在各个线程之间作切换工作时，负担要比进程小得多，也正因为如此，线程也被称为轻量级进程。</p>
+<h3 id="并发和并行的区别"><a href="#并发和并行的区别" class="headerlink" title="并发和并行的区别"></a>并发和并行的区别</h3><ul>
+<li><strong>并发：</strong> 同一时间段，多个任务都在执行 (单位时间内不一定同时执行)；</li>
+<li><strong>并行：</strong> 单位时间内，多个任务同时执行。</li>
+</ul>
+<h3 id="创建线程的方式"><a href="#创建线程的方式" class="headerlink" title="创建线程的方式"></a>创建线程的方式</h3><ul>
+<li>继承Tread类</li>
+<li>实现Runnable接口</li>
+<li>实现Callable接口</li>
+<li>使用Executor构建线程池</li>
+</ul>
+<h3 id="Tread类的start-和run-方法的区别"><a href="#Tread类的start-和run-方法的区别" class="headerlink" title="Tread类的start()和run()方法的区别"></a>Tread类的start()和run()方法的区别</h3><p>只有调用了start()方法，才会表现出多线程的特性，不同线程的run()方法里面的代码交替执行。如果只是调用run()方法，那么代码还是同步执行的，必须等待一个线程的run()方法里面的代码全部执行完毕之后，另外一个线程才可以执行其run()方法里面的代码。</p>
+<h3 id="Tread类的sleep-和wait-方法的区别和共同点"><a href="#Tread类的sleep-和wait-方法的区别和共同点" class="headerlink" title="Tread类的sleep()和wait()方法的区别和共同点"></a>Tread类的sleep()和wait()方法的区别和共同点</h3><ul>
+<li>两者最主要的区别是 <strong>sleep()没有释放锁，wait()释放了锁</strong>；sleep不依赖同步器synchronized，但是wait依赖。</li>
+<li>两者都可以暂停线程的执行</li>
+<li>wait经常被用于线程之间交互/通信，sleep通常被用于暂停执行</li>
+<li>wait方法被调用后，线程不会自动苏醒，需要别的线程调用同一个对象上的notify()或者notifyAll()方法，wait方法也可以使用wait(long timeout)超时后自动苏醒。sleep方法执行完之后，线程会自动苏醒。</li>
+</ul>
+<h3 id="为什么wait-、notify-、notifyAll-这些方法不在Tread类中？"><a href="#为什么wait-、notify-、notifyAll-这些方法不在Tread类中？" class="headerlink" title="为什么wait()、notify()、notifyAll()这些方法不在Tread类中？"></a>为什么wait()、notify()、notifyAll()这些方法不在Tread类中？</h3><p>这些操作都是锁级别操作，每个对象都有锁，所以定义在对象中。</p>
+<h3 id="Java中如何停止一个线程"><a href="#Java中如何停止一个线程" class="headerlink" title="Java中如何停止一个线程"></a>Java中如何停止一个线程</h3><ul>
+<li>JDK1.0中有像stop()、suspend()、resume()的控制方法来停止进程但由于潜在的死锁威胁就被弃用了。</li>
+<li>当run()或者call()方法执行完成之后线程会自动结束</li>
+<li>也可以使用interrupt()方法中断线程</li>
+<li>还可以使用volatile+boolean变量手动结束线程</li>
+</ul>
+<h3 id="Java中interrupted-和isInterrupted-方法的区别"><a href="#Java中interrupted-和isInterrupted-方法的区别" class="headerlink" title="Java中interrupted()和isInterrupted()方法的区别"></a>Java中interrupted()和isInterrupted()方法的区别</h3><p>interrupted()会将中断状态清除，而isInterrupted()不会。</p>
+<h3 id="如何在两个线程中共享数据"><a href="#如何在两个线程中共享数据" class="headerlink" title="如何在两个线程中共享数据"></a>如何在两个线程中共享数据</h3><p>根据多个线程的代码是否相同判断是否使用同一个Runnable对象，</p>
+<p>通过在线程之间共享对象，然后通过wait/notify/notifyAll、await/signal/signalAll进行唤起和等待</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><h3 id="Runnable接口和Callable接口的区别"><a href="#Runnable接口和Callable接口的区别" class="headerlink" title="Runnable接口和Callable接口的区别"></a>Runnable接口和Callable接口的区别</h3><ul>
+<li><p>Runnable接口中的run()方法的返回值是void，它只是纯粹地去执行run()方法中的代码而已；</p>
+</li>
+<li><p>Callable接口中的call()方法是有返回值的，是一个泛型，和Future、FutureTask配合可以用来获取异步执行的结果。</p>
+</li>
+</ul>
+<h3 id="为什么要使用线程池"><a href="#为什么要使用线程池" class="headerlink" title="为什么要使用线程池"></a>为什么要使用线程池</h3><p>避免频繁地创建和销毁线程，达到线程对象的重用。另外，使用线程池还可以根据项目灵活地控制并发的数目。</p>
+<ul>
+<li><strong>降低资源消耗</strong>。通过重复利用已创建的线程降低线程创建和销毁造成的消耗。</li>
+<li><strong>提高响应速度</strong>。当任务到达时，任务可以不需要的等到线程创建就能立即执行。</li>
+<li><strong>提高线程的可管理性</strong>。</li>
+</ul>
+<h3 id="executor-和submit-方法的区别"><a href="#executor-和submit-方法的区别" class="headerlink" title="executor()和submit()方法的区别"></a>executor()和submit()方法的区别</h3><ol>
+<li><strong><code>execute()</code>方法用于提交不需要返回值的任务，所以无法判断任务是否被线程池执行成功与否；</strong></li>
+<li><strong><code>submit()</code>方法用于提交需要返回值的任务。线程池会返回一个 <code>Future</code> 类型的对象，通过这个 <code>Future</code> 对象可以判断任务是否执行成功</strong></li>
+</ol>
+<h3 id="线程池的拒绝-饱和策略"><a href="#线程池的拒绝-饱和策略" class="headerlink" title="线程池的拒绝/饱和策略"></a>线程池的拒绝/饱和策略</h3><ul>
+<li><strong><code>AbortPolicy</code></strong>：抛出 <code>RejectedExecutionException</code>来拒绝新任务的处理。</li>
+<li><strong><code>DiscardPolicy</code>：</strong> 不处理新任务，直接丢弃掉。</li>
+<li><strong><code>DiscardOldestPolicy</code>：</strong> 此策略将丢弃最早的未处理的任务请求。</li>
+</ul>
+<h2 id="锁系列"><a href="#锁系列" class="headerlink" title="锁系列"></a>锁系列</h2><h3 id="synchronized关键字的作用、使用、底层原理、常见缺陷"><a href="#synchronized关键字的作用、使用、底层原理、常见缺陷" class="headerlink" title="synchronized关键字的作用、使用、底层原理、常见缺陷"></a>synchronized关键字的作用、使用、底层原理、常见缺陷</h3><ul>
+<li>作用：synchronized关键字解决的是多个线程之间访问资源的同步性，synchronized关键字可以保证被它修饰的方法或者代码块在任意时刻只能有一个线程执行。</li>
+<li>使用：最主要的三种使用方式<ul>
+<li><strong>修饰实例方法:</strong> 作用于当前对象实例加锁，进入同步代码前要获得当前对象实例的锁</li>
+<li><strong>修饰静态方法:</strong> 也就是给当前类加锁，会作用于类的所有对象实例，因为静态成员不属于任何一个实例对象，是类成员</li>
+<li><strong>修饰代码块:</strong> 指定加锁对象，对给定对象加锁，进入同步代码库前要获得给定对象的锁。</li>
+</ul>
+</li>
+<li>底层原理：从反编译字节码的角度看底层原理包含了监控器monitor</li>
+<li>常见缺陷：效率低、不够灵活、不知道是否获得了锁</li>
+</ul>
+<h3 id="volatile关键字的作用"><a href="#volatile关键字的作用" class="headerlink" title="volatile关键字的作用"></a>volatile关键字的作用</h3><p>保证变量的可见性有序性还能防止指令重排序，但不能保证变量的原子性（与CAS结合，能保证原子性），非线程安全。</p>
+<h3 id="synchronized和volatile的区别"><a href="#synchronized和volatile的区别" class="headerlink" title="synchronized和volatile的区别"></a>synchronized和volatile的区别</h3><p><code>synchronized</code> 关键字和 <code>volatile</code> 关键字是两个互补的存在，而不是对立的存在：</p>
+<ul>
+<li><strong>volatile关键字</strong>是线程同步的<strong>轻量级实现</strong>，所以<strong>volatile性能肯定比synchronized关键字要好</strong>。但是<strong>volatile关键字只能用于变量而synchronized关键字可以修饰方法以及代码块</strong>。<strong>实际开发中使用 synchronized 关键字的场景还是更多一些</strong>。</li>
+<li><strong>多线程访问volatile关键字不会发生阻塞，而synchronized关键字可能会发生阻塞</strong></li>
+<li><strong>volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。</strong></li>
+<li><strong>volatile关键字主要用于解决变量在多个线程之间的可见性，而 synchronized关键字解决的是多个线程之间访问资源的同步性。</strong></li>
+</ul>
+<h3 id="synchronized和ReentrantLock的区别"><a href="#synchronized和ReentrantLock的区别" class="headerlink" title="synchronized和ReentrantLock的区别"></a>synchronized和ReentrantLock的区别</h3><ul>
+<li>synchronized是和if、else、for、while一样的<strong>关键字</strong>，ReentrantLock是<strong>类</strong>，这是二者的本质区别。</li>
+<li>synchronized 依赖于 JVM 而 ReentrantLock 依赖于 API</li>
+<li>ReentrantLock可以对获取锁的等待时间进行设置，这样就避免了死锁</li>
+<li>ReentrantLock可以获取各种锁的信息</li>
+<li>ReentrantLock可以灵活地实现多路通知</li>
+</ul>
+<h3 id="什么是CAS？"><a href="#什么是CAS？" class="headerlink" title="什么是CAS？"></a>什么是CAS？</h3><p>  CAS是compare and swap的缩写，即我们所说的比较交换。cas是一种基于锁的操作，而且是乐观锁。在java中锁分为乐观锁和悲观锁。悲观锁是将资源锁住，等一个之前获得锁的线程释放锁之后，下一个线程才可以访问。而乐观锁采取了一种宽泛的态度，通过某种方式不加锁来处理资源，比如通过给记录加version来获取数据，性能较悲观锁有很大的提高。<br>　　 CAS操作包含三个操作数 ——内存位置（V）、预期原值（A）和新值(B)。如果内存地址里面的值和A的值是一样的，那么就将内存里面的值更新成B。CAS是通过无限循环来获取数据的，若果在第一轮循环中，a线程获取地址里面的值被b线程修改了，那么a线程需要自旋，到下次循环才有可能机会执行。java.util.concurrent.atomic 包下的类大多是使用CAS操作来实现的( AtomicInteger,AtomicBoolean,AtomicLong)</p>
+<h3 id="什么是AQS？"><a href="#什么是AQS？" class="headerlink" title="什么是AQS？"></a>什么是AQS？</h3><p>AQS的全称为（AbstractQueuedSynchronizer），这个类在java.util.concurrent.locks包下面。</p>
+<p>AQS是一个用来构建锁和同步器的框架，使用AQS能简单且高效地构造出应用广泛的大量的同步器，比如我们提到的ReentrantLock，Semaphore，其他的诸如ReentrantReadWriteLock，SynchronousQueue，FutureTask等等皆是基于AQS的。</p>
+<p><strong>AQS核心思想是，如果被请求的共享资源空闲，则将当前请求资源的线程设置为有效的工作线程，并且将共享资源设置为锁定状态。如果被请求的共享资源被占用，那么就需要一套线程阻塞等待以及被唤醒时锁分配的机制，这个机制AQS是用CLH队列锁实现的，即将暂时获取不到锁的线程加入到队列中。</strong>使用了独占式和共享式，底层使用了模板方法模式）</p>
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="TreadLocal是什么？有什么用"><a href="#TreadLocal是什么？有什么用" class="headerlink" title="TreadLocal是什么？有什么用?"></a>TreadLocal是什么？有什么用?</h3><p>ThreadLocal是一个本地线程副本变量工具类。主要用于将私有线程和该线程存放的副本对象做一个映射，各个线程之间的变量互不干扰，在高并发场景下，可以实现无状态的调用，特别适用于各个线程依赖不同的变量值完成操作的场景。ThreadLocal就是一种以<strong>空间换时间</strong>的做法，在每个Thread里面维护了一个以开地址法实现的ThreadLocal.ThreadLocalMap，把数据进行隔离，数据不共享，自然就没有线程安全方面的问题了。</p>
+<h3 id="semaphore有什么用？"><a href="#semaphore有什么用？" class="headerlink" title="semaphore有什么用？"></a>semaphore有什么用？</h3><p>Semaphore就是一个信号量，它的作用是<strong>限制某段代码块的并发数</strong>。Semaphore有一个构造函数，可以传入一个int型整数n，表示某段代码最多只有n个线程可以访问，如果超出了n，那么请等待，等到某个线程执行完毕这段代码块，下一个线程再进入。</p>
+<h3 id="CountDownLatch？"><a href="#CountDownLatch？" class="headerlink" title="CountDownLatch？"></a>CountDownLatch？</h3><p>类似于计数器的方式，用于等待一个或多个线程执行完操作开始自身代码的执行。</p>
+<h3 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier?"></a>CyclicBarrier?</h3><p>CyclicBarrier即同步屏障，它主要功能是让一组线程达到一个屏障（也可以称为同步点）是被阻塞，直到最后一个线程达到屏障时，屏障才被打开，所有被拦截的线程才会继续执行</p>
+<h3 id="CyclicBarrier和CountDownLatch的区别"><a href="#CyclicBarrier和CountDownLatch的区别" class="headerlink" title="CyclicBarrier和CountDownLatch的区别"></a>CyclicBarrier和CountDownLatch的区别</h3><ul>
+<li>两者都是Java.util.concurrent包下的多线程工具类，都可以用来表示代码运行到某个点上</li>
+<li>CyclicBarrier的某个线程运行到某个点之后，该线程停止运行，直到所有的线程都达到了这个点，所有线程才重新运行；CountDownLatch则不是，某线程运行到某个点之后，只是给某个数值-1，该线程继续运行。</li>
+<li>CyclicBarrier只能唤起一个任务，CountDownLatch可以唤起多个任务</li>
+<li>CyclicBarrier可以复用，CountDownLatch不可复用，当计数值为0时，该CountDownLatch就不能再使用了</li>
+</ul>
+<h2 id="ConcurrentHashMap的原理"><a href="#ConcurrentHashMap的原理" class="headerlink" title="ConcurrentHashMap的原理"></a>ConcurrentHashMap的原理</h2><p>JDK1.5：</p>
+<p>ConcurrentHashMap 是concurrent 包中线程安全的哈希表，采用分段锁，把 Map 分成了 N 个 Segment，put 和 get 的时候，都是根据 key.hashCode() 算出放到哪个 Segment 中。</p>
+<p>(JDK1.8：</p>
+<p>ConcurrentHashMap取消了segment分段锁，而采用CAS和synchronized来保证并发安全。数据结构跟HashMap1.8的结构一样，<strong>数组+链表/红黑二叉树</strong>。<br> synchronized只锁定当前链表或红黑二叉树的首节点，这样只要hash不冲突，就不会产生并发，效率又提升N倍。)</p>
+<h3 id="ConcurrentHashMap的并发度"><a href="#ConcurrentHashMap的并发度" class="headerlink" title="ConcurrentHashMap的并发度"></a>ConcurrentHashMap的并发度</h3><p>ConcurrentHashMap的并发度就是segment的大小，默认为16，这意味着最多同时可以有16条线程操作ConcurrentHashMap，这也是ConcurrentHashMap对Hashtable的最大优势，任何情况下，Hashtable只能有一条线程获取Hashtable中的数据。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -815,7 +873,7 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
                     </span>
                     <a href="https://zheroic.top" class="b-link-green">zheroic's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/20191219/34044.html" class="b-link-green">R语言第五次实训,dplyr 、tidyr和lubridate处理数据</a>
+                    <a href="/20200821/58846.html" class="b-link-green">Java多线程</a>
                 </p>
             </div>
 
@@ -838,7 +896,7 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
         repo: 'zheroic.github.io',
         owner: 'zheroic',
         admin: "zheroic",
-        id: '20191219/34044.html',
+        id: '20200821/58846.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -859,49 +917,53 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/20191219/57944.html">
+                <a href="/20200821/58846.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTrRI.jpg" class="responsive-img" alt="解决idea编写spark程序时，import org.apache.spark报错">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTozq.jpg" class="responsive-img" alt="Java多线程">
                         
-                        <span class="card-title">解决idea编写spark程序时，import org.apache.spark报错</span>
+                        <span class="card-title">Java多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            问题描述导入spark程序时，spark显示不能识别此符号
-解决：去官网下载对应spark版本的压缩包，链接解压，既有jars目录或者pom.xml加入
-  &lt;dependency>
-      &lt;groupId>org.apa
+                            Java多线程线程基础多线程有什么用
+发挥多核CPU的优势
+防止阻塞
+便于建模
+
+什么是线程？什么是进程？线程和进程的区别？进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/spark/" class="post-category" target="_blank">
-                                    spark
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/spark/" target="_blank">
-                        <span class="chip bg-color">spark</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -915,33 +977,34 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/20191219/57393.html">
+                <a href="/20200810/11986.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTozq.jpg" class="responsive-img" alt="R语言第六次实训,leaflet绘制地铁线路图">
+                        <img src="https://cdn.jsdelivr.net/gh/zheroic/zheroic.github.io/images/loading.gif" data-original="https://s1.ax1x.com/2020/04/26/JgTLeU.jpg" class="responsive-img" alt="Java保留两位小数的方法">
                         
-                        <span class="card-title">R语言第六次实训,leaflet绘制地铁线路图</span>
+                        <span class="card-title">Java保留两位小数的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目：数据请到我的主页看我的上传资源
-
-使用leaflet绘制地铁线路图，要求1） 图中绘制地铁线路2） 各站点展示进站流量（08:00:00-08:05:00间的数据），流量的大小用标记的大小表示，并且提示线路、站点、流量的具体数值。Sh
+                            Java除法保留小数以及保留两位小数常用方法除法保留小数java中的“/”、“%”运算，其中前者为取整，后者取余数。那么有没有快捷的运算方法取正常的运算结果呢？
+在“/”运算时指定返回结果类型为float
+int a = 10;
+int b
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-12-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -951,12 +1014,8 @@ head<span class="token punctuation">(</span>cus_nums<span class="token punctuati
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/R/" target="_blank">
-                        <span class="chip bg-color">R</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%9E%E8%AE%AD/" target="_blank">
-                        <span class="chip bg-color">实训</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
